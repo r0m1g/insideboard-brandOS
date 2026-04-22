@@ -509,10 +509,12 @@ ul.rules li.note b{color:var(--gray-500);}
   /* Multi-col grids → 2 cols */
   .ironm{grid-template-columns:repeat(2,1fr);}
   .vseq{grid-template-columns:repeat(3,1fr);}
-  /* Table grids: enable horizontal scroll */
-  .vtbl,.dtbl,.atbl{overflow-x:auto;}
-  .vrow{min-width:360px;}
-  .drow,.arow{min-width:440px;}
+  /* Table grids: stack cells vertically */
+  .vtbl,.dtbl,.atbl{overflow:visible;border:none;}
+  .vrow,.drow,.arow{display:block;border:1px solid var(--gray-200);margin-bottom:var(--s3);}
+  .vrow.hd,.drow.hd,.arow.hd{display:none;}
+  .vc,.dc,.ac{display:block;border-right:none;border-bottom:1px solid var(--gray-200);}
+  .vc:last-child,.dc:last-child,.ac:last-child{border-bottom:none;}
   /* Chart: scroll */
   .chmk{overflow-x:auto;}
   .cmb{min-width:440px;}
