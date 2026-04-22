@@ -489,6 +489,66 @@ ul.rules li.note b{color:var(--gray-500);}
   .cm-mx{grid-template-columns:repeat(2,1fr);}
   .cp.wide{grid-column:span 1;}
 }
+
+/* ---- ADDITIONAL RESPONSIVE FIXES ---- */
+/* Demo blocks with many fixed columns: scroll rather than overflow */
+.spr,.gbar{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.gdemo{overflow-x:auto;}
+.gdemo .cols{min-width:480px;}
+
+@media(max-width:960px){
+  .ch h2{font-size:36px;}
+  .rdemo .rti{font-size:42px;}
+  .pc .pct{font-size:44px;}
+  .tspec .disp{font-size:52px;}
+  .tspec .titl{font-size:36px;}
+}
+@media(max-width:720px){
+  /* Multi-col grids → 2 cols */
+  .ironm{grid-template-columns:repeat(2,1fr);}
+  .vseq{grid-template-columns:repeat(3,1fr);}
+  /* Table grids: enable horizontal scroll */
+  .vtbl,.dtbl,.atbl{overflow-x:auto;}
+  .vrow{min-width:360px;}
+  .drow,.arow{min-width:440px;}
+  /* Chart: scroll */
+  .chmk{overflow-x:auto;}
+  .cmb{min-width:440px;}
+  /* Font reductions */
+  .ch h2{font-size:28px;}
+  .pc .pct{font-size:36px;}
+  .rdemo .rti{font-size:32px;}
+  .tspec .disp{font-size:42px;}
+  .tspec .titl{font-size:28px;}
+  .cp-hero .fml{font-size:30px;}
+  .cp-sec .st{font-size:28px;}
+  .cp-bn .lft b{font-size:26px;}
+}
+@media(max-width:480px){
+  /* Grids → 2 or 1 col */
+  .ironm{grid-template-columns:repeat(2,1fr);}
+  .vseq{grid-template-columns:repeat(2,1fr);}
+  .cp-kpi{grid-template-columns:1fr;min-height:auto;}
+  .cp-kpi .kpi b{font-size:36px;}
+  /* Type specimen: stack label above sample */
+  .tspec .row{grid-template-columns:1fr;}
+  .tspec .row .lbl{margin-bottom:var(--s2);}
+  /* Font reductions */
+  .ch h2{font-size:24px;}
+  .pc .pct{font-size:28px;}
+  .rdemo .rti{font-size:26px;}
+  .tspec .disp{font-size:32px;}
+  .tspec .titl{font-size:24px;}
+  /* Padding reductions on heavy containers */
+  .cp-hero,.cp-sec,.cp-fml,.cp-bn{padding:var(--s5);}
+  .qs{padding:var(--s5);}
+  .fd{padding:var(--s5);}
+  .pc{padding:var(--s6) var(--s5);}
+  .rdemo{padding:var(--s5);min-height:auto;}
+  .refc{padding:var(--s4) var(--s5);}
+  /* Tweaks panel: full width minus margins */
+  .tweaks{right:var(--s3);bottom:var(--s3);width:calc(100vw - var(--s6));}
+}
 </style>
 </head>
 <body data-register="enterprise" data-density="default">
