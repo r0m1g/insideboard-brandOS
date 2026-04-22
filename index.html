@@ -127,13 +127,15 @@ ul.rules li.note b{color:var(--gray-500);}
 
 /* AUDIENCE CARDS */
 .agrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);margin:var(--s5) 0;}
-.acard{border:1px solid var(--gray-200);padding:var(--s5);background:var(--white);}
-.acard .ar{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ember);margin-bottom:var(--s3);}
-.acard .at{font-size:18px;font-weight:500;margin-bottom:var(--s3);}
-.acard .as{font-size:12px;color:var(--gray-600);font-family:var(--mono);margin-bottom:var(--s3);}
-.acard .ak{background:var(--ink);color:var(--gray-300);padding:var(--s3) var(--s4);font-size:14px;line-height:1.55;border-left:2px solid var(--gray-600);margin-top:var(--s3);font-style:italic;font-weight:400;}
-.acard .am{margin-top:var(--s3);font:500 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gray-600);}
-.acard .am em{font-style:normal;color:var(--ink);}
+.acard{background:var(--ink);color:var(--ivory);padding:var(--s6) var(--s7);border-left:3px solid var(--ember);font-family:var(--mono);font-size:12px;line-height:1.7;}
+.acard .ar{font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin-bottom:var(--s4);display:block;}
+.acard .at{font:500 16px/1.2 var(--sans);color:var(--ivory);margin-bottom:4px;font-family:var(--sans);letter-spacing:-.01em;}
+.acard .as{font:400 10px/1 var(--mono);letter-spacing:.08em;color:rgba(250,250,249,.5);margin-bottom:var(--s4);display:block;}
+.acard .adiv{border-top:1px solid rgba(250,250,249,.12);margin:var(--s3) 0;}
+.acard .abody{font:400 13px/1.6 var(--sans);color:rgba(250,250,249,.75);margin-bottom:var(--s3);}
+.acard .ak{font:400 13px/1.55 var(--sans);color:rgba(250,250,249,.85);font-style:italic;border-left:none;background:none;padding:0;margin-top:0;}
+.acard .am{margin-top:var(--s3);font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(250,250,249,.4);}
+.acard .am em{font-style:normal;color:var(--ember);}
 @media(max-width:720px){.agrid{grid-template-columns:1fr;}}
 
 /* COPY EXAMPLES */
@@ -418,12 +420,86 @@ ul.rules li.note b{color:var(--gray-500);}
 .tweaks .seg{display:flex;gap:2px;background:rgba(255,255,255,.08);padding:2px;border-radius:4px;}
 .tweaks .seg button{flex:1;padding:6px 4px;font-size:11px;font-weight:500;border-radius:3px;color:var(--text-muted);}
 .tweaks .seg button.on{background:var(--ivory);color:var(--ink);}
+/* ---- MOBILE NAV ---------------------------------------- */
+.nav-toggle{
+  display:none;
+  position:fixed;
+  top:var(--s3);
+  left:var(--s3);
+  z-index:200;
+  width:40px;height:40px;
+  background:var(--ink);
+  color:var(--ivory);
+  border-radius:4px;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  border:0;
+  flex-direction:column;
+  gap:5px;
+  padding:10px;
+}
+.nav-toggle span{
+  display:block;
+  width:100%;
+  height:1.5px;
+  background:var(--ivory);
+  transition:transform 200ms cubic-bezier(.2,0,0,1), opacity 200ms;
+}
+.nav-toggle.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+.nav-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(27,23,18,.4);
+  z-index:149;
+  opacity:0;
+  transition:opacity 200ms;
+}
+.nav-overlay.visible{opacity:1;}
+
+@media(max-width:960px){
+  .nav-toggle{display:flex;}
+  nav.side{
+    position:fixed;
+    top:0;left:0;
+    height:100vh;
+    z-index:150;
+    transform:translateX(-100%);
+    transition:transform 240ms cubic-bezier(.2,0,0,1);
+    box-shadow:none;
+    width:280px;
+  }
+  nav.side.open{
+    transform:translateX(0);
+    box-shadow:4px 0 32px rgba(27,23,18,.12);
+  }
+  .nav-overlay{display:block;}
+  main.doc{padding:var(--s8) var(--s5) var(--s9);}
+  .hero h1{font-size:48px;}
+  .hero .mg{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:36px;}
+  .hero .mg{grid-template-columns:1fr;}
+  .rtbl{grid-template-columns:1fr;}
+  .cm-mx{grid-template-columns:repeat(2,1fr);}
+  .cp.wide{grid-column:span 1;}
+}
 </style>
 </head>
 <body data-register="enterprise" data-density="default">
 <div class="shell">
 
-<nav class="side">
+<button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav class="side" id="navSide">
   <div class="brand"><div class="mark-box">IB</div><div class="wordmark">Insideboard AI</div></div>
   <div class="ng"><div class="ngl">Layer 1 · Strategy</div>
   <ol>
@@ -572,32 +648,40 @@ ul.rules li.note b{color:var(--gray-500);}
         <div class="ar">Target 1 · Commercial target</div>
         <div class="at">The Decision Maker</div>
         <div class="as">CHRO · CFO · CIO · Transformation Director</div>
-        <p style="font-size:13px;color:var(--gray-700);margin-bottom:var(--s3)">We sell to this audience. Invested heavily in tools and deployment. Behaviors haven't followed. Purchase trigger: board pressure on transformation ROI, licence renewal forcing the question "are we actually using what we're paying for?"</p>
+        <div class="adiv"></div>
+        <div class="abody">We sell to this audience. Invested heavily in tools and deployment. Behaviors haven't followed. Purchase trigger: board pressure on transformation ROI, licence renewal forcing the question "are we actually using what we're paying for?"</div>
         <div class="ak">"You paid for deployment. You expected performance. No one stayed for what happens in between."</div>
+        <div class="adiv"></div>
         <div class="am">Brand thread mode: <em>Revelation</em></div>
       </div>
       <div class="acard">
         <div class="ar">Target 2 · Critical pivot</div>
         <div class="at">The Manager</div>
         <div class="as">Team lead · Regional manager</div>
-        <p style="font-size:13px;color:var(--gray-700);margin-bottom:var(--s3)">The project doesn't take off without them. Runs communities. Senses what's happening in their team but lacks the data and time to act. The tipping point: when they realize InsideBoard works <em>for</em> them, not the other way around.</p>
+        <div class="adiv"></div>
+        <div class="abody">The project doesn't take off without them. Runs communities. Senses what's happening in their team but lacks the data and time to act. The tipping point: when they realize InsideBoard works for them, not the other way around.</div>
         <div class="ak">"What's happening in your team — you can feel it. We show it to you, and give you the means to act before it's too late."</div>
+        <div class="adiv"></div>
         <div class="am">Brand thread mode: <em>Recognition</em></div>
       </div>
       <div class="acard">
         <div class="ar">Target 3 · Product only</div>
         <div class="at">The End User</div>
         <div class="as">Sales rep · Advisor · Field operator</div>
-        <p style="font-size:13px;color:var(--gray-700);margin-bottom:var(--s3)">Not a commercial or marketing audience. Addressed exclusively through the product — UX copy, onboarding, IRON micro-interactions, Success Widget. Out of scope for Enterprise, Event, and Partner registers.</p>
+        <div class="adiv"></div>
+        <div class="abody">Not a commercial or marketing audience. Addressed exclusively through the product — UX copy, onboarding, IRON micro-interactions, Success Widget. Out of scope for Enterprise, Event, and Partner registers.</div>
         <div class="ak">"Bonjour. Que voulez-vous comprendre aujourd'hui ?"</div>
+        <div class="adiv"></div>
         <div class="am">Brand thread mode: <em>Presence</em></div>
       </div>
       <div class="acard">
         <div class="ar">Target 4 · Partner ecosystem</div>
         <div class="at">The Partner / Integrator</div>
         <div class="as">PwC · Deloitte · BearingPoint · IBM</div>
-        <p style="font-size:13px;color:var(--gray-700);margin-bottom:var(--s3)">Sells transformations. Knows a significant portion don't last. Core concern: does it integrate cleanly? Can I resell it with confidence? Addressed through the Partner register — peer-to-peer, same rigour on substance.</p>
+        <div class="adiv"></div>
+        <div class="abody">Sells transformations. Knows a significant portion don't last. Core concern: does it integrate cleanly? Can I resell it with confidence? Addressed through the Partner register — peer-to-peer, same rigour on substance.</div>
         <div class="ak">"Your clients ask what happens after deployment. Now you have the answer — and the platform to deliver it."</div>
+        <div class="adiv"></div>
         <div class="am">Brand thread mode: <em>Empowerment</em></div>
       </div>
     </div>
@@ -786,30 +870,38 @@ ul.rules li.note b{color:var(--gray-500);}
       <div class="acard">
         <div class="ar">Decision-Maker · Revelation</div>
         <div class="at">CHRO · CFO · CIO · Transformation Director</div>
-        <p style="font-size:13px;color:var(--gray-700);margin:var(--s3) 0"><b>Psychological truth:</b> Has invested heavily. Senses the results haven't followed. Cannot pinpoint why. Has no data to prove it. Vendors deliver and leave — InsideBoard stays.</p>
+        <div class="adiv"></div>
+        <div class="abody"><span style="color:var(--ember);font-weight:500">Psychological truth.</span> Has invested heavily. Senses the results haven't followed. Cannot pinpoint why. Has no data to prove it. Vendors deliver and leave — InsideBoard stays.</div>
         <div class="ak">"You paid for deployment. You expected performance. No one stayed for what happens in between."</div>
-        <div class="am" style="margin-top:var(--s3);font-size:11px;color:var(--gray-600)">Outbound emails · Decision-maker decks · Executive whitepapers · LinkedIn signed articles</div>
+        <div class="adiv"></div>
+        <div class="am">Outbound emails · Decision-maker decks · Executive whitepapers · LinkedIn signed articles</div>
       </div>
       <div class="acard">
         <div class="ar">Manager · Recognition</div>
         <div class="at">Team lead · Regional manager</div>
-        <p style="font-size:13px;color:var(--gray-700);margin:var(--s3) 0"><b>Psychological truth:</b> Already lives in the space InsideBoard addresses. Carries engagement responsibility without proper means. The platform finally gives them tools — it names what they already experience.</p>
+        <div class="adiv"></div>
+        <div class="abody"><span style="color:var(--ember);font-weight:500">Psychological truth.</span> Already lives in the space InsideBoard addresses. Carries engagement responsibility without proper means. The platform finally gives them tools — it names what they already experience.</div>
         <div class="ak">"What's happening in your team — you can feel it. We show it to you, and give you the means to act before it's too late."</div>
-        <div class="am" style="margin-top:var(--s3);font-size:11px;color:var(--gray-600)">Manager-focused product pages · In-app onboarding · Field manager testimonials</div>
+        <div class="adiv"></div>
+        <div class="am">Manager-focused product pages · In-app onboarding · Field manager testimonials</div>
       </div>
       <div class="acard">
         <div class="ar">Partner · Empowerment</div>
         <div class="at">PwC · Deloitte · BearingPoint · IBM</div>
-        <p style="font-size:13px;color:var(--gray-700);margin:var(--s3) 0"><b>Psychological truth:</b> Sells transformations. Knows a significant portion don't last. Needs a differentiated asset for proposals. <em>Always by your side</em> extends to the partner's own client relationship.</p>
+        <div class="adiv"></div>
+        <div class="abody"><span style="color:var(--ember);font-weight:500">Psychological truth.</span> Sells transformations. Knows a significant portion don't last. Needs a differentiated asset for proposals. Always by your side extends to the partner's own client relationship.</div>
         <div class="ak">"Your clients ask what happens after deployment. Now you have the answer — and the platform to deliver it."</div>
-        <div class="am" style="margin-top:var(--s3);font-size:11px;color:var(--gray-600)">Partner decks · Partner pages on website · Outreach to partner managers</div>
+        <div class="adiv"></div>
+        <div class="am">Partner decks · Partner pages on website · Outreach to partner managers</div>
       </div>
       <div class="acard">
         <div class="ar">End User · Presence</div>
         <div class="at">Sales rep · Advisor · Field operator</div>
-        <p style="font-size:13px;color:var(--gray-700);margin:var(--s3) 0"><b>Psychological truth:</b> Asked to change behavior daily, often without context, support, or proof that it matters. Not addressed through commercial communications — only through product micro-interactions.</p>
+        <div class="adiv"></div>
+        <div class="abody"><span style="color:var(--ember);font-weight:500">Psychological truth.</span> Asked to change behavior daily, often without context, support, or proof that it matters. Not addressed through commercial communications — only through product micro-interactions.</div>
         <div class="ak">"Bonjour. Que voulez-vous comprendre aujourd'hui ?"</div>
-        <div class="am" style="margin-top:var(--s3);font-size:11px;color:var(--gray-600)">Product register only · UX copy · IRON micro-interactions · Success Widget</div>
+        <div class="adiv"></div>
+        <div class="am">Product register only · UX copy · IRON micro-interactions · Success Widget</div>
       </div>
     </div>
   </div>
@@ -1346,6 +1438,16 @@ const secs=[...document.querySelectorAll('section.chapter')];
 const navs=[...document.querySelectorAll('nav.side ol a')];
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}});},{rootMargin:'-30% 0px -60% 0px'});
 secs.forEach(s=>io.observe(s));
+
+/* Mobile nav toggle */
+const navToggle=document.getElementById('navToggle');
+const navSide=document.getElementById('navSide');
+const navOverlay=document.getElementById('navOverlay');
+function openNav(){navSide.classList.add('open');navOverlay.classList.add('visible');navToggle.classList.add('open');document.body.style.overflow='hidden';}
+function closeNav(){navSide.classList.remove('open');navOverlay.classList.remove('visible');navToggle.classList.remove('open');document.body.style.overflow='';}
+navToggle.addEventListener('click',()=>navSide.classList.contains('open')?closeNav():openNav());
+navOverlay.addEventListener('click',closeNav);
+document.querySelectorAll('nav.side ol a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=960)closeNav();}));
 </script>
 </body>
 </html>
