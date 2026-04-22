@@ -515,6 +515,25 @@ ul.rules li.note b{color:var(--gray-500);}
   .vrow.hd,.drow.hd,.arow.hd{display:none;}
   .vc,.dc,.ac{display:block;border-right:none;border-bottom:1px solid var(--gray-200);}
   .vc:last-child,.dc:last-child,.ac:last-child{border-bottom:none;}
+  /* Column label shown before each cell */
+  .vrow:not(.hd) .vc::before,
+  .drow:not(.hd) .dc::before,
+  .arow:not(.hd) .ac::before{
+    display:block;font:500 9px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gray-500);margin-bottom:4px;
+  }
+  /* Differentiation */
+  .drow:not(.hd) .dc:nth-child(1)::before{content:"Vs.";}
+  .drow:not(.hd) .dc:nth-child(2)::before{content:"What they do";}
+  .drow:not(.hd) .dc:nth-child(3)::before{content:"What InsideBoard does instead";}
+  /* Mechanism */
+  .vrow:not(.hd) .vc:nth-child(1)::before{content:"Level";}
+  .vrow:not(.hd) .vc:nth-child(2)::before{content:"Element";}
+  .vrow:not(.hd) .vc:nth-child(3)::before{content:"Function";}
+  /* Anti-patterns */
+  .arow:not(.hd) .ac:nth-child(1)::before{content:"Anti-pattern";}
+  .arow:not(.hd) .ac:nth-child(2)::before{content:"Why it's wrong";}
+  .arow:not(.hd) .ac:nth-child(3)::before{content:"What to do instead";}
   /* Chart: scroll */
   .chmk{overflow-x:auto;}
   .cmb{min-width:440px;}
