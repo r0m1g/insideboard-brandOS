@@ -12,9 +12,12 @@
   --white:#FFFFFF;--ivory:#FAFAF9;--stone:#EAE6DF;--ink:#1B1712;--ember:#EE2E20;
   --gray-200:#DDD4C4;--gray-300:#C9BEAB;--gray-400:#AFA38E;--gray-500:#8F8472;
   --gray-600:#6F6656;--gray-700:#4F483C;--gray-800:#332E26;--gray-900:#1B1712;
-  --fn-red:#D64545;--fn-coral:#F08B73;--fn-brown:#8B5A3C;--fn-orange:#E3893A;
-  --fn-yellow:#E5B94A;--fn-sage:#B8D29C;--fn-green:#4F8B5E;--fn-teal:#3E8C93;
-  --fn-blue:#7DA8E8;--fn-indigo:#3F4FA8;--fn-lavender:#B79BE8;--fn-pink:#D97BA8;
+  /* IRON agents — reserved, do not use outside agent contexts */
+  --fn-coral:#F08B73;--fn-blue:#7DA8E8;--fn-sage:#B8D29C;--fn-lavender:#B79BE8;
+  /* General functional palette */
+  --fn-red:#C94040;--fn-brick:#D4725A;--fn-amber:#C8882A;--fn-ochre:#B8963E;
+  --fn-moss:#6B8F5A;--fn-pine:#3D7A62;--fn-teal:#2E7A82;--fn-steel:#4A7FBF;
+  --fn-slate:#4A5F8A;--fn-plum:#7A5A8F;--fn-mauve:#9E6B82;--fn-brown:#7A4F35;
   --bg-canvas:var(--ivory);--bg-paper:var(--white);--bg-surface:var(--stone);
   --text-primary:var(--ink);--text-primary-inverse:var(--ivory);
   --text-muted:rgba(250,250,249,0.55);--text-on-color:var(--ivory);
@@ -81,7 +84,7 @@ section.chapter:last-child{border-bottom:0;}
    Rule: highlight signals importance without overpowering the reading line.
    Opacity: 50% — below this the signal is lost, above it competes with Ember signal uses.
    Never use on dark backgrounds. Never combine with bold. */
-.ch .pr em{font-style:normal;color:var(--ink);font-weight:500;background:linear-gradient(180deg,transparent 60%,rgba(238,46,32,.50) 60%);padding:0 2px;}
+.ch .pr em{font-style:normal;color:var(--ink);font-weight:500;background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.50) 75%);padding:0 2px;}
 .cb{padding-left:calc(60px + var(--s5));}
 @media(max-width:720px){.ch{grid-template-columns:1fr;}.cb{padding-left:0;}}
 h3.sub{font-size:22px;font-weight:500;letter-spacing:-.005em;margin:var(--s7) 0 var(--s4);}
@@ -208,10 +211,10 @@ ul.rules li.note b{color:var(--gray-500);}
 .im{padding:var(--s4);display:flex;flex-direction:column;justify-content:space-between;min-height:100px;}
 .im b{font-size:13px;font-weight:500;}
 .im span{font:400 11px/1 var(--mono);opacity:.75;margin-top:var(--s2);display:block;}
-.im.k{background:var(--fn-coral);color:var(--ivory);}
-.im.d{background:var(--fn-blue);color:var(--ivory);}
-.im.m{background:var(--fn-sage);color:var(--ink);}
-.im.c{background:var(--fn-lavender);color:var(--ink);}
+.im.k{background:var(--gray-700);color:var(--ivory);}
+.im.d{background:var(--gray-700);color:var(--ivory);}
+.im.m{background:var(--gray-700);color:var(--ivory);}
+.im.c{background:var(--gray-700);color:var(--ivory);}
 
 /* TYPE SPECIMEN */
 .tspec{border:1px solid var(--gray-200);background:var(--white);padding:var(--s6);margin:var(--s4) 0;}
@@ -257,7 +260,7 @@ ul.rules li.note b{color:var(--gray-500);}
 .gbar div b{font-weight:500;font-size:10px;}
 
 /* COMBO */
-.cm-mx{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3);margin:var(--s4) 0;}
+.cm-mx{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s3);margin:var(--s4) 0;}
 .comb{padding:var(--s5);aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--mono);font-size:10px;border:1px solid var(--gray-200);}
 .comb .cl{letter-spacing:.08em;text-transform:uppercase;opacity:.7;}
 .comb .cs{font-family:var(--sans);font-size:22px;line-height:1.1;font-weight:500;letter-spacing:-.01em;max-width:18ch;}
@@ -275,6 +278,19 @@ ul.rules li.note b{color:var(--gray-500);}
 .fnr .no{color:var(--ember);font-weight:500;}
 .fnr .sft{color:var(--gray-600);font-weight:500;}
 @media(max-width:720px){.fnr{grid-template-columns:1fr;gap:4px;}}
+
+/* TOUCHPOINT CARDS */
+.tpgrid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin:var(--s4) 0;}
+.tpcard{border:1px solid var(--gray-200);overflow:hidden;background:var(--white);}
+.tphead{display:flex;align-items:center;gap:var(--s3);padding:var(--s3) var(--s4);background:var(--stone);border-bottom:1px solid var(--gray-200);}
+.tpdot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.tpname{font:500 12px/1 var(--sans);letter-spacing:-.005em;}
+.tpreg{font:500 9px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin-left:auto;}
+.tpbody{padding:var(--s4);}
+.tptone{font-size:13px;line-height:1.55;color:var(--ink);margin-bottom:var(--s3);}
+.tpmeta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--s2);font:400 10px/1.4 var(--mono);color:var(--gray-500);}
+.tpmeta span b{color:var(--gray-700);font-weight:500;display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em;font-size:9px;}
+@media(max-width:720px){.tpgrid{grid-template-columns:1fr;}}
 
 /* IRON DEMO */
 .ird{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3);margin:var(--s4) 0;}
@@ -381,12 +397,14 @@ ul.rules li.note b{color:var(--gray-500);}
 [data-register="enterprise"] .rdemo{background:var(--ivory);color:var(--ink);}
 [data-register="event"] .rdemo{background:var(--ink);color:var(--ivory);}
 [data-register="event"] .rdemo .rti em{font-style:normal;color:var(--ember);}
-[data-register="product"] .rdemo{background:var(--white);color:var(--ink);border-left:2px solid var(--fn-blue);}
+[data-register="product"] .rdemo{background:var(--white);color:var(--ink);border-left:2px solid #4A7FBF;}
 [data-register="partner"] .rdemo{background:var(--stone);color:var(--ink);}
+[data-register="impact"] .rdemo{background:var(--ember);color:var(--ivory);}
+[data-register="impact"] .acc{background:var(--ivory);}
 .rdemo .acc{position:absolute;top:var(--s5);right:var(--s5);width:12px;height:12px;border-radius:50%;}
 [data-register="enterprise"] .acc{background:var(--gray-300);}
 [data-register="event"] .acc{background:var(--ember);}
-[data-register="product"] .acc{background:var(--fn-blue);}
+[data-register="product"] .acc{background:#4A7FBF;}
 [data-register="partner"] .acc{background:var(--fn-sage);}
 
 /* REG TABLE */
@@ -664,7 +682,7 @@ ul.rules li.note b{color:var(--gray-500);}
     <span class="lb">09 · Automation Layer</span>
   </div>
   <div class="mg" style="margin-top:var(--s6)">
-    <div><b>Posture</b><span>Always by your side.</span></div>
+    <div><b>Posture</b><span><em>Always by your side.</em></span></div>
     <div><b>Strategic positioning</b><span>Performance Orchestration Platform</span></div>
     <div><b>Sections validated</b><span>00 · 01 · 02</span></div>
     <div><b>Version</b><span>1.0 · Internal · Q2 2026</span></div>
@@ -727,15 +745,14 @@ ul.rules li.note b{color:var(--gray-500);}
     <h3 class="sub">Strategic definition</h3>
     <ul class="rules">
       <li class="note"><b>Internal</b>Performance Orchestration Platform.</li>
-      <li class="note"><b>Tagline</b><em>Always by your side.</em></li>
-      <li class="note"><b style="color:transparent;user-select:none">——</b><span style="font:400 12px/1.4 var(--mono);letter-spacing:0.06em;color:var(--gray-500)">Always alone, never combined. Its strength comes from its isolation.</span></li>
+      <li class="note"><b>Tagline</b><em>Always by your side.</em> Always alone, never combined. Its strength comes from its isolation.</li>
       <li class="note"><b>Promise (EN)</b>Your team's success isn't a matter of luck. We orchestrate it by your side, day after day.</li>
       <li class="note"><b>Promise (FR)</b>Le succès de vos équipes ne se joue pas au hasard. Nous l'orchestrons à vos côtés, jour après jour.</li>
       <li class="dont"><b>Former</b>"Activate your success" — phased out. Must not appear in any new material.</li>
     </ul>
     <div class="callout warn"><b>What InsideBoard is not</b>An LMS, an IT tool, a digitized consulting firm, an additional reporting layer, or a CRM add-on.</div>
     <h3 class="sub">Client trajectory</h3>
-    <div class="fd light"><div class="flab">Maturity path</div><div class="ftxt">Onboarding → Adoption → Business Performance → Operational Excellence</div></div>
+    <div class="fd"><div class="flab">Maturity path</div><div class="ftxt">Onboarding → Adoption → Business Performance → Operational Excellence</div></div>
     <p style="font-size:14px;color:var(--gray-700)">The client enters with a simple need and progressively discovers the platform's depth. We never promise transformation. We promise what makes transformation last.</p>
     <h3 class="sub">Visual references</h3>
     <ul class="rules">
@@ -781,17 +798,21 @@ ul.rules li.note b{color:var(--gray-500);}
     <div class="fd"><div class="flab">The Success Formula</div><div class="ftxt">Performance + Engagement + Training + Collaboration <em>=</em> Success</div></div>
     <p>Each dimension is powered by a dedicated IRON Agent. Together with the Closed Loop, they form the mechanism of proof in the verbal system: what makes the brand promise credible and defendable.</p>
     <h3 class="sub">The four agents</h3>
-    <div class="ird">
-      <div class="irc" style="background:var(--fn-lavender)"><span class="irl">Performance Agent</span></div>
-      <div class="irc" style="background:var(--fn-coral)"><span class="irl">Engagement Agent</span></div>
-      <div class="irc" style="background:var(--fn-blue)"><span class="irl">Training Agent</span></div>
-      <div class="irc" style="background:var(--fn-sage);color:var(--ink)"><span class="irl">Collaboration Agent</span></div>
+    <div style="background:var(--ink);padding:var(--s4);margin:var(--s4) 0;">
+      <div class="ird">
+        <div class="irc" style="background:var(--fn-lavender);color:var(--ink)"><span class="irl">Performance Agent</span></div>
+        <div class="irc" style="background:var(--fn-coral);color:var(--ivory)"><span class="irl">Engagement Agent</span></div>
+        <div class="irc" style="background:var(--fn-blue);color:var(--ivory)"><span class="irl">Training Agent</span></div>
+        <div class="irc" style="background:var(--fn-sage);color:var(--ink)"><span class="irl">Collaboration Agent</span></div>
+      </div>
     </div>
     <h3 class="sub">Structural model — The Community</h3>
-    <p>The entire platform is organized around communities — a shared space where KPIs, content, coaching, and gamification converge around common goals. Every use case is a community.</p>
+    <div class="fd"><div class="flab">Structural model</div><div class="ftxt">Every use case is a community. KPIs, content, coaching, and collaboration converge in a shared space organized around common goals.</div></div>
+    <p>The Community is the foundational architecture unit of InsideBoard — not a feature, not a module, but the structural container around which the entire platform is organized.</p>
     <ul class="rules">
-      <li class="note"><b>Architecture</b>One transversal community (BU, program) + role-based communities (account managers, service, ops).</li>
-      <li class="note"><b>References</b>General Motors and Michelin both follow this two-layer model.</li>
+      <li class="note"><b>Transversal layer</b>One community per BU or program — cross-functional, strategic, owned by leadership.</li>
+      <li class="note"><b>Role-based layer</b>Dedicated communities per role (account managers, service, ops) — focused, measurable, actionable.</li>
+      <li class="note"><b>Proven model</b>General Motors and Michelin both operate on this two-layer architecture.</li>
     </ul>
   </div>
 </section>
@@ -929,7 +950,7 @@ ul.rules li.note b{color:var(--gray-500);}
   <div class="cb">
     <div class="pc">
       <div class="pcl">Level 1 · Posture · What InsideBoard IS for the client</div>
-      <div class="pct">Always by your side.</div>
+      <div class="pct"><em>Always by your side.</em></div>
       <div class="pcr">Always appears alone. Never combined with another formulation. Its strength comes from its isolation.</div>
     </div>
     <h4 class="mi">Authorized usages</h4>
@@ -1091,8 +1112,7 @@ ul.rules li.note b{color:var(--gray-500);}
   <div class="cb">
     <h3 class="sub">Verbal rules</h3>
     <ul class="rules">
-      <li class="dont"><b>Never</b><em>Always by your side</em></li>
-      <li class="dont"><b style="color:transparent;user-select:none">——</b><span style="font:400 12px/1.4 var(--mono);letter-spacing:0.06em;color:var(--gray-500)">combined with any other formulation.</span></li>
+      <li class="dont"><b>Never</b><em>Always by your side</em> combined with any other formulation.</li>
       <li class="note"><b>Language</b>English-first. French is strategic adaptation, not literal translation.</li>
       <li class="note"><b>French</b>Vouvoiement systematic in all contexts including product.</li>
       <li class="dont"><b>Never</b>"Activate your success" — being phased out.</li>
@@ -1140,7 +1160,7 @@ ul.rules li.note b{color:var(--gray-500);}
   </div></div>
   <div class="cb">
     <div class="refc">
-      <div class="rcs"><span class="rck">POSTURE</span><span class="rcv">Always by your side.</span><br><span class="rcv" style="opacity:.5;font-size:11px">(always alone, never combined)</span></div>
+      <div class="rcs"><span class="rck">POSTURE</span><span class="rcv"><em>Always by your side.</em></span><br><span class="rcv" style="opacity:.5;font-size:11px">(always alone, never combined)</span></div>
       <div class="rcd"></div>
       <div class="rcs"><span class="rck">PROMISE</span><span class="rcv">Your team's success isn't a matter of luck.</span><br><span class="rcv">We orchestrate it by your side, day after day.</span></div>
       <div class="rcd"></div>
@@ -1207,15 +1227,15 @@ ul.rules li.note b{color:var(--gray-500);}
     </ul>
     <div class="callout"><b>The contrast rule</b>Outfit speaks. Mono points. The two fonts create a clear system/content distinction — everything structural or technical passes through Mono, everything editorial stays in Outfit. Mixing them at similar sizes breaks this.</div>
     <h3 class="sub">Highlight system</h3>
-    <p>Une seule technique de mise en valeur autorisée dans le body : le soulignement Ember à 50% en dégradé bas de ligne. Documenté ici pour usage futur dans tout asset produit.</p>
+    <p>One highlight technique authorized in body copy: the Ember 50% gradient underline. Documented here as the reference for all future produced assets.</p>
     <div style="background:var(--white);border:1px solid var(--gray-200);padding:var(--s5);margin:var(--s4) 0;max-width:66ch">
-      <p style="font-size:18px;margin:0">InsideBoard is the <span style="font-weight:500;background:linear-gradient(180deg,transparent 60%,rgba(238,46,32,.50) 60%);padding:0 2px">performance layer</span> that sits on top of the client's existing ecosystem.</p>
+      <p style="font-size:18px;margin:0">InsideBoard is the <span style="font-weight:500;background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.50) 75%);padding:0 2px">performance layer</span> that sits on top of the client's existing ecosystem.</p>
     </div>
     <ul class="rules">
-      <li class="note"><b>Opacité</b>50% — en dessous, le signal disparaît. Au-dessus, il entre en compétition avec les usages Ember primaires.</li>
-      <li class="note"><b>CSS</b><code style="font:400 11px/1 var(--mono);color:var(--gray-600)">background:linear-gradient(180deg,transparent 60%,rgba(238,46,32,.50) 60%)</code></li>
-      <li class="do"><b>Usage</b>Principes de chapitre, accroches éditoriales, phrases clés dans le body.</li>
-      <li class="dont"><b>Jamais</b>Sur fond sombre, sur du Bold, ni combiné avec la couleur Ember en texte.</li>
+      <li class="note"><b>Opacity</b>50% — below this the signal disappears. Above it competes with primary Ember uses.</li>
+      <li class="note"><b>CSS</b><code style="font:400 11px/1 var(--mono);color:var(--gray-600)">background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.50) 75%)</code></li>
+      <li class="do"><b>Use</b>Chapter principles, editorial hooks, key phrases in body copy.</li>
+      <li class="dont"><b>Never</b>On dark backgrounds, on Bold text, or combined with Ember text color.</li>
     </ul>
   </div>
 </section>
@@ -1256,16 +1276,21 @@ ul.rules li.note b{color:var(--gray-500);}
       <div class="sw"><div class="ch" style="background:var(--fn-sage);color:var(--ink)"></div><div class="mt"><span class="nm">Sage</span><span class="hx">#B8D29C</span><span class="hx" style="color:var(--ember);font-weight:500">IRON · Collaboration</span></div></div>
       <div class="sw"><div class="ch" style="background:var(--fn-lavender);color:var(--ink)"></div><div class="mt"><span class="nm">Lavender</span><span class="hx">#B79BE8</span><span class="hx" style="color:var(--ember);font-weight:500">IRON · Performance</span></div></div>
     </div>
-    <h4 class="mi">General functional colors</h4>
+    <div class="callout"><b>Steel — product register color</b>Steel (#4A7FBF) is the signature color of the Product register. It appears in product UI surfaces, the Product register demo, and product-related touchpoint markers. It does not appear in Enterprise, Event, or Partner contexts.</div>
+    <h4 class="mi">General functional palette — 12 colors</h4>
     <div class="sw-g p6">
-      <div class="sw"><div class="ch" style="background:var(--fn-red)"></div><div class="mt"><span class="nm">Red</span><span class="hx">#D64545</span></div></div>
-      <div class="sw"><div class="ch" style="background:var(--fn-orange)"></div><div class="mt"><span class="nm">Orange</span><span class="hx">#E3893A</span></div></div>
-      <div class="sw"><div class="ch" style="background:var(--fn-yellow);color:var(--ink)"></div><div class="mt"><span class="nm">Yellow</span><span class="hx">#E5B94A</span></div></div>
-      <div class="sw"><div class="ch" style="background:var(--fn-green)"></div><div class="mt"><span class="nm">Green</span><span class="hx">#4F8B5E</span></div></div>
-      <div class="sw"><div class="ch" style="background:var(--fn-teal)"></div><div class="mt"><span class="nm">Teal</span><span class="hx">#3E8C93</span></div></div>
-      <div class="sw"><div class="ch" style="background:var(--fn-indigo)"></div><div class="mt"><span class="nm">Indigo</span><span class="hx">#3F4FA8</span></div></div>
-      <div class="sw"><div class="ch" style="background:var(--fn-brown)"></div><div class="mt"><span class="nm">Brown</span><span class="hx">#8B5A3C</span></div></div>
-      <div class="sw"><div class="ch" style="background:var(--fn-pink)"></div><div class="mt"><span class="nm">Pink</span><span class="hx">#D97BA8</span></div></div>
+      <div class="sw"><div class="ch" style="background:#C94040"></div><div class="mt"><span class="nm">Red</span><span class="hx">#C94040</span></div></div>
+      <div class="sw"><div class="ch" style="background:#D4725A"></div><div class="mt"><span class="nm">Brick</span><span class="hx">#D4725A</span></div></div>
+      <div class="sw"><div class="ch" style="background:#C8882A"></div><div class="mt"><span class="nm">Amber</span><span class="hx">#C8882A</span></div></div>
+      <div class="sw"><div class="ch" style="background:#B8963E;color:var(--ink)"></div><div class="mt"><span class="nm">Ochre</span><span class="hx">#B8963E</span></div></div>
+      <div class="sw"><div class="ch" style="background:#6B8F5A"></div><div class="mt"><span class="nm">Moss</span><span class="hx">#6B8F5A</span></div></div>
+      <div class="sw"><div class="ch" style="background:#3D7A62"></div><div class="mt"><span class="nm">Pine</span><span class="hx">#3D7A62</span></div></div>
+      <div class="sw"><div class="ch" style="background:#2E7A82"></div><div class="mt"><span class="nm">Teal</span><span class="hx">#2E7A82</span></div></div>
+      <div class="sw"><div class="ch" style="background:#4A7FBF"></div><div class="mt"><span class="nm">Steel</span><span class="hx">#4A7FBF</span></div></div>
+      <div class="sw"><div class="ch" style="background:#4A5F8A"></div><div class="mt"><span class="nm">Slate</span><span class="hx">#4A5F8A</span></div></div>
+      <div class="sw"><div class="ch" style="background:#7A5A8F"></div><div class="mt"><span class="nm">Plum</span><span class="hx">#7A5A8F</span></div></div>
+      <div class="sw"><div class="ch" style="background:#9E6B82"></div><div class="mt"><span class="nm">Mauve</span><span class="hx">#9E6B82</span></div></div>
+      <div class="sw"><div class="ch" style="background:#7A4F35"></div><div class="mt"><span class="nm">Brown</span><span class="hx">#7A4F35</span></div></div>
     </div>
     <h3 class="sub">Allowed combinations</h3>
     <div class="cm-mx">
@@ -1273,33 +1298,46 @@ ul.rules li.note b{color:var(--gray-500);}
       <div class="comb" style="background:var(--ink);color:var(--ivory)"><div class="cl">02 · Deep</div><div class="cs">Ivory on Ink</div><div class="cr">Ratio 13.4 · AAA</div></div>
       <div class="comb" style="background:var(--ink);color:var(--ember)"><div class="cl">03 · Signal</div><div class="cs">Ember on Ink</div><div class="cr">Ratio 4.9 · AA</div></div>
       <div class="comb" style="background:var(--stone);color:var(--ink)"><div class="cl">04 · Surface</div><div class="cs">Ink on Stone</div><div class="cr">Ratio 11.2 · AAA</div></div>
+      <div class="comb" style="background:var(--ember);color:var(--ivory)"><div class="cl">05 · Impact</div><div class="cs">Ivory on Ember</div><div class="cr">Event · signal moment only</div></div>
     </div>
     <div class="callout warn"><b>Forbidden</b>White text on Ivory/Stone. Ember on Stone or Ivory large surfaces. Two functional colors at full saturation in one composition.</div>
+    <div class="callout"><b>05 · Impact — usage rule</b>Ember as background is authorized exclusively in Event register contexts or for a single high-signal moment (key stat, CTA, event asset). Never on more than one element per composition. Never in Enterprise or Product registers.</div>
     <h3 class="sub">Functional palette — usage rules</h3>
     <div class="fnu">
       <div class="fnr hd"><span>Color</span><span>Large surface</span><span>Object marker</span><span>Typography</span><span>Primary use</span></div>
-      <div class="fnr"><span><i style="background:var(--fn-coral)"></i>Coral</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>IRON Engagement — card, icon, agent surface</span></div>
-      <div class="fnr"><span><i style="background:var(--fn-blue)"></i>Blue</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>IRON Training — card, icon, agent surface</span></div>
-      <div class="fnr"><span><i style="background:var(--fn-sage)"></i>Sage</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>IRON Collaboration — card, icon, agent surface</span></div>
-      <div class="fnr"><span><i style="background:var(--fn-lavender)"></i>Lavender</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>IRON Performance — card, icon, agent surface</span></div>
-      <div class="fnr"><span><i style="background:var(--fn-red)"></i>Red</span><span class="no">No</span><span class="yes">Yes</span><span class="yes">Yes</span><span>Error state, destructive</span></div>
-      <div class="fnr"><span><i style="background:var(--fn-green)"></i>Green</span><span class="no">No</span><span class="yes">Yes</span><span class="yes">Yes</span><span>Success state, positive delta</span></div>
-      <div class="fnr"><span><i style="background:var(--fn-yellow)"></i>Yellow</span><span class="no">No</span><span class="yes">Yes</span><span class="yes">Yes</span><span>Warning, pending, attention</span></div>
-      <div class="fnr"><span><i style="background:var(--fn-orange)"></i>Orange</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz only — too close to Ember to use as surface</span></div>
+      <div class="fnr"><span><i style="background:var(--fn-coral)"></i>Coral</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>IRON Engagement — reserved, agent surfaces only</span></div>
+      <div class="fnr"><span><i style="background:var(--fn-blue)"></i>Blue</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>IRON Training — reserved, agent surfaces only</span></div>
+      <div class="fnr"><span><i style="background:var(--fn-sage)"></i>Sage</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>IRON Collaboration — reserved, agent surfaces only</span></div>
+      <div class="fnr"><span><i style="background:var(--fn-lavender)"></i>Lavender</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>IRON Performance — reserved, agent surfaces only</span></div>
+      <div class="fnr"><span><i style="background:#C94040"></i>Red</span><span class="no">No</span><span class="yes">Yes</span><span class="yes">Yes</span><span>Error state, destructive action</span></div>
+      <div class="fnr"><span><i style="background:#D4725A"></i>Brick</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz — warm series anchor</span></div>
+      <div class="fnr"><span><i style="background:#C8882A"></i>Amber</span><span class="no">No</span><span class="yes">Yes</span><span class="yes">Yes</span><span>Warning, pending, attention — replaces orange</span></div>
+      <div class="fnr"><span><i style="background:#B8963E"></i>Ochre</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz — warm series secondary</span></div>
+      <div class="fnr"><span><i style="background:#6B8F5A"></i>Moss</span><span class="no">No</span><span class="yes">Yes</span><span class="yes">Yes</span><span>Success state, positive delta</span></div>
+      <div class="fnr"><span><i style="background:#3D7A62"></i>Pine</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz — cool series anchor</span></div>
+      <div class="fnr"><span><i style="background:#2E7A82"></i>Teal</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz — cool series secondary</span></div>
+      <div class="fnr"><span><i style="background:#4A7FBF"></i>Steel</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="no">No</span><span>Product register signature color — border, accent, marker</span></div>
+      <div class="fnr"><span><i style="background:#4A5F8A"></i>Slate</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz — neutral blue series</span></div>
+      <div class="fnr"><span><i style="background:#7A5A8F"></i>Plum</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz — cool series tertiary</span></div>
+      <div class="fnr"><span><i style="background:#9E6B82"></i>Mauve</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz — warm cool bridge</span></div>
+      <div class="fnr"><span><i style="background:#7A4F35"></i>Brown</span><span class="no">No</span><span class="yes">Yes</span><span class="no">No</span><span>Data-viz — earth series anchor</span></div>
     </div>
+    <div class="callout warn"><b>IRON color reservation rule</b>Coral, Blue, Sage, and Lavender are exclusively reserved for IRON agent contexts — agent cards, agent icons, agent surfaces. They must not appear in data-viz, UI states, decorative elements, or any non-agent context. Violation breaks the agent identity system.</div>
     <h3 class="sub">IRON family — visual signature</h3>
-    <div class="ird">
-      <div class="irc" style="background:var(--fn-coral)"><span class="irl">Engagement</span></div>
-      <div class="irc" style="background:var(--fn-blue)"><span class="irl">Training</span></div>
-      <div class="irc" style="background:var(--fn-sage);color:var(--ink)"><span class="irl">Collaboration</span></div>
-      <div class="irc" style="background:var(--fn-lavender);color:var(--ink)"><span class="irl">Performance</span></div>
+    <div style="background:var(--ink);padding:var(--s4);margin:var(--s4) 0;">
+      <div class="ird">
+        <div class="irc" style="background:var(--fn-coral);color:var(--ivory)"><span class="irl">Engagement</span></div>
+        <div class="irc" style="background:var(--fn-blue);color:var(--ivory)"><span class="irl">Training</span></div>
+        <div class="irc" style="background:var(--fn-sage);color:var(--ink)"><span class="irl">Collaboration</span></div>
+        <div class="irc" style="background:var(--fn-lavender);color:var(--ink)"><span class="irl">Performance</span></div>
+      </div>
     </div>
-    <h4 class="mi">Dark vs Light — règle de lisibilité</h4>
+    <h4 class="mi">Dark vs Light — legibility rule</h4>
     <ul class="rules">
-      <li class="do"><b>Ink text</b>Sur Sage et Lavender — ces deux couleurs sont trop claires pour du texte ivory.</li>
-      <li class="do"><b>Ivory text</b>Sur Coral et Blue — ces deux couleurs sont suffisamment sombres pour porter du texte clair.</li>
-      <li class="note"><b>Sur fond Ink</b>Toutes les quatre couleurs IRON sont autorisées comme surfaces. Le texte interne reste ivory ou ink selon la règle ci-dessus.</li>
-      <li class="dont"><b>Jamais</b>Du texte Ink sur Coral ou Blue. Du texte Ivory sur Sage ou Lavender.</li>
+      <li class="do"><b>Ink text</b>On Sage and Lavender — these two colors are too light for Ivory text.</li>
+      <li class="do"><b>Ivory text</b>On Coral and Blue — these two colors are dark enough to carry light text.</li>
+      <li class="note"><b>On Ink background</b>All four IRON colors are authorized as surfaces. Internal text follows the rule above.</li>
+      <li class="dont"><b>Never</b>Ink text on Coral or Blue. Ivory text on Sage or Lavender.</li>
     </ul>
     <div class="callout warn"><b>Ember signal integrity</b>One Ember, unambiguous, reserved for the moment the brand chooses to speak. If it appears next to another loud color, it loses meaning.</div>
   </div>
@@ -1312,36 +1350,89 @@ ul.rules li.note b{color:var(--gray-500);}
   </div></div>
   <div class="cb">
     <h3 class="sub">Categorical sequence — max 6</h3>
-    <p>Pour les données non liées aux agents IRON, utiliser cette séquence ordinale. Les couleurs IRON (Coral, Blue, Sage, Lavender) sont réservées exclusivement aux agents.</p>
+    <p>For all data unrelated to IRON agents, use this ordinal sequence. IRON colors (Coral, Blue, Sage, Lavender) are exclusively reserved for agent contexts.</p>
     <div class="vseq">
-      <div class="vz" style="background:var(--fn-teal)"><span>01</span></div>
-      <div class="vz" style="background:var(--fn-indigo)"><span>02</span></div>
-      <div class="vz" style="background:var(--fn-brown)"><span>03</span></div>
-      <div class="vz" style="background:var(--fn-orange)"><span>04</span></div>
-      <div class="vz" style="background:var(--fn-green)"><span>05</span></div>
-      <div class="vz" style="background:var(--fn-yellow);color:var(--ink)"><span>06</span></div>
+      <div class="vz" style="background:#2E7A82"><span>01</span></div>
+      <div class="vz" style="background:#4A5F8A"><span>02</span></div>
+      <div class="vz" style="background:#7A4F35"><span>03</span></div>
+      <div class="vz" style="background:#C8882A;color:var(--ink)"><span>04</span></div>
+      <div class="vz" style="background:#6B8F5A"><span>05</span></div>
+      <div class="vz" style="background:#B8963E;color:var(--ink)"><span>06</span></div>
     </div>
-    <h3 class="sub">Chart mock — données génériques</h3>
+    <h3 class="sub">Bar chart — categorical data</h3>
     <div class="chmk">
       <div class="cmh">
-        <div class="cmt">Performance par région · Q2</div>
+        <div class="cmt">Performance by region · Q2</div>
         <div class="cml">
-          <span><i style="background:var(--fn-teal)"></i>EMEA</span>
-          <span><i style="background:var(--fn-indigo)"></i>APAC</span>
-          <span><i style="background:var(--fn-brown)"></i>AMER</span>
-          <span><i style="background:var(--fn-orange)"></i>LATAM</span>
+          <span><i style="background:#2E7A82"></i>EMEA</span>
+          <span><i style="background:#4A5F8A"></i>APAC</span>
+          <span><i style="background:#7A4F35"></i>AMER</span>
+          <span><i style="background:#C8882A"></i>LATAM</span>
         </div>
       </div>
       <div class="cmb">
-        <div class="cmc"><div class="cmbar" style="height:68%;background:var(--fn-teal)"></div><span>Jan</span></div>
-        <div class="cmc"><div class="cmbar" style="height:82%;background:var(--fn-indigo)"></div><span>Feb</span></div>
-        <div class="cmc"><div class="cmbar" style="height:54%;background:var(--fn-brown)"></div><span>Mar</span></div>
-        <div class="cmc"><div class="cmbar" style="height:91%;background:var(--fn-teal)"></div><span>Apr</span></div>
-        <div class="cmc"><div class="cmbar" style="height:76%;background:var(--fn-indigo)"></div><span>May</span></div>
-        <div class="cmc"><div class="cmbar" style="height:88%;background:var(--fn-brown)"></div><span>Jun</span></div>
+        <div class="cmc"><div class="cmbar" style="height:68%;background:#2E7A82"></div><span>Jan</span></div>
+        <div class="cmc"><div class="cmbar" style="height:82%;background:#4A5F8A"></div><span>Feb</span></div>
+        <div class="cmc"><div class="cmbar" style="height:54%;background:#7A4F35"></div><span>Mar</span></div>
+        <div class="cmc"><div class="cmbar" style="height:91%;background:#2E7A82"></div><span>Apr</span></div>
+        <div class="cmc"><div class="cmbar" style="height:76%;background:#4A5F8A"></div><span>May</span></div>
+        <div class="cmc"><div class="cmbar" style="height:88%;background:#7A4F35"></div><span>Jun</span></div>
       </div>
     </div>
-    <div class="callout"><b>Exception IRON</b>Quand les données représentent spécifiquement les quatre agents (adoption par agent, activité par agent), utiliser Coral / Blue / Sage / Lavender. Dans tous les autres contextes, utiliser la séquence data-viz ci-dessus.</div>
+
+<h3 class="sub">Line chart — trend over time</h3>
+<div class="chmk" style="padding-bottom:var(--s6)">
+  <div class="cmh">
+    <div class="cmt">Adoption rate · rolling 6 months</div>
+    <div class="cml">
+      <span><i style="background:var(--ember)"></i>Target cohort</span>
+      <span><i style="background:var(--gray-400)"></i>Baseline</span>
+    </div>
+  </div>
+  <div style="position:relative;height:200px;border-bottom:1px solid var(--gray-300);margin-top:var(--s4)">
+    <svg viewBox="0 0 600 200" preserveAspectRatio="none" style="width:100%;height:100%;position:absolute;top:0;left:0">
+      <polyline points="0,160 100,140 200,100 300,70 400,50 500,30 600,20" fill="none" stroke="var(--ember)" stroke-width="2"/>
+      <polyline points="0,180 100,175 200,168 300,160 400,155 500,150 600,148" fill="none" stroke="var(--gray-300)" stroke-width="1.5" stroke-dasharray="4 3"/>
+    </svg>
+    <div style="position:absolute;bottom:-20px;left:0;right:0;display:flex;justify-content:space-between;font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--gray-500)">
+      <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+    </div>
+  </div>
+</div>
+
+<h3 class="sub">Donut chart — distribution</h3>
+<div style="background:var(--white);border:1px solid var(--gray-200);padding:var(--s5);margin:var(--s4) 0;display:flex;align-items:center;gap:var(--s7);flex-wrap:wrap;">
+  <svg viewBox="0 0 120 120" width="120" height="120" style="flex-shrink:0">
+    <circle cx="60" cy="60" r="45" fill="none" stroke="var(--stone)" stroke-width="18"/>
+    <circle cx="60" cy="60" r="45" fill="none" stroke="var(--ember)" stroke-width="18" stroke-dasharray="169 113" stroke-dashoffset="28" transform="rotate(-90 60 60)"/>
+    <circle cx="60" cy="60" r="45" fill="none" stroke="#2E7A82" stroke-width="18" stroke-dasharray="79 203" stroke-dashoffset="-141" transform="rotate(-90 60 60)"/>
+    <text x="60" y="56" text-anchor="middle" font-family="'Outfit',sans-serif" font-weight="500" font-size="18" fill="var(--ink)">60%</text>
+    <text x="60" y="70" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8" fill="var(--gray-500)" letter-spacing="1">ACTIVE</text>
+  </svg>
+  <div style="font:500 11px/1 var(--mono);display:flex;flex-direction:column;gap:var(--s3)">
+    <div style="display:flex;align-items:center;gap:var(--s2)"><span style="width:10px;height:10px;background:var(--ember);display:inline-block;border-radius:2px"></span>Active users — 60%</div>
+    <div style="display:flex;align-items:center;gap:var(--s2)"><span style="width:10px;height:10px;background:#2E7A82;display:inline-block;border-radius:2px"></span>Partial adoption — 25%</div>
+    <div style="display:flex;align-items:center;gap:var(--s2)"><span style="width:10px;height:10px;background:var(--stone);border:1px solid var(--gray-200);display:inline-block;border-radius:2px"></span>Inactive — 15%</div>
+  </div>
+</div>
+
+<h3 class="sub">Circular gauge — KPI single value</h3>
+<div style="background:var(--ink);padding:var(--s6);margin:var(--s4) 0;display:flex;align-items:center;gap:var(--s7);flex-wrap:wrap;max-width:420px">
+  <svg viewBox="0 0 120 120" width="120" height="120" style="flex-shrink:0">
+    <circle cx="60" cy="60" r="48" fill="none" stroke="var(--gray-800)" stroke-width="10"/>
+    <circle cx="60" cy="60" r="48" fill="none" stroke="var(--ember)" stroke-width="10" stroke-dasharray="226 75" stroke-dashoffset="28" stroke-linecap="butt" transform="rotate(-90 60 60)"/>
+    <text x="60" y="55" text-anchor="middle" font-family="'Outfit',sans-serif" font-weight="500" font-size="22" fill="var(--ivory)">74%</text>
+    <text x="60" y="70" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="rgba(250,250,249,.5)" letter-spacing="1">TARGET</text>
+  </svg>
+  <div style="color:var(--ivory)">
+    <div style="font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(250,250,249,.5);margin-bottom:var(--s2)">Adoption rate</div>
+    <div style="font-size:13px;color:rgba(250,250,249,.75);line-height:1.5">3 pts below target.<br>Trend: +2 pts vs last month.</div>
+  </div>
+</div>
+
+<div class="callout"><b>Gauge — design rule</b>Ember fills the gauge arc against an Ink background. The value is the focal point. Label and context in Ivory. Reserve for single decisive KPIs — not for multiple gauges in one view.</div>
+
+    <div class="callout"><b>Exception — IRON agent data</b>When data specifically represents the four agents (adoption per agent, activity per agent), use the IRON colors: Coral / Blue / Sage / Lavender. In all other contexts, use the data-viz sequence above. Never mix IRON colors with the general data-viz palette in the same chart.</div>
     <ul class="rules">
       <li class="do"><b>Axes</b>1px stroke, gray-300. No gridlines other than the zero line.</li>
       <li class="dont"><b>Avoid</b>3D charts, shadows, beveled bars. Pie charts above 3 slices. Dual-axis charts.</li>
@@ -1349,12 +1440,12 @@ ul.rules li.note b{color:var(--gray-500);}
     <h3 class="sub">Tables — dense data</h3>
     <div class="tdemo">
       <table>
-        <thead><tr><th>Région</th><th>Comptes actifs</th><th>Adoption</th><th>Delta vs Q1</th></tr></thead>
+        <thead><tr><th>Region</th><th>Active accounts</th><th>Adoption</th><th>Delta vs Q1</th></tr></thead>
         <tbody>
-          <tr><td><i class="dot2" style="background:var(--fn-teal)"></i>EMEA</td><td>14</td><td>68%</td><td class="pos">+12 pts</td></tr>
-          <tr><td><i class="dot2" style="background:var(--fn-indigo)"></i>APAC</td><td>9</td><td>82%</td><td class="pos">+18 pts</td></tr>
-          <tr><td><i class="dot2" style="background:var(--fn-brown)"></i>AMER</td><td>11</td><td>54%</td><td class="neg">−3 pts</td></tr>
-          <tr><td><i class="dot2" style="background:var(--fn-orange)"></i>LATAM</td><td>6</td><td>91%</td><td class="pos">+9 pts</td></tr>
+          <tr><td><i class="dot2" style="background:#2E7A82"></i>EMEA</td><td>14</td><td>68%</td><td class="pos">+12 pts</td></tr>
+          <tr><td><i class="dot2" style="background:#4A5F8A"></i>APAC</td><td>9</td><td>82%</td><td class="pos">+18 pts</td></tr>
+          <tr><td><i class="dot2" style="background:#7A4F35"></i>AMER</td><td>11</td><td>54%</td><td class="neg">−3 pts</td></tr>
+          <tr><td><i class="dot2" style="background:#C8882A"></i>LATAM</td><td>6</td><td>91%</td><td class="pos">+9 pts</td></tr>
         </tbody>
       </table>
     </div>
@@ -1394,24 +1485,30 @@ ul.rules li.note b{color:var(--gray-500);}
 <section class="chapter" id="s04">
   <div class="ch"><div class="cn">3·04</div><div>
     <h2>Iconography</h2>
-    <p class="pr">One style: <em>outline, 1.5 px stroke, 24×24 grid, 2 px corners</em>. Not filled, not duotone.</p>
+    <p class="pr">Two icon systems, two distinct roles. <em>Brand iconography</em> for communication. <em>Platform iconography</em> for the UI. They coexist — they do not mix.</p>
   </div></div>
   <div class="cb">
+    <div class="callout warn"><b>Section in progress</b>Brand iconography is currently in production. This section will be updated with the full icon set and usage rules once validated.</div>
+
+    <h3 class="sub">System 1 — Brand iconography</h3>
+    <p>Designed for external communications, presentations, marketing materials, and any context where InsideBoard speaks as a brand. Also used to reference platform objects or features within communication assets (decks, proposals, event materials).</p>
     <ul class="rules">
-      <li class="do"><b>Use</b>Outline 1.5px. Square caps. 2px corner radius. 24×24 native grid.</li>
+      <li class="do"><b>Style</b>Outline 1.5px. Square caps. 2px corner radius. 24×24 native grid.</li>
       <li class="dont"><b>Avoid</b>Filled icons. Duotone. Literal figuration (dumbbell for Training, handshake for Collaboration).</li>
+      <li class="note"><b>Status</b>In production — set to be delivered and documented here.</li>
     </ul>
-    <div class="icg">
-      <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg><span>01</span></div>
-      <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16"/></svg><span>02</span></div>
-      <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M4 20V8l8-4 8 4v12"/><path d="M10 20v-6h4v6"/></svg><span>03</span></div>
-      <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg><span>04</span></div>
-      <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M3 17l4-4 4 4 7-7"/><path d="M14 6h6v6"/></svg><span>05</span></div>
-      <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>06</span></div>
-      <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M4 6l8 7 8-7"/><path d="M4 6v12h16V6"/></svg><span>07</span></div>
-      <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 10.5l7-3.5M8.5 13.5l7 3.5"/></svg><span>08</span></div>
-    </div>
+
+    <h3 class="sub">System 2 — Platform iconography</h3>
+    <p>The full icon set of the InsideBoard application. Covers navigation, platform objects (communities, KPIs, modules, agents), states, and interactions. Designed for functional legibility at small sizes in UI contexts.</p>
+    <ul class="rules">
+      <li class="do"><b>Use</b>Within the product UI. When referencing a specific platform object or feature in a brand communication asset (e.g., showing a screenshot, explaining a mechanism).</li>
+      <li class="dont"><b>Never</b>As decorative elements in brand communications. They carry product meaning, not brand meaning — the distinction must be maintained.</li>
+      <li class="dont"><b>Never</b>Brand icons inside the product UI. The two systems do not cross.</li>
+      <li class="note"><b>Asset availability</b>Platform icons are available from the design system. Contact the Art Director for the current export set.</li>
+    </ul>
+
     <div class="callout"><b>IRON icons</b>The four IRON agents ship with designed icons and tagged colors (Coral, Blue, Sage, Lavender) so they travel consistently across every surface.</div>
+    <div class="callout"><b>IRON modes — icons pending</b>Knowledge, Deep Search, Multi-Agent, and Coaching each have a dedicated icon set currently in production. Color assignment for modes is separate from agent colors and will be documented here once the icon system is validated.</div>
   </div>
 </section>
 
@@ -1460,7 +1557,7 @@ ul.rules li.note b{color:var(--gray-500);}
       <div class="cp wide"><div class="capt2">01 · Hero-Posture</div><div class="cp-hero cpf"><div class="fml">Always <em>by your side</em>.</div><div class="mk2">MARK</div></div></div>
       <div class="cp"><div class="capt2">02 · Section title</div><div class="cp-sec cpf"><div class="sn">§ 03</div><div class="st">The four agents, one formula.</div></div></div>
       <div class="cp"><div class="capt2">03 · Formula slide</div><div class="cp-fml cpf"><div class="ft">Insight is the starting move. Action is the product.</div></div></div>
-      <div class="cp"><div class="capt2">04 · KPI slide</div><div class="cp-kpi cpf" style="min-height:220px;padding:var(--s7)"><div class="kpi"><b>3.4×</b><span>adoption lift</span></div><div class="kpi"><b>62%</b><span>faster ramp</span></div><div class="kpi"><b>N=84</b><span>pilot cohort</span></div></div></div>
+      <div class="cp"><div class="capt2">04 · KPI slide</div><div class="cp-kpi cpf" style="min-height:220px;padding:var(--s7);grid-template-columns:1fr 1fr;"><div class="kpi"><b>3.4×</b><span>adoption lift</span></div><div class="kpi"><b>62%</b><span>faster ramp</span></div></div></div>
       <div class="cp"><div class="capt2">05 · Email signature</div><div class="cp-em cpf"><b class="nm">Lea Moreau</b><span class="rl">Head of Customer Strategy</span><hr><div class="sig"><div class="mk3">IB</div> INSIDEBOARD AI</div></div></div>
       <div class="cp wide"><div class="capt2">06 · Event banner</div><div class="cp-bn cpf"><div class="lft"><b>The next operating model for customer-facing AI.</b><span>LAS VEGAS · 04.24</span></div><div class="mbig">MARK</div></div></div>
     </div>
@@ -1517,10 +1614,11 @@ ul.rules li.note b{color:var(--gray-500);}
   <div class="cb">
     <h3 class="sub">Register switcher — live</h3>
     <div class="rsw" id="registerSwitcher">
-      <button data-r="enterprise" class="active">Enterprise sobre</button>
-      <button data-r="event">Événementiel</button>
-      <button data-r="product">Produit clair</button>
-      <button data-r="partner">Partenaire</button>
+      <button data-r="enterprise" class="active">Enterprise</button>
+      <button data-r="event">Event</button>
+      <button data-r="product">Product</button>
+      <button data-r="partner">Partner</button>
+      <button data-r="impact">Impact</button>
     </div>
     <div class="rdemo">
       <div class="rey" id="rEyebrow">01 · Enterprise · RFP, commercial docs, LinkedIn</div>
@@ -1530,10 +1628,10 @@ ul.rules li.note b{color:var(--gray-500);}
     </div>
     <h3 class="sub">Register specs — side by side</h3>
     <div class="rtbl">
-      <div class="rcol"><div class="rch" style="background:var(--ivory);color:var(--ink)"><b>01 · Enterprise</b><span>sobre</span></div><dl><dt>Canvas</dt><dd>Ivory</dd><dt>Ember</dt><dd>Forbidden</dd><dt>Density</dt><dd>Airy (+15%)</dd><dt>Type peak</dt><dd>Title 48–56</dd><dt>Supports</dt><dd>RFPs, commercial one-pagers, LinkedIn</dd></dl></div>
-      <div class="rcol"><div class="rch" style="background:var(--ink);color:var(--ivory)"><b>02 · Event</b><span style="color:var(--ember)">énergétique</span></div><dl><dt>Canvas</dt><dd>Ink</dd><dt>Ember</dt><dd>Authorized — one element</dd><dt>Density</dt><dd>Default</dd><dt>Type peak</dt><dd>Display 72–96</dd><dt>Supports</dt><dd>Keynote decks, launch assets, event banners</dd></dl></div>
-      <div class="rcol"><div class="rch" style="background:var(--white);color:var(--ink);border-left:2px solid var(--fn-blue)"><b>03 · Product</b><span>clair</span></div><dl><dt>Canvas</dt><dd>White</dd><dt>Ember</dt><dd>Forbidden in UI chrome</dd><dt>Density</dt><dd>Compact (−15%)</dd><dt>Type peak</dt><dd>Subtitle 28–32</dd><dt>Supports</dt><dd>App UI, documentation, onboarding</dd></dl></div>
-      <div class="rcol"><div class="rch" style="background:var(--stone);color:var(--ink)"><b>04 · Partner</b><span>ouvert</span></div><dl><dt>Canvas</dt><dd>Stone</dd><dt>Ember</dt><dd>Forbidden — Ember belongs to us alone</dd><dt>Density</dt><dd>Default</dd><dt>Type peak</dt><dd>Title 48–56</dd><dt>Supports</dt><dd>Co-branded material, integration pages</dd></dl></div>
+      <div class="rcol"><div class="rch" style="background:var(--ivory);color:var(--ink)"><b>01 · Enterprise</b><span>sober</span></div><dl><dt>Canvas</dt><dd>Ivory</dd><dt>Ember</dt><dd>Forbidden</dd><dt>Density</dt><dd>Airy (+15%)</dd><dt>Type peak</dt><dd>Title 48–56</dd><dt>Supports</dt><dd>RFPs, commercial one-pagers, LinkedIn</dd></dl></div>
+      <div class="rcol"><div class="rch" style="background:var(--ink);color:var(--ivory)"><b>02 · Event</b><span style="color:var(--ember)">energetic</span></div><dl><dt>Canvas</dt><dd>Ink</dd><dt>Ember</dt><dd>Authorized — one element</dd><dt>Density</dt><dd>Default</dd><dt>Type peak</dt><dd>Display 72–96</dd><dt>Supports</dt><dd>Keynote decks, launch assets, event banners</dd></dl></div>
+      <div class="rcol"><div class="rch" style="background:var(--white);color:var(--ink);border-left:2px solid #4A7FBF"><b>03 · Product</b><span>clear</span></div><dl><dt>Canvas</dt><dd>White</dd><dt>Ember</dt><dd>Forbidden in UI chrome</dd><dt>Density</dt><dd>Compact (−15%)</dd><dt>Type peak</dt><dd>Subtitle 28–32</dd><dt>Supports</dt><dd>App UI, documentation, onboarding</dd></dl></div>
+      <div class="rcol"><div class="rch" style="background:var(--stone);color:var(--ink);border-left:3px solid #6B8F5A"><b>04 · Partner</b><span style="color:var(--gray-600)">open</span></div><dl><dt>Canvas</dt><dd>Stone</dd><dt>Ember</dt><dd>Forbidden — Ember belongs to us alone</dd><dt>Density</dt><dd>Default</dd><dt>Type peak</dt><dd>Title 48–56</dd><dt>Supports</dt><dd>Co-branded material, integration pages</dd></dl></div>
     </div>
     <h3 class="sub">Decision rules — which register to pick</h3>
     <div class="dtree">
@@ -1578,69 +1676,62 @@ ul.rules li.note b{color:var(--gray-500);}
     <p style="font-size:14px;color:var(--gray-700);margin-bottom:var(--s5)">Production mode reads as: <strong>AI-generated → human-edited</strong> in all cases today. The ratio shifts toward full generation as output quality is validated over time.</p>
 
     <h3 class="sub">Touchpoint map</h3>
-    <div class="fnu">
-      <div class="fnr hd">
-        <span>Touchpoint</span>
-        <span>Register</span>
-        <span>Tone rules</span>
-        <span>Production mode</span>
-        <span>Format / support</span>
+    <div class="tpgrid">
+      <div class="tpcard">
+        <div class="tphead"><span class="tpdot" style="background:var(--ink)"></span><span class="tpname">Sales deck</span><span class="tpreg">Enterprise</span></div>
+        <div class="tpbody">
+          <div class="tptone">Short sentences. Specific numbers. Named realities. No adjectives. No hedge words.</div>
+          <div class="tpmeta"><span><b>Production</b>AI-gen → human edit</span><span><b>Format</b>Google Slides → PDF / PPT</span></div>
+        </div>
       </div>
-      <div class="fnr">
-        <span><i style="background:var(--ink)"></i>Sales deck</span>
-        <span>Enterprise</span>
-        <span>Short sentences. Specific numbers. Named realities. No adjectives. No hedge words.</span>
-        <span class="sft">AI-gen → human edit</span>
-        <span>Google Slides → PDF / PPT export</span>
+      <div class="tpcard">
+        <div class="tphead"><span class="tpdot" style="background:var(--ember)"></span><span class="tpname">Event / keynote</span><span class="tpreg">Event</span></div>
+        <div class="tpbody">
+          <div class="tptone">Rhythm. Repetition for emphasis. Direct address. One Ember signal. No hype.</div>
+          <div class="tpmeta"><span><b>Production</b>AI-gen → AD production</span><span><b>Format</b>Figma / Illustrator → print / screen</span></div>
+        </div>
       </div>
-      <div class="fnr">
-        <span><i style="background:var(--ember)"></i>Event / keynote</span>
-        <span>Event</span>
-        <span>Rhythm. Repetition for emphasis. Direct address. One Ember signal. No hype.</span>
-        <span class="sft">AI-gen → AD production</span>
-        <span>Figma / Illustrator → print / screen</span>
+      <div class="tpcard">
+        <div class="tphead"><span class="tpdot" style="background:#6B8F5A"></span><span class="tpname">Partner material</span><span class="tpreg">Partner</span></div>
+        <div class="tpbody">
+          <div class="tptone">Peer-to-peer. Open. Same rigor on substance. No Ember — partner accent only.</div>
+          <div class="tpmeta"><span><b>Production</b>AI-gen → human edit</span><span><b>Format</b>Google Slides → PDF</span></div>
+        </div>
       </div>
-      <div class="fnr">
-        <span><i style="background:var(--gray-400)"></i>Partner material</span>
-        <span>Partner</span>
-        <span>Peer-to-peer. Open. Same rigor on substance. No Ember — partner accent only.</span>
-        <span class="sft">AI-gen → human edit</span>
-        <span>Google Slides → PDF</span>
+      <div class="tpcard">
+        <div class="tphead"><span class="tpdot" style="background:#4A7FBF"></span><span class="tpname">Product / in-app</span><span class="tpreg">Product</span></div>
+        <div class="tpbody">
+          <div class="tptone">Plain words. Action-oriented. Vouvoiement maintained. No jargon. No gamification language.</div>
+          <div class="tpmeta"><span><b>Production</b>AI-gen → Product edit</span><span><b>Format</b>In-app · IRON · Success Widget</span></div>
+        </div>
       </div>
-      <div class="fnr">
-        <span><i style="background:var(--fn-blue)"></i>Product / in-app</span>
-        <span>Product</span>
-        <span>Plain words. Action-oriented. Vouvoiement. No jargon. No gamification language.</span>
-        <span class="sft">AI-gen → Product edit</span>
-        <span>In-app copy · IRON · Success Widget</span>
+      <div class="tpcard">
+        <div class="tphead"><span class="tpdot" style="background:var(--gray-300)"></span><span class="tpname">Website / landing</span><span class="tpreg">Enterprise</span></div>
+        <div class="tpbody">
+          <div class="tptone">Hero = Promise level. No bullets in hero. Density controlled. Outcome-first.</div>
+          <div class="tpmeta"><span><b>Production</b>AI-gen → human edit</span><span><b>Format</b>Web · HTML / CMS</span></div>
+        </div>
       </div>
-      <div class="fnr">
-        <span><i style="background:var(--gray-300)"></i>Website / landing</span>
-        <span>Enterprise</span>
-        <span>Hero = Promise level. No bullets in hero. Density controlled. Outcome-first.</span>
-        <span class="sft">AI-gen → human edit</span>
-        <span>Web · HTML / CMS</span>
+      <div class="tpcard">
+        <div class="tphead"><span class="tpdot" style="background:#4A5F8A"></span><span class="tpname">LinkedIn</span><span class="tpreg">Enterprise · Event</span></div>
+        <div class="tpbody">
+          <div class="tptone">Opens with felt truth. No corporate opener. Short paragraphs. One idea per post.</div>
+          <div class="tpmeta"><span><b>Production</b>AI-gen → author edit</span><span><b>Format</b>Native post · image / carousel · video</span></div>
+        </div>
       </div>
-      <div class="fnr">
-        <span><i style="background:var(--fn-indigo)"></i>LinkedIn</span>
-        <span>Enterprise · Event</span>
-        <span>Opens with felt truth. No corporate opener. Short paragraphs. One idea per post.</span>
-        <span class="sft">AI-gen → author edit</span>
-        <span>Native post · image / carousel · video (target)</span>
+      <div class="tpcard">
+        <div class="tphead"><span class="tpdot" style="background:#2E7A82"></span><span class="tpname">Email / outreach</span><span class="tpreg">Enterprise</span></div>
+        <div class="tpbody">
+          <div class="tptone">Subject line = one specific claim. No "I hope this finds you well". Outcome in line 1.</div>
+          <div class="tpmeta"><span><b>Production</b>AI-gen → human edit</span><span><b>Format</b>Plain text · HTML email</span></div>
+        </div>
       </div>
-      <div class="fnr">
-        <span><i style="background:var(--fn-teal)"></i>Email / outreach</span>
-        <span>Enterprise</span>
-        <span>Subject line = one specific claim. No "I hope this finds you well". Outcome in line 1.</span>
-        <span class="sft">AI-gen → human edit</span>
-        <span>Plain text · HTML email</span>
-      </div>
-      <div class="fnr">
-        <span><i style="background:var(--fn-sage)"></i>Internal comms</span>
-        <span>Partner</span>
-        <span>Direct. No corporate wrapper. State the decision, not the process. Action item visible.</span>
-        <span class="sft">AI-gen → human edit</span>
-        <span>Slack · Confluence · email</span>
+      <div class="tpcard">
+        <div class="tphead"><span class="tpdot" style="background:var(--gray-400)"></span><span class="tpname">Internal comms</span><span class="tpreg">Partner</span></div>
+        <div class="tpbody">
+          <div class="tptone">Direct. No corporate wrapper. State the decision, not the process. Action item visible.</div>
+          <div class="tpmeta"><span><b>Production</b>AI-gen → human edit</span><span><b>Format</b>Slack · Confluence · email</span></div>
+        </div>
       </div>
     </div>
 
@@ -1788,6 +1879,7 @@ ul.rules li.note b{color:var(--gray-500);}
     <button data-v="event">Evt.</button>
     <button data-v="product">Prod.</button>
     <button data-v="partner">Part.</button>
+    <button data-v="impact">Imp.</button>
   </div></div>
   <div class="tr"><label>Density</label>
   <div class="seg" data-tweak="density">
@@ -1807,7 +1899,8 @@ const rc={
   enterprise:{eyebrow:'01 · Enterprise · RFP, commercial docs, LinkedIn',title:'A quiet operating system for customer-facing AI.',body:'Four agents. One formula. A posture that holds across enterprise rollout, partner onboarding, and keynote stage. The register changes — the identity does not.',foot:'Canvas · Ivory / Ink · no Ember'},
   event:{eyebrow:'02 · Event · Keynote, launch, trade show',title:'Always <em>by your side</em>.',body:'Event register takes the stage. Ink background, Ivory voice, one Ember signal. The Formula carries, and the butterfly signature closes the gesture.',foot:'Deep · Ink / Ivory · Ember authorized'},
   product:{eyebrow:'03 · Product · UI, documentation, embedded surfaces',title:'Four agents. One interface.',body:'Product register is the mechanics register. White canvas, Ink text, IRON functional colors differentiate states and objects. No Ember — product surfaces do not shout.',foot:'Paper · White / Ink · functional accents'},
-  partner:{eyebrow:'04 · Partner · Co-branded material, integrations',title:'Built alongside, not on top of, our partners.',body:'Partner register sits on Stone — warm, open, non-competitive. Partner colors travel as functional anchors. Our mark remains in identity mode, not signature.',foot:'Surface · Stone / Ink · partner accent'}
+  partner:{eyebrow:'04 · Partner · Co-branded material, integrations',title:'Built alongside, not on top of, our partners.',body:'Partner register is warm, open, peer-to-peer. Stone grounds the canvas. A partner accent color anchors the composition. The mark stays in identity mode — never dominant, always present.',foot:'Surface · Stone / Ink · partner accent'},
+  impact:{eyebrow:'05 · Impact · Event signal · single high-stakes moment',title:'The number that changes the conversation.',body:'Ember as background is a decision, not a default. One composition per event context — reserved for the stat, the CTA, the moment the brand chooses to speak loudest. Never in Enterprise or Product.',foot:'Ember / Ivory · Event register only · one per composition'}
 };
 function applyReg(r){
   document.body.setAttribute('data-register',r);
