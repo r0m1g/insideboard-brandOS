@@ -32,7 +32,8 @@ body{font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.55;col
 .shell > *{min-width:0;}
 a{color:inherit;}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit;}
 .shell{display:grid;grid-template-columns:272px minmax(0,1fr);max-width:1440px;margin:0 auto;min-height:100vh;}
-@media(max-width:960px){.shell{grid-template-columns:1fr;}}
+.shell > main{margin-left:272px;}
+@media(max-width:960px){.shell{grid-template-columns:1fr;}.shell > main{margin-left:0;}}
 
 /* NAV */
 nav.side{position:fixed;top:0;left:0;width:272px;height:100vh;padding:var(--s7) var(--s5) var(--s6);border-right:1px solid var(--gray-200);overflow-y:auto;background:var(--ivory);z-index:10;}
