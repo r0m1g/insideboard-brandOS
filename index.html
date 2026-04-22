@@ -512,6 +512,8 @@ ul.rules li.note b{color:var(--gray-500);}
   /* Table grids: stack cells vertically */
   .vtbl,.dtbl,.atbl{overflow:visible;border:none;}
   .vrow,.drow,.arow{display:block;border:1px solid var(--gray-200);margin-bottom:var(--s3);}
+  .vrow:last-child,.drow:last-child,.arow:last-child{margin-bottom:0;border-bottom:1px solid var(--gray-200);}
+  .vtbl,.dtbl,.atbl{border-bottom:1px solid var(--gray-200);}
   .vrow.hd,.drow.hd,.arow.hd{display:none;}
   .vc,.dc,.ac{display:block;border-right:none;border-bottom:1px solid var(--gray-200);}
   .vc:last-child,.dc:last-child,.ac:last-child{border-bottom:none;}
