@@ -35,7 +35,7 @@ a{color:inherit;}button{font:inherit;cursor:pointer;border:0;background:none;col
 @media(max-width:960px){.shell{grid-template-columns:1fr;}}
 
 /* NAV */
-nav.side{position:sticky;top:0;align-self:start;height:100vh;padding:var(--s7) var(--s5) var(--s6);border-right:1px solid var(--gray-200);overflow-y:auto;background:var(--ivory);}
+nav.side{position:fixed;top:0;left:0;width:272px;height:100vh;padding:var(--s7) var(--s5) var(--s6);border-right:1px solid var(--gray-200);overflow-y:auto;background:var(--ivory);z-index:10;}
 nav.side .brand{display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s5);}
 nav.side .mark-box{width:32px;height:32px;background:var(--ink);color:var(--ivory);display:grid;place-items:center;font:500 10px/1 var(--mono);letter-spacing:.1em;border-radius:4px;}
 nav.side .wordmark{font-weight:500;font-size:13px;letter-spacing:.04em;text-transform:uppercase;}
