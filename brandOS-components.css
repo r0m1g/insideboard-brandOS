@@ -42,7 +42,8 @@ main.doc{padding:var(--s8) var(--s8) var(--s9);max-width:1000px;}
 .lb{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--gray-300);color:var(--gray-600);transition:background 120ms ease,color 120ms ease,border-color 120ms ease;}
 .lb.on{background:var(--ink);color:var(--ivory);border-color:var(--ink);}
 a.lb{text-decoration:none;cursor:pointer;}
-a.lb:not(.on):hover{background:var(--stone);color:var(--ink);border-color:var(--gray-400);}
+a.lb:not(.on):not(.wip):hover{background:var(--stone);color:var(--ink);border-color:var(--gray-400);}
+a.lb.wip:hover{background:var(--gray-800);color:var(--ivory);border-color:var(--gray-800);}
 a.lb.on:hover{background:var(--ember);border-color:var(--ember);}
 
 /* LAYER DIVIDER */
