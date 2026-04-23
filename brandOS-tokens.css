@@ -1,0 +1,90 @@
+/* ==========================================================================
+   INSIDEBOARD AI — BRAND TOKENS
+   Source of truth for all design variables.
+   Edit here to update palette, typography, or spacing globally.
+   Never add component styles here — those live in brand-components.css
+   ========================================================================== */
+
+:root {
+  /* --- PRIMARY PALETTE --- */
+  --white: #FFFFFF;
+  --ivory: #FAFAF9;
+  --stone: #EAE6DF;
+  --ink: #1B1712;
+  --ember: #EE2E20;
+
+  /* --- WARM GRAY SCALE --- */
+  --gray-200: #DDD4C4;
+  --gray-300: #C9BEAB;
+  --gray-400: #AFA38E;
+  --gray-500: #8F8472;
+  --gray-600: #6F6656;
+  --gray-700: #4F483C;
+  --gray-800: #332E26;
+  --gray-900: #1B1712;
+
+  /* --- IRON AGENTS — reserved, do not use outside agent contexts --- */
+  --fn-coral: #F08B73;
+  --fn-blue: #7DA8E8;
+  --fn-sage: #B8D29C;
+  --fn-lavender: #B79BE8;
+
+  /* --- GENERAL FUNCTIONAL PALETTE --- */
+  --fn-red: #C94040;
+  --fn-brick: #D4725A;
+  --fn-amber: #C8882A;
+  --fn-ochre: #B8963E;
+  --fn-moss: #6B8F5A;
+  --fn-pine: #3D7A62;
+  --fn-teal: #2E7A82;
+  --fn-steel: #4A7FBF;
+  --fn-slate: #4A5F8A;
+  --fn-plum: #7A5A8F;
+  --fn-mauve: #9E6B82;
+  --fn-brown: #7A4F35;
+
+  /* --- SEMANTIC TOKENS --- */
+  --bg-canvas: var(--ivory);
+  --bg-paper: var(--white);
+  --bg-surface: var(--stone);
+  --text-primary: var(--ink);
+  --text-primary-inverse: var(--ivory);
+  --text-muted: rgba(250, 250, 249, 0.55);
+  --text-on-color: var(--ivory);
+
+  /* --- SPACING SCALE --- */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 16px;
+  --s4: 24px;
+  --s5: 32px;
+  --s6: 48px;
+  --s7: 64px;
+  --s8: 96px;
+  --s9: 128px;
+
+  /* --- TYPOGRAPHY --- */
+  --sans: "Outfit", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* --- DENSITY --- */
+  --density: 1;
+}
+
+[data-density="comfortable"] { --density: 1.15; }
+[data-density="compact"]     { --density: 0.85; }
+
+/* --- BASE RESET --- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
