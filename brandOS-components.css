@@ -43,7 +43,7 @@ main.doc{padding:var(--s8) var(--s8) var(--s9);max-width:1000px;}
 .lb.on{background:var(--ink);color:var(--ivory);border-color:var(--ink);}
 a.lb{text-decoration:none;cursor:pointer;}
 a.lb:not(.on):not(.wip):hover{background:var(--stone);color:var(--ink);border-color:var(--gray-400);}
-a.lb.wip:hover{color:var(--ember);border-color:var(--ember);}
+a.lb.wip:hover{background:transparent;color:var(--ember);border-color:var(--ember);}
 a.lb.on:hover{background:var(--ember);border-color:var(--ember);}
 
 /* LAYER DIVIDER */
