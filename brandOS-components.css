@@ -41,6 +41,8 @@ main.doc{padding:var(--s8) var(--s8) var(--s9);max-width:1000px;}
 .lbadges{display:inline-flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s6);}
 .lb{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--gray-300);color:var(--gray-600);}
 .lb.on{background:var(--ink);color:var(--ivory);border-color:var(--ink);}
+a.lb{text-decoration:none;cursor:pointer;}
+a.lb:hover{opacity:.75;}
 
 /* LAYER DIVIDER */
 .ldiv{padding:var(--s5) 0 var(--s4);border-bottom:2px solid var(--ink);margin-bottom:var(--s6);font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);display:flex;align-items:center;gap:var(--s4);}
