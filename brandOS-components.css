@@ -58,14 +58,14 @@ a.lb.on:hover{background:var(--ember);border-color:var(--ember);}
 
 /* LAYER DIVIDER — dark hero variant */
 .ldiv.ldark{background:var(--ink);padding:var(--s6) var(--s5);border-top:3px solid var(--ember);border-bottom:0;display:grid;grid-template-columns:60px 1fr;gap:var(--s5);align-items:start;margin-bottom:var(--s6);}
-.ldiv.ldark .ldn{font-family:var(--mono);font-size:48px;font-weight:400;color:var(--ember);line-height:1;padding-top:2px;}
+.ldiv.ldark .ldn{font-family:var(--mono);font-size:28px;font-weight:400;color:var(--ember);line-height:1;padding-top:2px;}
 .ldiv.ldark .ldlb{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,250,249,.5);display:block;}
 .ldiv.ldark .ldlb em{color:var(--ember);font-style:normal;}
 .ldiv.ldark .ldd{font-size:16px;color:rgba(250,250,249,.7);margin:var(--s3) 0 0;line-height:1.6;max-width:62ch;}
 
 /* LAYER DIVIDER — intro layer variant */
 .ldiv.lintro{background:var(--gray-50);padding:var(--s6) var(--s5);border-top:2px solid var(--ink);border-bottom:0;margin-bottom:var(--s6);}
-.ldiv.lintro .ldn{font-family:var(--mono);font-size:48px;font-weight:500;color:var(--ink);line-height:1.1;}
+.ldiv.lintro .ldn{font-family:var(--mono);font-size:28px;font-weight:500;color:var(--ink);line-height:1.1;}
 .ldiv.lintro .ldd{font-size:14px;color:var(--gray-700);margin:var(--s3) 0 0;line-height:1.55;max-width:62ch;}
 
 /* CHAPTER */
