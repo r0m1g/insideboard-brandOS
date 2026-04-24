@@ -88,8 +88,79 @@ The `<!-- SECTION -->` and `<!-- /SECTION -->` markers are the anchor points for
 | `.atbl`        | Anti-patterns table              |
 | `.refc`        | Reference card (dark mono)       |
 | `.ldiv`        | Layer divider                    |
+| `.ldn`         | Layer divider name label         |
+| `.ldd`         | Layer divider description        |
+| `.lbadges`     | Hero badge strip (one per layer) |
+| `.lb`          | Individual hero badge            |
 | `.rsw`         | Register switcher                |
 | `.rdemo`       | Register demo block              |
+
+---
+
+## Content derivation rules — what comes from where
+
+Every content element in `index.html` must be derivable from `brandOS-content.md`. Never write content directly into the HTML.
+
+| HTML element | Source in content.md |
+|---|---|
+| `.cn` (section number) | The `N·N` prefix of the `###` heading — e.g. `### 1·1 Positioning` → `1·1` |
+| `h2` (section title) | The text of the `###` heading after the number — e.g. `Positioning` |
+| `.pr` (principle) | **The first paragraph** immediately after the `###` heading, verbatim or condensed to the key sentence |
+| `.ldn` / `.lb` (layer name) | The name after `·` in the `## Layer XX · Name` heading |
+| `.ldd` (layer description) | The `*italic line*` immediately after the `## Layer` heading |
+| `h3.sub` | `####` subheadings within the section |
+| `h4.mi` | `#####` subheadings within the section |
+| nav `<li>` | Section title (same as `h2`) |
+
+**Rule:** If content cannot be found in `brandOS-content.md`, add it there first — then update the HTML.
+
+**`.pr` rule — non-negotiable:** The `.pr` paragraph is the **first paragraph** of the `###` section verbatim. It does NOT replace the remaining paragraphs — those stay in `.cb`. Never condense, rewrite, or invent `.pr` text. If the first paragraph is long, use it in full.
+
+**Second paragraph rule:** If a `###` section has a second paragraph in content.md, it belongs in `.cb` as a `<p>` before the first `####` subsection — never dropped.
+
+---
+
+## Layer name vs section title — critical distinction
+
+Every layer has two distinct identifiers that must never be confused:
+
+| Element | Uses | Example |
+|---------|------|---------|
+| `.ldn` (layer divider) | **Layer name** from `## Layer XX · Name` | `00 · System Overview` |
+| `.ngl-name` (nav group label) | **Layer name** | `System Overview` |
+| `.lb` (hero badge in `.lbadges`) | **Layer name** | `00 · System Overview` |
+| nav `<li>` | **Section title** from `### N·N Title` | `The Brand OS` |
+| `.cn` (chapter number) | **Section number** | `0·1` |
+| `h2` (chapter title) | **Section title** | `The Brand OS` |
+
+**Rule:** `.lbadges` badges always use the **layer name**, never the section title. When a layer name differs from its first section title, the badge still shows the layer name.
+
+---
+
+## Responsive — rules and checklist
+
+All responsive breakpoints live in `brandOS-components.css`. Never add `@media` rules to `index.html`.
+
+| Breakpoint | Scope |
+|---|---|
+| `≤960px` | Mobile nav (sidebar hidden, hamburger shown), hero h1 reduced, main padding reduced |
+| `≤720px` | Grids collapse, tables stack as cards, font sizes reduced |
+| `≤480px` | Single-column grids, further font reductions |
+
+**When making a content change (Update type 1), also check:**
+- Does the new content introduce a new nav item or hero badge? → verify it's clickable on mobile (no z-index overlay blocking it)
+- Does the new section use a multi-column grid? → a `@media(max-width:720px)` rule may be needed in `brandOS-components.css`
+- Does a new table use custom column headers? → the `::before` content labels for mobile stacking may need updating in `brandOS-components.css`
+
+**Known z-index stack:**
+| Element | z-index |
+|---|---|
+| `.tweaks` panel | 100 |
+| `.nav-overlay` | 149 |
+| `nav.side` (mobile) | 150 |
+| `.nav-toggle` | 200 |
+
+The `.nav-overlay` must always have `pointer-events:none` when not `.visible` — otherwise it blocks clicks on the hero section on mobile.
 
 ---
 
@@ -109,7 +180,7 @@ These 40 lines are stable. Do not modify, move, or rewrite them.
 
 `brandOS-content.md` is the authoritative content source. Its structure maps to `index.html` sections:
 
-- `## Layer 0` → `#s00`
+- `## Layer 00` → `#s00`
 - `## Layer 1` → `#s11` through `#s17`
 - `## Layer 2` → `#s21` through `#s27`
 - `## Layer 3` → `#s01` through `#s10`

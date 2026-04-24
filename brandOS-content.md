@@ -9,32 +9,34 @@
 
 ---
 
-## Layer 0 · Introduction & Governance
+## Layer 00 · System Overview
 
-### 0·0 Introduction & Governance
+*Governance layer. Defines who can read, modify, and validate this document, how it is structured, and its current validation status.*
 
-The Brand OS is the single source of truth for how InsideBoard AI thinks, speaks, looks, and operates — not a static style guide, but a living system.
+### 0·1 The Brand OS
 
-#### What is the Brand OS
+The InsideBoard AI Brand OS is the single source of truth for how the brand thinks, speaks, looks, and operates. It is not a static style guide — it is a living operating system that governs every brand expression, from a sales deck to an event keynote, from product micro-copy to a partner proposal.
 
-The InsideBoard AI Brand OS is the single source of truth for how the brand thinks, speaks, looks, and operates. It is not a static style guide — it is a living operating system that governs every brand expression, from a sales deck to an event keynote, from a product micro-copy to a partner proposal.
+Built in layers, from strategy to automation, it can be understood at any depth — and used consistently by anyone authorized to produce brand content.
 
-It is built in layers, from strategy to automation, so that the brand can be understood at any depth — and produced consistently by anyone authorized to use it.
+---
 
-#### How to use this document
+#### Access & Usage
 
-| Audience | Access level | Purpose |
-|----------|-------------|---------|
+| Audience | Access | Purpose |
+|----------|--------|---------|
 | Co-founders (Michael, Yohan) | Full read + validation | Strategic alignment and final approval |
-| Art Director | Full read + edit | Creation, maintenance, and enforcement |
+| Art Director | Full read + edit | Creation, maintenance, enforcement |
 | Internal teams (Sales, CSM, Delivery) | Read · templates only | Produce brand-compliant content autonomously |
 | External partners / agencies | Restricted · on request | Apply brand within defined scope |
 
-#### Document map & status
+---
 
-| Section | Title | Status |
-|---------|-------|--------|
-| 00 | Introduction & Governance | ✦ Validated |
+#### Document Map
+
+| Layer | Title | Status |
+|-------|-------|--------|
+| 00 | System Overview | ✦ Validated |
 | 01 | Brand Strategy | ✦ Validated |
 | 02 | Verbal Identity | ✦ Validated |
 | 03 | Visual Identity | ◑ In progress |
@@ -45,17 +47,22 @@ It is built in layers, from strategy to automation, so that the brand can be und
 | 08 | Component System | ○ To define |
 | 09 | Automation Layer | ○ To define |
 
-#### Governance
+---
 
-**Ownership** — This document is owned and maintained by the Art Director. Any structural modification requires co-founder approval.
+#### Ownership
+
+This document is owned and maintained by the Art Director. 
+Any structural modification requires co-founder approval.
 
 **Versioning** — Version 1.0 — Q2 2026. Each validated update increments the version number and logs the change below.
 
-**Change log** — v1.0 · Q2 2026 · Initial release — Sections 00, 01, 02 validated.
+**Change log** — v1.0 · Q2 2026 · Initial release — Sections 00, 01, 02 validated. · v1.1 · Q2 2026 · Sections 04, 05 validated.
 
 ---
 
 ## Layer 1 · Brand Strategy
+
+*The strategic foundation. Positioning, Closed Loop, Success Formula, audiences, application territories, IRON, and trust architecture. Everything that makes the brand promise defensible.*
 
 ### 1·1 Positioning
 
@@ -253,6 +260,8 @@ Enterprise client base. Microsoft 365 environments. More than half of the CAC40.
 ---
 
 ## Layer 2 · Verbal Identity
+
+*The full verbal system. How InsideBoard speaks, what it says, the registers it adopts by context, and the rules that govern every written output.*
 
 ### 2·1 Verbal architecture
 
@@ -481,6 +490,8 @@ Always by your side combined with anything else
 
 ## Layer 3 · Visual Identity (v1 draft)
 
+*Visual system — in progress. Type, color, spacing, iconography, illustration, photography, motion, and cross-register coherence.*
+
 ### 3·01 Type system
 
 One family, five roles. *Outfit* carries the entire system; *Fraunces* lives only inside the logo. No italic anywhere else.
@@ -637,7 +648,7 @@ Five primaries carry the identity. Twelve functional anchors carry meaning. *Emb
 
 ---
 
-### 3·02b Data visualisation
+### 3·03 Data visualisation
 
 Charts are where a brand system dies or holds. The rule: *mapping before decoration*.
 
@@ -695,7 +706,7 @@ Example table structure:
 
 ---
 
-### 3·03 Space & grid
+### 3·04 Space & grid
 
 The system breathes on an *8-pixel* base. Four was tempting for UI finesse — eight forces respiration.
 
@@ -722,7 +733,7 @@ The system breathes on an *8-pixel* base. Four was tempting for UI finesse — e
 
 ---
 
-### 3·04 Iconography
+### 3·05 Iconography
 
 Two icon systems, two distinct roles. *Brand iconography* for communication. *Platform iconography* for the UI. They coexist — they do not mix.
 
@@ -751,7 +762,7 @@ The full icon set of the InsideBoard application. Covers navigation, platform ob
 
 ---
 
-### 3·05 Illustration & visual treatment
+### 3·06 Illustration & visual treatment
 
 No figurative illustration. Three registers only: *type as image*, *butterfly signature*, and *documentary photography*.
 
@@ -763,7 +774,7 @@ No figurative illustration. Three registers only: *type as image*, *butterfly si
 
 ---
 
-### 3·06 The butterfly mark
+### 3·07 The butterfly mark
 
 Two modes, no third. *Identity* — inside the logo lockup. *Signature* — large, rare, as the closing gesture.
 
@@ -777,7 +788,7 @@ Two modes, no third. *Identity* — inside the logo lockup. *Signature* — larg
 
 ---
 
-### 3·07 Composition patterns
+### 3·08 Composition patterns
 
 Seven root compositions. Consistency comes from *what is forbidden everywhere* — no shadows, no border-radius over 8px, no more than two colors.
 
@@ -808,7 +819,7 @@ Example: "The next operating model for customer-facing AI." / LAS VEGAS · 04.24
 
 ---
 
-### 3·08 Photography
+### 3·09 Photography
 
 One direction only: *documentary*. Photography exists as proof — of a room, a person, a moment. Not as mood.
 
@@ -822,7 +833,7 @@ One direction only: *documentary*. Photography exists as proof — of a room, a 
 
 ---
 
-### 3·09 Motion & interaction
+### 3·10 Motion & interaction
 
 Three principles, not a system. Movement exists to confirm a decision — never to perform. The brand decides, then holds.
 
@@ -841,7 +852,7 @@ Nothing animates on a loop. Exception: the butterfly signature reveal, once, on 
 
 ---
 
-### 3·10 Transversal coherence
+### 3·11 Transversal coherence
 
 Four registers exist so the system can flex. They share everything except *background*, *density*, and *Ember presence*.
 
@@ -913,15 +924,15 @@ Ember / Ivory · Event register only · one per composition
 
 ## Section 04 · Brand Experience Map
 
-### 4·0 Brand Experience Map
+*The operational bridge. Maps every touchpoint to a register, tone rules, a production mode, and a target format. The reference for every content production decision.*
+
+### 4·1 Touchpoint map
 
 How the brand manifests at every touchpoint — *what register, what rules, what format, who produces*. The operational bridge between verbal and visual systems.
 
 Every brand output belongs to a touchpoint. Every touchpoint has a register, a set of actionable tone rules, a production mode, and a target format. This map is the reference for humans and the instruction set for AI-assisted production.
 
 Production mode reads as: **AI-generated → human-edited** in all cases today. The ratio shifts toward full generation as output quality is validated over time.
-
-#### Touchpoint map
 
 **Sales deck** — Register: Enterprise
 Tone: Short sentences. Specific numbers. Named realities. No adjectives. No hedge words.
@@ -955,7 +966,7 @@ Production: AI-gen → human edit · Format: Plain text · HTML email
 Tone: Direct. No corporate wrapper. State the decision, not the process. Action item visible.
 Production: AI-gen → human edit · Format: Slack · Confluence · email
 
-#### Production logic
+### 4·2 Production logic
 
 **Principle** — Every output is AI-generated within the constraints of this Brand OS, then edited by the relevant human. The more precise the brief, the less editing is required. Quality of generation is the metric that determines how far automation can go.
 
@@ -964,7 +975,7 @@ Production: AI-gen → human edit · Format: Slack · Confluence · email
 - Is it internal or a draft stage? → **AI-gen, author self-validates**
 - Does it carry the logo or brand signature? → **AD validates placement**
 
-#### Tone rules — prompt-ready
+### 4·3 Tone rules — prompt-ready
 
 These rules are written to be used directly as AI prompt instructions. Copy the relevant register block into any generation context.
 
@@ -996,13 +1007,13 @@ Register: Partner. Tone: peer-to-peer, open, one notch more relaxed than Enterpr
 
 ## Section 05 · Brand Voice in Action
 
-### 5·0 Brand Voice in Action
+*The Brand OS in practice. Annotated before/after examples from real InsideBoard content, named anti-patterns, and a five-question checklist to validate any output before release.*
+
+### 5·1 Before / After
 
 Real examples, annotated. Built from *actual InsideBoard material* — what currently exists, and what the Brand OS produces instead.
 
 This section translates the verbal system into concrete, annotated examples. Use it to calibrate any output before it leaves the building — human-written or AI-generated. Every Before/After pair is drawn from real InsideBoard content.
-
-#### Before / After — by register
 
 ##### Enterprise · Commercial follow-up email
 
@@ -1067,7 +1078,7 @@ This section translates the verbal system into concrete, annotated examples. Use
 
 ---
 
-#### Named anti-patterns
+### 5·2 Named anti-patterns
 
 Real formulations currently in use at InsideBoard. Recognize and eliminate systematically.
 
@@ -1084,7 +1095,7 @@ Real formulations currently in use at InsideBoard. Recognize and eliminate syste
 
 ---
 
-#### Calibration checklist — 5 questions
+### 5·3 Calibration checklist — 5 questions
 
 To be used on any output before validation — by a human or injected directly into an AI generation prompt.
 

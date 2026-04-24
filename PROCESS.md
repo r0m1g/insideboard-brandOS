@@ -56,6 +56,11 @@ Using str_replace, update only the HTML section between <!-- SECTION: s22 --> an
 Do not touch any other section. Do not rewrite the file. Use str_replace only.
 ```
 
+**After any content update, also verify:**
+- Nav `<li>` and hero `.lb` badge match the new section/layer name
+- If a new nav item or badge was added, the corresponding `id` exists in `index.html`
+- If new multi-column grids or tables were added, a responsive rule exists in `brandOS-components.css`
+
 ---
 
 ### Update type 2 — Visual token change
