@@ -25,7 +25,7 @@ nav.side ol a:hover,nav.side ol a.active{color:var(--ink);}
 nav.side ol a.active::before{color:var(--ember);}
 a.ngl-link{text-decoration:none;color:inherit;transition:color 160ms cubic-bezier(.2,0,0,1);}
 a.ngl-link:hover{color:var(--ink);}
-a.ngl-link.active .ngl-name{color:var(--ink);background:linear-gradient(transparent 70%,rgba(238,46,32,.50) 70%);}
+a.ngl-link.active .ngl-name{color:var(--ink);background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.80) 75%);}
 nav.side ol li.disabled a{pointer-events:none;cursor:default;color:var(--gray-400);}
 nav.side ol li.disabled a::before{color:var(--gray-300);}
 nav.side .meta{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid var(--gray-200);font-size:11px;font-family:var(--mono);color:var(--gray-500);line-height:1.7;}
@@ -44,7 +44,7 @@ main.doc{padding:var(--s8) var(--s8) var(--s9);max-width:1000px;}
 .hero .mg div b{color:var(--gray-500);font-weight:400;display:block;margin-bottom:4px;letter-spacing:.08em;text-transform:uppercase;}
 .hero .mg div span{color:var(--ink);font-weight:500;}
 .lbadges{display:inline-flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s6);}
-.lb{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--gray-300);color:var(--gray-600);transition:background 120ms ease,color 120ms ease,border-color 120ms ease;}
+.lb{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--gray-300);color:var(--gray-600);transition:background 120ms cubic-bezier(.2,0,0,1),color 120ms cubic-bezier(.2,0,0,1),border-color 120ms cubic-bezier(.2,0,0,1);}
 .lb.on{background:var(--ink);color:var(--ivory);border-color:var(--ink);}
 a.lb{text-decoration:none;cursor:pointer;}
 a.lb:not(.on):not(.wip):hover{background:var(--stone);color:var(--ink);border-color:var(--gray-400);}
@@ -76,10 +76,9 @@ section.chapter:last-child{border-bottom:0;}
 .cn{font-family:var(--mono);font-size:12px;color:var(--gray-500);padding-top:12px;}
 .ch h2{font-size:48px;font-weight:500;letter-spacing:-.015em;line-height:1.1;margin:0 0 var(--s3);}
 .ch .pr{font-size:18px;color:var(--gray-700);max-width:62ch;margin:0;}
-/* HIGHLIGHT SYSTEM — Ember 50% underline. Used on em inside .pr (chapter principles).
+/* HIGHLIGHT SYSTEM — Ember 80% underline. Used on em inside .pr (chapter principles).
    Rule: highlight signals importance without overpowering the reading line.
-   Opacity: 50% — below this the signal is lost, above it competes with Ember signal uses.
-   Never use on dark backgrounds. Never combine with bold. */
+   Opacity: 80% — below this the signal is lost, above it competes with Ember signal uses. */
 .ch .pr em{font-style:normal;color:var(--ink);font-weight:500;background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.80) 75%);padding:0 2px;}
 .cb{padding-left:calc(60px + var(--s5));}
 @media(max-width:720px){.ch{grid-template-columns:1fr;}.cb{padding-left:0;}}

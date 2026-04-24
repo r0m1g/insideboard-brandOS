@@ -508,8 +508,6 @@ One family, five roles. *Outfit* carries the entire system.
 
 - **Use** — 400 Regular for all running text. 500 Medium for titles, KPIs, captions.
 - **Avoid** — 700 Bold. Contrast comes from size and color, not from Bold.
-- **Avoid** — Italic Outfit anywhere in the system.
-
 **Why only Outfit** — Outfit carries enough humanism to avoid the cold-IT register, and enough geometry to stay enterprise-credible.
 
 #### JetBrains Mono — the second voice
@@ -533,12 +531,12 @@ JetBrains Mono handles everything that is **systemic, indexed, or technical** �
 
 #### Highlight system
 
-One highlight technique authorized in body copy: the Ember 50% gradient underline. Documented here as the reference for all future produced assets.
+One highlight technique authorized in body copy: the Ember 80% gradient underline. Documented here as the reference for all future produced assets.
 
-- **Opacity** — 50% — below this the signal disappears. Above it competes with primary Ember uses.
-- **CSS** — `background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.50) 75%)`
+- **Opacity** — 80% — below this the signal disappears. Above it competes with primary Ember uses.
+- **CSS** — `background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.80) 75%)`
 - **Use** — Chapter principles, editorial hooks, key phrases in body copy.
-- **Never** — On dark backgrounds, on Bold text, or combined with Ember text color.
+- **Note** — Usage on dark backgrounds and Ember backgrounds: rule not yet defined.
 
 ---
 
@@ -905,7 +903,7 @@ Ember / Ivory · Event register only · one per composition
 
 #### Invariants across all registers
 
-- **Type** — Outfit only, five roles, no italic, no Bold.
+- **Type** — Outfit only, five roles, no Bold.
 - **Grid** — Base 8, 12-column working grid, same exclusion zones.
 - **Mark** — Two modes — identity or signature — never a third.
 - **Motion** — 240ms, standard-out, user-initiated.
