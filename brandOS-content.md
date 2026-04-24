@@ -776,8 +776,10 @@ No figurative illustration. Three registers only: *type as image*, *butterfly si
 
 Two modes, no third. *Identity* — inside the logo lockup. *Signature* — large, rare, as the closing gesture.
 
-**Mode 01 · Identity** — Always in the validated lockup.
-**Mode 02 · Signature** — Large, rare, at the closing gesture. On Ink or Ivory only.
+**Mode 01 · Identity · Light** — Logo lockup on light background (Ink version).
+**Mode 01 · Identity · Dark** — Logo lockup on dark background (Ivory version).
+**Mode 02 · Signature · Light** — Mark only on light background (Ink version).
+**Mode 02 · Signature · Dark** — Mark only on dark background (Ivory version).
 
 - **Identity** — Always in the validated lockup. Minimum clear space = 1× mark height on all sides.
 - **Signature** — Minimum size = 1/6 of the support width. On Ink or Ivory only. At most one per support.

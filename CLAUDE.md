@@ -41,6 +41,22 @@ InsideBoard AI Brand OS — a living HTML document that serves as the single sou
 - Never rewrite `index.html` in full unless explicitly instructed with the regeneration prompt from `PROCESS.md`.
 - Never add inline styles to `index.html` sections (inline styles already present on specific elements are intentional — do not remove them, but do not add new ones).
 - Never modify `brandOS-tokens.css` or `brandOS-components.css` during a content-only operation.
+- **Never write visible text into `index.html` that does not already exist in `brandOS-content.md`.** This includes labels, captions, mode names, demo copy — anything a user reads. If the text doesn't exist in `brandOS-content.md`, add it there first, then derive the HTML from it. No exception.
+
+### Process is mandatory
+`PROCESS.md` defines the update protocol for every operation type. It is not optional reading — follow it for every edit, without waiting to be reminded. Before touching any file, identify the operation type (content / token / component / new section) and apply the corresponding protocol from `PROCESS.md`.
+
+### Structural coherence — mandatory
+
+`brandOS-content.md` is the single source of truth for structure: layer names, section titles, section order, and what exists. `index.html` implements it. No other file maintains a structural list.
+
+**After any structural operation** (new section, removed section, renamed layer or section title), verify before closing:
+- Every `### N·N Title` in `brandOS-content.md` that is implemented has a matching `<!-- SECTION: id -->` in `index.html`
+- Every `## Layer XX · Name` in `brandOS-content.md` has a matching `.ldn` and nav group in `index.html`
+
+**At the start of any session where files have been modified**, run this alignment check first. If drift is detected between `brandOS-content.md` and `index.html`, surface it to the user before doing anything else.
+
+Never leave a session with `brandOS-content.md` and `index.html` out of structural sync.
 
 ---
 

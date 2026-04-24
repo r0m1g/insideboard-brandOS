@@ -9,11 +9,13 @@
   /* --- PRIMARY PALETTE --- */
   --white: #FFFFFF;
   --ivory: #FAFAF9;
+  --gray-50: #F4EFE6;
   --stone: #EAE6DF;
   --ink: #1B1712;
   --ember: #EE2E20;
 
-  /* --- WARM GRAY SCALE --- */
+  /* --- WARM GRAY SCALE — 11 steps --- */
+  --gray-100: #EAE3D6;
   --gray-200: #DDD4C4;
   --gray-300: #C9BEAB;
   --gray-400: #AFA38E;
@@ -22,6 +24,7 @@
   --gray-700: #4F483C;
   --gray-800: #332E26;
   --gray-900: #1B1712;
+  --gray-950: #0D0B08;
 
   /* --- IRON AGENTS — reserved, do not use outside agent contexts --- */
   --fn-coral: #F08B73;
@@ -83,7 +86,7 @@ body {
   font-weight: 400;
   line-height: 1.55;
   color: var(--ink);
-  background: var(--ivory);
+  background: rgba(250,250,249,.5);
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; }

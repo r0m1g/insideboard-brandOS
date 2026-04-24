@@ -108,6 +108,14 @@ Also add the corresponding nav item in <!-- SECTION: nav --> under the correct l
 Use str_replace only. Do not rewrite the file.
 ```
 
+**Step 3 — mandatory after every structural change:**
+Update the Section ID map below to reflect the new section. Verify that:
+- The new ID matches the `<!-- SECTION: id -->` marker added to `index.html`
+- The Layer name matches the `## Layer XX · Name` heading in `brandOS-content.md`
+- Status is set to `✓ in HTML`
+
+This step is not optional. Never close a structural operation with the Section ID map out of sync.
+
 ---
 
 ### Update type 5 — Full content regeneration (rare)
@@ -135,38 +143,15 @@ Write the result to index.html.
 3. **Never add `<style>` blocks to `index.html`** — all styles live in the CSS files.
 4. **Never read `brandOS-tokens.css` for content updates** — only `brandOS-components.css` (for class names) and `brandOS-content.md` (for content).
 5. **Section markers are stable** — `<!-- SECTION: id -->` and `<!-- /SECTION: id -->` must be preserved in all operations.
+6. **Content-first, no exception** — Before writing any visible text into `index.html` (labels, captions, mode names, demo copy — anything a user reads), verify it exists verbatim in `brandOS-content.md`. If it doesn't, add it there first, then derive the HTML from it. Never originate content directly in the HTML.
 
 ---
 
-## Section ID map
+## Structure — source of truth
 
-| ID    | Content                        | Layer |
-|-------|-------------------------------|-------|
-| s00   | Introduction & Governance      | 00    |
-| s11   | Positioning                    | 01    |
-| s12   | The Closed Loop                | 01    |
-| s13   | The Success Formula            | 01    |
-| s14   | Audiences                      | 01    |
-| s15   | Application territories        | 01    |
-| s16   | IRON                           | 01    |
-| s17   | Trust architecture             | 01    |
-| s21   | Verbal architecture            | 02    |
-| s22   | Tone & voice                   | 02    |
-| s23   | Verbal registers               | 02    |
-| s24   | Audience messaging             | 02    |
-| s25   | Non-negotiable rules           | 02    |
-| s26   | Anti-patterns                  | 02    |
-| s27   | Reference card                 | 02    |
-| s01   | Type system                    | 03    |
-| s02   | Color system                   | 03    |
-| s02b  | Data visualisation             | 03    |
-| s03   | Space & grid                   | 03    |
-| s04   | Iconography                    | 03    |
-| s05   | Illustration & visual treatment| 03    |
-| s06   | The butterfly mark             | 03    |
-| s07   | Composition patterns           | 03    |
-| s08   | Photography                    | 03    |
-| s09   | Motion & interaction           | 03    |
-| s10   | Transversal coherence          | 03    |
-| s40   | Brand Experience Map           | 04    |
-| s50   | Brand Voice in Action          | 05    |
+`brandOS-content.md` is the authoritative source for all structural information: layer names, section titles, section order, and what exists or is planned.
+
+**To know what sections exist:** read `brandOS-content.md` — `## Layer` headings define layers, `### N·N Title` headings define sections.
+**To know what is implemented:** scan `<!-- SECTION: id -->` markers in `index.html`.
+
+Do not maintain a separate list. Any such list is a derived artifact and will drift.
