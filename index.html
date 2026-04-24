@@ -21,11 +21,11 @@
 <!-- SECTION: nav -->
 <nav class="side" id="navSide">
   <a href="#" class="brand" style="text-decoration:none;" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><div class="mark-box">IB</div><div class="wordmark">Insideboard AI</div></a>
-  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-00">00 · Introduction</a></div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-00">00 · <span class="ngl-name">Introduction</span></a></div>
   <ol>
     <li><a href="#s00">Introduction &amp; Governance</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-01">01 · Brand Strategy</a></div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-01">01 · <span class="ngl-name">Brand Strategy</span></a></div>
   <ol>
     <li><a href="#s11">Positioning</a></li>
     <li><a href="#s12">The Closed Loop</a></li>
@@ -35,7 +35,7 @@
     <li><a href="#s16">IRON</a></li>
     <li><a href="#s17">Trust architecture</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-02">02 · Verbal Identity</a></div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-02">02 · <span class="ngl-name">Verbal Identity</span></a></div>
   <ol>
     <li><a href="#s21">Verbal architecture</a></li>
     <li><a href="#s22">Tone &amp; voice</a></li>
@@ -45,7 +45,7 @@
     <li><a href="#s26">Anti-patterns</a></li>
     <li><a href="#s27">Reference card</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-03">03 · Visual Identity</a></div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-03">03 · <span class="ngl-name">Visual Identity</span></a></div>
   <ol>
     <li><a href="#s01">Type system</a></li>
     <li><a href="#s02">Color system</a></li>
@@ -59,13 +59,13 @@
     <li><a href="#s09">Motion</a></li>
     <li><a href="#s10">Coherence</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-04">04 · Experience Map</a></div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-04">04 · <span class="ngl-name">Brand Experience Map</span></a></div>
   <ol>
     <li><a href="#s40-touchpoint">Touchpoint map</a></li>
     <li><a href="#s40-production">Production logic</a></li>
     <li><a href="#s40-tone">Tone rules — prompt-ready</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-05">05 · Voice in Action</a></div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-05">05 · <span class="ngl-name">Brand Voice in Action</span></a></div>
   <ol>
     <li><a href="#s50-before">Before / After</a></li>
     <li><a href="#s50-antipatterns">Named anti-patterns</a></li>
@@ -1165,8 +1165,8 @@
 
 <!-- SECTION: s40-touchpoint -->
 <section class="chapter" id="s40-touchpoint">
-  <div class="ch"><div class="cn">4·0</div><div>
-    <h2>Brand Experience Map</h2>
+  <div class="ch"><div class="cn">4·1</div><div>
+    <h2>Touchpoint map</h2>
     <p class="pr">How the brand manifests at every touchpoint — <em>what register, what rules, what format, who produces</em>. The operational bridge between verbal and visual systems.</p>
   </div></div>
   <div class="cb">
@@ -1237,7 +1237,7 @@
 
 <!-- SECTION: s40-production -->
 <section class="chapter" id="s40-production">
-  <div class="ch"><div class="cn">4·1</div><div>
+  <div class="ch"><div class="cn">4·2</div><div>
     <h2>Production logic</h2>
   </div></div>
   <div class="cb">
@@ -1255,7 +1255,7 @@
 
 <!-- SECTION: s40-tone -->
 <section class="chapter" id="s40-tone">
-  <div class="ch"><div class="cn">4·2</div><div>
+  <div class="ch"><div class="cn">4·3</div><div>
     <h2>Tone rules — prompt-ready</h2>
   </div></div>
   <div class="cb">
@@ -1278,8 +1278,8 @@
 
 <!-- SECTION: s50-before -->
 <section class="chapter" id="s50-before">
-  <div class="ch"><div class="cn">5·0</div><div>
-    <h2>Brand Voice in Action</h2>
+  <div class="ch"><div class="cn">5·1</div><div>
+    <h2>Before / After</h2>
     <p class="pr">Real examples, annotated. Built from <em>actual InsideBoard material</em> — what currently exists, and what the Brand OS produces instead.</p>
   </div></div>
   <div class="cb">
@@ -1359,7 +1359,7 @@
 
 <!-- SECTION: s50-antipatterns -->
 <section class="chapter" id="s50-antipatterns">
-  <div class="ch"><div class="cn">5·1</div><div>
+  <div class="ch"><div class="cn">5·2</div><div>
     <h2>Named anti-patterns</h2>
   </div></div>
   <div class="cb">
@@ -1382,7 +1382,7 @@
 
 <!-- SECTION: s50-checklist -->
 <section class="chapter" id="s50-checklist">
-  <div class="ch"><div class="cn">5·2</div><div>
+  <div class="ch"><div class="cn">5·3</div><div>
     <h2>Calibration checklist — 5 questions</h2>
   </div></div>
   <div class="cb">
@@ -1449,10 +1449,38 @@ function applyReg(r){
 document.querySelectorAll('#registerSwitcher button').forEach(b=>b.addEventListener('click',()=>applyReg(b.dataset.r)));
 document.querySelectorAll('[data-tweak="register"] button').forEach(b=>b.addEventListener('click',()=>applyReg(b.dataset.v)));
 document.querySelectorAll('[data-tweak="density"] button').forEach(b=>b.addEventListener('click',()=>{document.body.setAttribute('data-density',b.dataset.v);document.querySelectorAll('[data-tweak="density"] button').forEach(x=>x.classList.toggle('on',x===b));}));
-const secs=[...document.querySelectorAll('section.chapter')];
 const navs=[...document.querySelectorAll('nav.side ol a')];
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}});},{rootMargin:'-30% 0px -60% 0px'});
-secs.forEach(s=>io.observe(s));
+const nglLinks=[...document.querySelectorAll('nav.side .ngl-link')];
+const allAnchors=[
+  ...[...document.querySelectorAll('.ldiv[id]')].map(el=>({el,type:'layer'})),
+  ...[...document.querySelectorAll('section.chapter[id]')].map(el=>({el,type:'section'}))
+].sort((a,b)=>a.el.offsetTop-b.el.offsetTop);
+function updateNav(){
+  const threshold=window.innerHeight*0.4;
+  let active=null;
+  for(const item of allAnchors){if(item.el.getBoundingClientRect().top<=threshold)active=item;}
+  if(!active)return;
+  if(active.type==='section'){
+    const idx=allAnchors.indexOf(active);
+    for(let i=idx-1;i>=0;i--){
+      if(allAnchors[i].type==='layer'){
+        if(allAnchors[i].el.getBoundingClientRect().bottom>0)active=allAnchors[i];
+        break;
+      }
+    }
+  }
+  nglLinks.forEach(a=>a.classList.remove('active'));
+  navs.forEach(a=>a.classList.remove('active'));
+  if(active.type==='layer'){
+    const lk=nglLinks.find(a=>a.getAttribute('href')==='#'+active.el.id);
+    if(lk)lk.classList.add('active');
+  }else{
+    const lk=navs.find(a=>a.getAttribute('href')==='#'+active.el.id);
+    if(lk)lk.classList.add('active');
+  }
+}
+window.addEventListener('scroll',updateNav,{passive:true});
+updateNav();
 
 /* Mobile nav toggle */
 const navToggle=document.getElementById('navToggle');
