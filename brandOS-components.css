@@ -331,8 +331,7 @@ ul.rules li.note b{color:var(--gray-500);}
 .bm.light{background:var(--ivory);}
 .bm.dark{background:var(--ink);border-color:var(--ink);}
 .bm .bcap,.cp .capt2{position:absolute;top:var(--s3);left:var(--s3);font:500 9px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;}
-.bm .bcap{color:var(--gray-500);}
-.bm.dark .bcap{color:rgba(250,250,249,.4);}
+.bm .bcap{padding:4px 6px;background:var(--ivory);color:var(--ink);z-index:4;}
 .bsvg{max-width:70%;height:auto;display:block;}
 .bm.sg .bsvg{max-width:50%;}
 @media(max-width:720px){.bfly{grid-template-columns:1fr;}}
