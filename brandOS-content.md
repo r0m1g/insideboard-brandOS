@@ -3,7 +3,7 @@
 > A living operating system for the brand — from strategy to automation. The single source of truth for every team that thinks, speaks, or produces in the name of InsideBoard AI.
 
 **Version:** 1.0 · Internal · Q2 2026
-**Posture:** *Always by your side.*
+**Posture:** Always by your side.
 **Strategic positioning:** Performance Orchestration Platform
 **Sections validated:** 00 · 01 · 02
 
@@ -71,7 +71,7 @@ InsideBoard AI is the performance layer that sits on top of the client's existin
 #### Strategic definition
 
 - **Internal:** Performance Orchestration Platform.
-- **Tagline:** *Always by your side.* Always alone, never combined. Its strength comes from its isolation.
+- **Tagline:** Always by your side. Always alone, never combined. Its strength comes from its isolation.
 - **Promise (EN):** Your team's success isn't a matter of luck. We orchestrate it by your side, day after day.
 - **Promise (FR):** Le succès de vos équipes ne se joue pas au hasard. Nous l'orchestrons à vos côtés, jour après jour.
 - **Never:** "Activate your success" — phased out. Must not appear in any new material.
@@ -269,7 +269,7 @@ Three levels. Each has a distinct function. They reinforce each other without re
 
 #### Level 1 — Posture
 
-*Always by your side.*
+Always by your side.
 
 Always appears alone. Never combined with another formulation. Its strength comes from its isolation.
 
@@ -286,13 +286,13 @@ Your team's success isn't a matter of luck. We orchestrate it by your side, day 
 Le succès de vos équipes ne se joue pas au hasard. Nous l'orchestrons à vos côtés, jour après jour.
 
 - **Do** — Hero statement on website, opening slide of commercial decks, major event keynotes.
-- **Note** — The full version (17 words) is dense by design. Never alongside *Always by your side*.
+- **Note** — The full version (17 words) is dense by design. Never alongside "Always by your side".
 
 #### Level 3 — Mechanism (proof)
 
 | Level | Element | Function |
 |-------|---------|----------|
-| Posture · Level 1 | *Always by your side.* | What InsideBoard IS for the client |
+| Posture · Level 1 | Always by your side. | What InsideBoard IS for the client |
 | Promise · Level 2 | *Your team's success isn't a matter of luck…* | What InsideBoard makes the client EXPERIENCE |
 | Mechanism · Level 3 | Success Formula + The Closed Loop | HOW it works, proven |
 
@@ -428,7 +428,7 @@ These rules apply across all registers, all audiences, all formats. No exception
 
 #### Verbal rules
 
-- **Never** — *Always by your side* combined with any other formulation.
+- **Never** — "Always by your side" combined with any other formulation.
 - **Language** — English-first. French is strategic adaptation, not literal translation.
 - **French** — Vouvoiement systematic in all contexts including product.
 - **Never** — "Activate your success" — being phased out.
@@ -469,7 +469,7 @@ What the brand sounds like when it goes wrong. If a draft falls into one of thes
 
 Condensed daily reference. Print, pin, share.
 
-**POSTURE** — *Always by your side.* (always alone, never combined)
+**POSTURE** — Always by your side. (always alone, never combined)
 
 **PROMISE** — Your team's success isn't a matter of luck. We orchestrate it by your side, day after day.
 
@@ -494,7 +494,7 @@ Always by your side combined with anything else
 
 ### 3·01 Type system
 
-One family, five roles. *Outfit* carries the entire system; *Fraunces* lives only inside the logo. No italic anywhere else.
+One family, five roles. *Outfit* carries the entire system.
 
 #### Type scale — Outfit
 
