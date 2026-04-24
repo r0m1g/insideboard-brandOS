@@ -21,11 +21,11 @@
 <!-- SECTION: nav -->
 <nav class="side" id="navSide">
   <a href="#" class="brand" style="text-decoration:none;" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><div class="mark-box">IB</div><div class="wordmark">Insideboard AI</div></a>
-  <div class="ng"><div class="ngl">00 · Introduction</div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-00">00 · Introduction</a></div>
   <ol>
     <li><a href="#s00">Introduction &amp; Governance</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl">01 · Brand Strategy</div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-01">01 · Brand Strategy</a></div>
   <ol>
     <li><a href="#s11">Positioning</a></li>
     <li><a href="#s12">The Closed Loop</a></li>
@@ -35,7 +35,7 @@
     <li><a href="#s16">IRON</a></li>
     <li><a href="#s17">Trust architecture</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl">02 · Verbal Identity</div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-02">02 · Verbal Identity</a></div>
   <ol>
     <li><a href="#s21">Verbal architecture</a></li>
     <li><a href="#s22">Tone &amp; voice</a></li>
@@ -45,7 +45,7 @@
     <li><a href="#s26">Anti-patterns</a></li>
     <li><a href="#s27">Reference card</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl">03 · Visual Identity</div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-03">03 · Visual Identity</a></div>
   <ol>
     <li><a href="#s01">Type system</a></li>
     <li><a href="#s02">Color system</a></li>
@@ -59,13 +59,13 @@
     <li><a href="#s09">Motion</a></li>
     <li><a href="#s10">Coherence</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl">04 · Experience Map</div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-04">04 · Experience Map</a></div>
   <ol>
     <li><a href="#s40-touchpoint">Touchpoint map</a></li>
     <li><a href="#s40-production">Production logic</a></li>
     <li><a href="#s40-tone">Tone rules — prompt-ready</a></li>
   </ol></div>
-  <div class="ng"><div class="ngl">05 · Voice in Action</div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-05">05 · Voice in Action</a></div>
   <ol>
     <li><a href="#s50-before">Before / After</a></li>
     <li><a href="#s50-antipatterns">Named anti-patterns</a></li>
@@ -73,10 +73,10 @@
   </ol></div>
   <div class="ng"><div class="ngl" style="color:var(--gray-400)">06–09 · In progress</div>
   <ol>
-    <li><a href="#s50" style="color:var(--gray-400)">06 · Do / Don't</a></li>
-    <li><a href="#s50" style="color:var(--gray-400)">07 · Design Language</a></li>
-    <li><a href="#s50" style="color:var(--gray-400)">08 · Component System</a></li>
-    <li><a href="#s50" style="color:var(--gray-400)">09 · Automation Layer</a></li>
+    <li class="disabled"><a>06 · Do / Don't</a></li>
+    <li class="disabled"><a>07 · Design Language</a></li>
+    <li class="disabled"><a>08 · Component System</a></li>
+    <li class="disabled"><a>09 · Automation Layer</a></li>
   </ol></div>
   <div class="meta">Brand OS · v1.0<br>Q2 2026<br><br>Internal document.<br>Do not distribute.</div>
 </nav>
@@ -94,8 +94,8 @@
     <a href="#s11" class="lb on">01 · Brand Strategy</a>
     <a href="#s21" class="lb on">02 · Verbal Identity</a>
     <a href="#s01" class="lb wip">03 · Visual Identity</a>
-    <a href="#s40" class="lb on">04 · Brand Experience Map</a>
-    <a href="#s50" class="lb on">05 · Brand Voice in Action</a>
+    <a href="#s40-touchpoint" class="lb on">04 · Brand Experience Map</a>
+    <a href="#s50-before" class="lb on">05 · Brand Voice in Action</a>
     <span class="lb">06 · Do / Don't</span>
     <span class="lb">07 · Design Language</span>
     <span class="lb">08 · Component System</span>
@@ -110,7 +110,7 @@
 </header>
 <!-- /SECTION: hero -->
 
-<div class="ldiv"><div class="ldlb"><em>Layer 0</em> · Introduction &amp; Governance</div><p class="ldd">La couche de gouvernance. Définit qui peut lire, modifier et valider ce document, comment il est structuré, et quel en est l'état de validation.</p></div>
+<div class="ldiv ldark" id="layer-00"><div class="ldn">00</div><div class="ldtext"><div class="ldlb"><em>Layer 0</em> · Introduction &amp; Governance</div><p class="ldd">La couche de gouvernance. Définit qui peut lire, modifier et valider ce document, comment il est structuré, et quel en est l'état de validation.</p></div></div>
 
 <!-- SECTION: s00 -->
 <section class="chapter" id="s00">
@@ -158,7 +158,7 @@
 </section>
 <!-- /SECTION: s00 -->
 
-<div class="ldiv"><div class="ldlb"><em>Layer 1</em> · Brand Strategy</div><p class="ldd">Le socle stratégique. Positionnement, Closed Loop, Success Formula, audiences, territoires d'application, IRON et architecture de preuve. Tout ce qui rend la promesse défendable.</p></div>
+<div class="ldiv ldark" id="layer-01"><div class="ldn">01</div><div class="ldtext"><div class="ldlb"><em>Layer 1</em> · Brand Strategy</div><p class="ldd">Le socle stratégique. Positionnement, Closed Loop, Success Formula, audiences, territoires d'application, IRON et architecture de preuve. Tout ce qui rend la promesse défendable.</p></div></div>
 
 <!-- SECTION: s11 -->
 <section class="chapter" id="s11">
@@ -385,7 +385,7 @@
 </section>
 <!-- /SECTION: s17 -->
 
-<div class="ldiv" style="margin-top:var(--s8)"><div class="ldlb"><em>Layer 2</em> · Verbal Identity</div><p class="ldd">Le système verbal complet. Comment InsideBoard parle, ce qu'il dit, les registres qu'il adopte selon le contexte, et les règles qui gouvernent chaque output écrit.</p></div>
+<div class="ldiv ldark" id="layer-02" style="margin-top:var(--s8)"><div class="ldn">02</div><div class="ldtext"><div class="ldlb"><em>Layer 2</em> · Verbal Identity</div><p class="ldd">Le système verbal complet. Comment InsideBoard parle, ce qu'il dit, les registres qu'il adopte selon le contexte, et les règles qui gouvernent chaque output écrit.</p></div></div>
 
 <!-- SECTION: s21 -->
 <section class="chapter" id="s21">
@@ -643,7 +643,7 @@
 </section>
 <!-- /SECTION: s27 -->
 
-<div class="ldiv" style="margin-top:var(--s8)"><div class="ldlb"><em>Layer 3</em> · Visual Identity · v1 draft</div><p class="ldd">Le système visuel en cours de validation. Typographie, couleur, espacement, iconographie, illustration, photographie, motion et cohérence transversale entre les registres.</p></div>
+<div class="ldiv ldark" id="layer-03" style="margin-top:var(--s8)"><div class="ldn">03</div><div class="ldtext"><div class="ldlb"><em>Layer 3</em> · Visual Identity · v1 draft</div><p class="ldd">Le système visuel en cours de validation. Typographie, couleur, espacement, iconographie, illustration, photographie, motion et cohérence transversale entre les registres.</p></div></div>
 
 <!-- SECTION: s01 -->
 <section class="chapter" id="s01">
@@ -817,7 +817,7 @@
 
 <!-- SECTION: s02b -->
 <section class="chapter" id="s02b">
-  <div class="ch"><div class="cn">3·02·</div><div>
+  <div class="ch"><div class="cn">3·03</div><div>
     <h2>Data visualisation</h2>
     <p class="pr">Charts are where a brand system dies or holds. The rule: <em>mapping before decoration</em>.</p>
 
@@ -928,7 +928,7 @@
 
 <!-- SECTION: s03 -->
 <section class="chapter" id="s03">
-  <div class="ch"><div class="cn">3·03</div><div>
+  <div class="ch"><div class="cn">3·04</div><div>
     <h2>Space &amp; grid</h2>
     <p class="pr">The system breathes on an <em>8-pixel</em> base. Four was tempting for UI finesse — eight forces respiration.</p>
 
@@ -961,7 +961,7 @@
 
 <!-- SECTION: s04 -->
 <section class="chapter" id="s04">
-  <div class="ch"><div class="cn">3·04</div><div>
+  <div class="ch"><div class="cn">3·05</div><div>
     <h2>Iconography</h2>
     <p class="pr">Two icon systems, two distinct roles. <em>Brand iconography</em> for communication. <em>Platform iconography</em> for the UI. They coexist — they do not mix.</p>
 
@@ -994,7 +994,7 @@
 
 <!-- SECTION: s05 -->
 <section class="chapter" id="s05">
-  <div class="ch"><div class="cn">3·05</div><div>
+  <div class="ch"><div class="cn">3·06</div><div>
     <h2>Illustration &amp; visual treatment</h2>
     <p class="pr">No figurative illustration. Three registers only: <em>type as image</em>, <em>butterfly signature</em>, and <em>documentary photography</em>.</p>
 
@@ -1013,7 +1013,7 @@
 
 <!-- SECTION: s06 -->
 <section class="chapter" id="s06">
-  <div class="ch"><div class="cn">3·06</div><div>
+  <div class="ch"><div class="cn">3·07</div><div>
     <h2>The butterfly mark</h2>
     <p class="pr">Two modes, no third. <em>Identity</em> — inside the logo lockup. <em>Signature</em> — large, rare, as the closing gesture.</p>
 
@@ -1035,7 +1035,7 @@
 
 <!-- SECTION: s07 -->
 <section class="chapter" id="s07">
-  <div class="ch"><div class="cn">3·07</div><div>
+  <div class="ch"><div class="cn">3·08</div><div>
     <h2>Composition patterns</h2>
     <p class="pr">Seven root compositions. Consistency comes from <em>what is forbidden everywhere</em> — no shadows, no border-radius over 8px, no more than two colors.</p>
 
@@ -1061,7 +1061,7 @@
 
 <!-- SECTION: s08 -->
 <section class="chapter" id="s08">
-  <div class="ch"><div class="cn">3·08</div><div>
+  <div class="ch"><div class="cn">3·09</div><div>
     <h2>Photography</h2>
     <p class="pr">One direction only: <em>documentary</em>. Photography exists as proof — of a room, a person, a moment. Not as mood.</p>
 
@@ -1081,7 +1081,7 @@
 
 <!-- SECTION: s09 -->
 <section class="chapter" id="s09">
-  <div class="ch"><div class="cn">3·09</div><div>
+  <div class="ch"><div class="cn">3·10</div><div>
     <h2>Motion &amp; interaction</h2>
     <p class="pr">Three principles, not a system. Movement exists to confirm a decision — never to perform. The brand decides, then holds.</p>
 
@@ -1103,7 +1103,7 @@
 
 <!-- SECTION: s10 -->
 <section class="chapter" id="s10">
-  <div class="ch"><div class="cn">3·10</div><div>
+  <div class="ch"><div class="cn">3·11</div><div>
     <h2>Transversal coherence</h2>
     <p class="pr">Four registers exist so the system can flex. They share everything except <em>background</em>, <em>density</em>, and <em>Ember presence</em>.</p>
 
@@ -1161,21 +1161,17 @@
 </section>
 <!-- /SECTION: s10 -->
 
-<div class="ldiv"><div class="ldlb"><em>Section 04</em> · Brand Experience Map</div><p class="ldd">Le pont opérationnel. Associe chaque touchpoint à un registre, des règles de ton, un mode de production et un format cible. La référence pour toute décision de production de contenu.</p></div>
+<div class="ldiv ldark" id="layer-04"><div class="ldn">04</div><div class="ldtext"><div class="ldlb"><em>Section 04</em> · Brand Experience Map</div><p class="ldd">Le pont opérationnel. Associe chaque touchpoint à un registre, des règles de ton, un mode de production et un format cible. La référence pour toute décision de production de contenu.</p></div></div>
 
-<!-- SECTION: s40 -->
-<section class="chapter" id="s40">
+<!-- SECTION: s40-touchpoint -->
+<section class="chapter" id="s40-touchpoint">
   <div class="ch"><div class="cn">4·0</div><div>
     <h2>Brand Experience Map</h2>
     <p class="pr">How the brand manifests at every touchpoint — <em>what register, what rules, what format, who produces</em>. The operational bridge between verbal and visual systems.</p>
-
   </div></div>
   <div class="cb">
-
     <p>Every brand output belongs to a touchpoint. Every touchpoint has a register, a set of actionable tone rules, a production mode, and a target format. This map is the reference for humans and the instruction set for AI-assisted production.</p>
     <p style="font-size:14px;color:var(--gray-700);margin-bottom:var(--s5)">Production mode reads as: <strong>AI-generated → human-edited</strong> in all cases today. The ratio shifts toward full generation as output quality is validated over time.</p>
-
-    <h3 class="sub" id="s40-touchpoint">Touchpoint map</h3>
     <div class="tpgrid">
       <div class="tpcard">
         <div class="tphead"><span class="tpdot" style="background:var(--ink)"></span><span class="tpname">Sales deck</span><span class="tpreg">Enterprise</span></div>
@@ -1235,7 +1231,16 @@
       </div>
     </div>
 
-    <h3 class="sub" id="s40-production">Production logic</h3>
+  </div>
+</section>
+<!-- /SECTION: s40-touchpoint -->
+
+<!-- SECTION: s40-production -->
+<section class="chapter" id="s40-production">
+  <div class="ch"><div class="cn">4·1</div><div>
+    <h2>Production logic</h2>
+  </div></div>
+  <div class="cb">
     <div class="callout"><b>Principle</b>Every output is AI-generated within the constraints of this Brand OS, then edited by the relevant human. The more precise the brief, the less editing is required. Quality of generation is the metric that determines how far automation can go.</div>
     <div class="dtree">
       <div class="dn"><span class="dq">Does the output go directly to a client?</span><span class="da">→ Human validation required</span></div>
@@ -1244,7 +1249,16 @@
       <div class="dn"><span class="dq">Does it carry the logo or brand signature?</span><span class="da">→ AD validates placement</span></div>
     </div>
 
-    <h3 class="sub" id="s40-tone">Tone rules — prompt-ready</h3>
+  </div>
+</section>
+<!-- /SECTION: s40-production -->
+
+<!-- SECTION: s40-tone -->
+<section class="chapter" id="s40-tone">
+  <div class="ch"><div class="cn">4·2</div><div>
+    <h2>Tone rules — prompt-ready</h2>
+  </div></div>
+  <div class="cb">
     <p style="font-size:14px;color:var(--gray-700)">These rules are written to be used directly as AI prompt instructions. Copy the relevant register block into any generation context.</p>
     <div class="refc">
       <div class="rcs"><span class="rck">Enterprise — prompt block</span><span class="rcv">Register: Enterprise. Tone: direct, confident, outcome-oriented. Rules: short sentences (max 20 words), no adjectives, no hedge words (might / could / potentially), no corporate buzzwords, no em dashes, vouvoiement in French. Open with a named reality or a specific number. Never open with a question. Never promise transformation — promise what makes transformation last. End with a clear next step or a single claim.</span></div>
@@ -1258,22 +1272,18 @@
 
   </div>
 </section>
-<!-- /SECTION: s40 -->
+<!-- /SECTION: s40-tone -->
 
-<div class="ldiv"><div class="ldlb"><em>Section 05</em> · Brand Voice in Action</div><p class="ldd">Le Brand OS en pratique. Exemples avant/après issus de vrais contenus InsideBoard, anti-patterns nommés et checklist en 5 questions pour valider tout output avant diffusion.</p></div>
+<div class="ldiv ldark" id="layer-05"><div class="ldn">05</div><div class="ldtext"><div class="ldlb"><em>Section 05</em> · Brand Voice in Action</div><p class="ldd">Le Brand OS en pratique. Exemples avant/après issus de vrais contenus InsideBoard, anti-patterns nommés et checklist en 5 questions pour valider tout output avant diffusion.</p></div></div>
 
-<!-- SECTION: s50 -->
-<section class="chapter" id="s50">
+<!-- SECTION: s50-before -->
+<section class="chapter" id="s50-before">
   <div class="ch"><div class="cn">5·0</div><div>
     <h2>Brand Voice in Action</h2>
     <p class="pr">Real examples, annotated. Built from <em>actual InsideBoard material</em> — what currently exists, and what the Brand OS produces instead.</p>
-
   </div></div>
   <div class="cb">
-
     <p>This section translates the verbal system into concrete, annotated examples. Use it to calibrate any output before it leaves the building — human-written or AI-generated. Every Before/After pair is drawn from real InsideBoard content.</p>
-
-    <h3 class="sub" id="s50-before">Before / After — by register</h3>
 
     <h4 class="mi">Enterprise · Commercial follow-up email</h4>
     <div class="cpex">
@@ -1343,7 +1353,16 @@
     </div>
     <div class="callout"><b>Why it works</b>IRON does not introduce itself. It does not explain what it is. It activates. Presence is proven through action, not description. The contextual mode leverages what the platform already knows — pretending not to know is a missed opportunity.</div>
 
-    <h3 class="sub" id="s50-antipatterns">Named anti-patterns</h3>
+  </div>
+</section>
+<!-- /SECTION: s50-before -->
+
+<!-- SECTION: s50-antipatterns -->
+<section class="chapter" id="s50-antipatterns">
+  <div class="ch"><div class="cn">5·1</div><div>
+    <h2>Named anti-patterns</h2>
+  </div></div>
+  <div class="cb">
     <p style="font-size:14px;color:var(--gray-700)">Real formulations currently in use at InsideBoard. Recognize and eliminate systematically.</p>
     <div class="atbl">
       <div class="arow hd"><div class="ac">Formulation</div><div class="ac">Why it fails</div><div class="ac">Replace with</div></div>
@@ -1357,7 +1376,16 @@
       <div class="arow"><div class="ac"><span class="apn">"So, let us help you"</span></div><div class="ac">Weak closing, low-grade commercial tone</div><div class="ac">A precise claim or a specific next step</div></div>
     </div>
 
-    <h3 class="sub" id="s50-checklist">Calibration checklist — 5 questions</h3>
+  </div>
+</section>
+<!-- /SECTION: s50-antipatterns -->
+
+<!-- SECTION: s50-checklist -->
+<section class="chapter" id="s50-checklist">
+  <div class="ch"><div class="cn">5·2</div><div>
+    <h2>Calibration checklist — 5 questions</h2>
+  </div></div>
+  <div class="cb">
     <p style="font-size:14px;color:var(--gray-700)">To be used on any output before validation — by a human or injected directly into an AI generation prompt.</p>
     <div class="dtree">
       <div class="dn"><span class="dq">1. Does the first sentence name a client reality — or does it talk about us?</span><span class="da">If us → rewrite</span></div>
@@ -1370,7 +1398,7 @@
 
   </div>
 </section>
-<!-- /SECTION: s50 -->
+<!-- /SECTION: s50-checklist -->
 
 </main>
 </div>
@@ -1421,7 +1449,7 @@ function applyReg(r){
 document.querySelectorAll('#registerSwitcher button').forEach(b=>b.addEventListener('click',()=>applyReg(b.dataset.r)));
 document.querySelectorAll('[data-tweak="register"] button').forEach(b=>b.addEventListener('click',()=>applyReg(b.dataset.v)));
 document.querySelectorAll('[data-tweak="density"] button').forEach(b=>b.addEventListener('click',()=>{document.body.setAttribute('data-density',b.dataset.v);document.querySelectorAll('[data-tweak="density"] button').forEach(x=>x.classList.toggle('on',x===b));}));
-const secs=[...document.querySelectorAll('section.chapter, h3.sub[id]')];
+const secs=[...document.querySelectorAll('section.chapter')];
 const navs=[...document.querySelectorAll('nav.side ol a')];
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}});},{rootMargin:'-30% 0px -60% 0px'});
 secs.forEach(s=>io.observe(s));

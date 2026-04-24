@@ -23,6 +23,10 @@ nav.side ol a{display:flex;gap:var(--s3);align-items:baseline;text-decoration:no
 nav.side ol a::before{content:counter(s,decimal-leading-zero);font:500 10px/1 var(--mono);color:var(--gray-400);min-width:20px;}
 nav.side ol a:hover,nav.side ol a.active{color:var(--ink);}
 nav.side ol a.active::before{color:var(--ember);}
+a.ngl-link{text-decoration:none;color:inherit;transition:color 160ms cubic-bezier(.2,0,0,1);}
+a.ngl-link:hover,a.ngl-link.active{color:var(--ink);}
+nav.side ol li.disabled a{pointer-events:none;cursor:default;color:var(--gray-400);}
+nav.side ol li.disabled a::before{color:var(--gray-300);}
 nav.side .meta{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid var(--gray-200);font-size:11px;font-family:var(--mono);color:var(--gray-500);line-height:1.7;}
 
 /* MAIN */
@@ -52,6 +56,13 @@ a.lb.on:hover{background:var(--ember);border-color:var(--ember);}
 .ldiv .ldlb em{color:var(--ember);font-style:normal;}
 .ldiv .ldd{font-size:14px;color:var(--gray-600);margin:var(--s3) 0 0;line-height:1.55;max-width:64ch;}
 
+/* LAYER DIVIDER — dark hero variant */
+.ldiv.ldark{background:var(--ink);padding:var(--s6) var(--s5);border-top:3px solid var(--ember);border-bottom:0;display:grid;grid-template-columns:60px 1fr;gap:var(--s5);align-items:start;margin-bottom:var(--s6);}
+.ldiv.ldark .ldn{font-family:var(--mono);font-size:48px;font-weight:400;color:var(--ember);line-height:1;padding-top:2px;}
+.ldiv.ldark .ldlb{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(250,250,249,.5);display:block;}
+.ldiv.ldark .ldlb em{color:var(--ember);font-style:normal;}
+.ldiv.ldark .ldd{font-size:16px;color:rgba(250,250,249,.7);margin:var(--s3) 0 0;line-height:1.6;max-width:62ch;}
+
 /* CHAPTER */
 section.chapter{padding:var(--s8) 0;border-bottom:1px solid var(--gray-200);scroll-margin-top:var(--s5);}
 section.chapter:last-child{border-bottom:0;}
@@ -63,7 +74,7 @@ section.chapter:last-child{border-bottom:0;}
    Rule: highlight signals importance without overpowering the reading line.
    Opacity: 50% — below this the signal is lost, above it competes with Ember signal uses.
    Never use on dark backgrounds. Never combine with bold. */
-.ch .pr em{font-style:normal;color:var(--ink);font-weight:500;background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.50) 75%);padding:0 2px;}
+.ch .pr em{font-style:normal;color:var(--ink);font-weight:500;background:linear-gradient(180deg,transparent 75%,rgba(238,46,32,.80) 75%);padding:0 2px;}
 .cb{padding-left:calc(60px + var(--s5));}
 @media(max-width:720px){.ch{grid-template-columns:1fr;}.cb{padding-left:0;}}
 h3.sub{font-size:22px;font-weight:500;letter-spacing:-.005em;margin:var(--s7) 0 var(--s4);}
