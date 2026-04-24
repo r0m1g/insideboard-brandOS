@@ -64,7 +64,7 @@ a.lb.on:hover{background:var(--ember);border-color:var(--ember);}
 .ldiv.ldark .ldd{font-size:16px;color:rgba(250,250,249,.7);margin:var(--s3) 0 0;line-height:1.6;max-width:62ch;}
 
 /* LAYER DIVIDER — intro layer variant */
-.ldiv.lintro{background:var(--gray-50);padding:var(--s6) var(--s5);border-top:2px solid var(--ink);border-bottom:0;margin-bottom:var(--s6);}
+.ldiv.lintro{background:var(--gray-50);padding:var(--s6) var(--s5);border-top:2px solid var(--ink);border-bottom:0;margin-top:var(--s8);margin-bottom:var(--s6);}
 .ldiv.lintro .ldn{font-family:var(--mono);font-size:28px;font-weight:500;color:var(--ink);line-height:1.1;}
 .ldiv.lintro .ldd{font-size:14px;color:var(--gray-700);margin:var(--s3) 0 0;line-height:1.55;max-width:62ch;}
 
