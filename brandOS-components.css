@@ -331,6 +331,7 @@ ul.rules li.note b{color:var(--gray-500);}
 .bm.light{background:var(--ivory);}
 .bm.dark{background:var(--ink);border-color:var(--ink);}
 .cap-tag{position:absolute;top:var(--s3);left:var(--s3);font:500 9px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 6px;background:var(--ivory);color:var(--ink);z-index:4;}
+.bm.dark .cap-tag{background:var(--white);}
 .bsvg{max-width:70%;height:auto;display:block;}
 .bm.sg .bsvg{max-width:50%;}
 @media(max-width:720px){.bfly{grid-template-columns:1fr;}}
