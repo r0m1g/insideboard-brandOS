@@ -47,8 +47,10 @@ a.lb.wip:hover{background:transparent;color:var(--ember);border-color:var(--embe
 a.lb.on:hover{background:var(--ember);border-color:var(--ember);}
 
 /* LAYER DIVIDER */
-.ldiv{padding:var(--s5) 0 var(--s4);border-bottom:2px solid var(--ink);margin-bottom:var(--s6);font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);display:flex;align-items:center;gap:var(--s4);}
-.ldiv em{color:var(--ember);font-style:normal;}
+.ldiv{padding:var(--s5) 0 var(--s4);border-bottom:2px solid var(--ink);margin-bottom:var(--s6);}
+.ldiv .ldlb{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gray-500);display:flex;align-items:center;gap:var(--s4);}
+.ldiv .ldlb em{color:var(--ember);font-style:normal;}
+.ldiv .ldd{font-size:14px;color:var(--gray-600);margin:var(--s3) 0 0;line-height:1.55;max-width:64ch;}
 
 /* CHAPTER */
 section.chapter{padding:var(--s8) 0;border-bottom:1px solid var(--gray-200);scroll-margin-top:var(--s5);}
