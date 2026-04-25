@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UI Exploration — Brand OS</title>
+<link rel="stylesheet" href="brandOS-tokens.css">
+<link rel="stylesheet" href="brandOS-components.css">
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   UI EXPLORATION v2 — "Always Present"
+   feat/ui-exploration · hero + nav + layer-00 + s11 + s12
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ─── 1. LOAD ANIMATIONS ─────────────────────────────────────────── */
+
+/* Document materializes — opacity only, no blur, no movement.
+   The brand is always present; it doesn't need to arrive. */
+@keyframes appear {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes nav-arrive {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes dot-pulse {
+  0%   { box-shadow: 0 0 0 0   color-mix(in srgb, var(--ember) 50%, transparent); }
+  60%  { box-shadow: 0 0 0 9px color-mix(in srgb, var(--ember)  0%, transparent); }
+  100% { box-shadow: 0 0 0 0   color-mix(in srgb, var(--ember)  0%, transparent); }
+}
+
+nav.side           { animation: nav-arrive 600ms cubic-bezier(.2,0,0,1) 0ms both; }
+.hero .eyebrow     { animation: appear  900ms ease-in-out    0ms both; }
+.hero h1           { animation: appear 1100ms ease-in-out  160ms both; }
+.hero .lede        { animation: appear 1000ms ease-in-out  400ms both; }
+.hero .hero-lower  { animation: appear  900ms ease-in-out  660ms both; }
+.hero .dot         { animation: dot-pulse 1100ms cubic-bezier(.2,0,0,1) 1400ms both; }
+
+
+/* ─── 2. SCROLL REVEAL ───────────────────────────────────────────── */
+
+.ldiv-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(.2,0,0,1),
+              transform 700ms cubic-bezier(.2,0,0,1);
+}
+.ch-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 520ms cubic-bezier(.2,0,0,1),
+              transform 520ms cubic-bezier(.2,0,0,1);
+}
+.ldiv-reveal.revealed,
+.ch-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ─── 3. NAV — redesigned system ────────────────────────────────── */
+
+nav.side {
+  display: flex;
+  flex-direction: column;
+  padding: var(--s7) var(--s5) var(--s6);
+  border-right: 1px solid var(--gray-200);
+  background: var(--white);
+}
+
+/* Brand text header */
+.nav-brand-name {
+  display: block;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -.01em;
+  margin-bottom: var(--s2);
+}
+.nav-brand-sub {
+  display: block;
+  font: 500 34px/1 var(--sans);
+  color: var(--ember);
+  letter-spacing: -.025em;
+}
+
+/* Nav footer — mark pushed to bottom */
+.nav-footer {
+  margin-top: auto;
+  padding-top: var(--s5);
+}
+.nav-mark {
+  width: auto;
+  height: 32px;
+  display: block;
+  opacity: .4;
+}
+
+/* Group container */
+.ng {
+  margin-bottom: var(--s5);
+  padding-bottom: var(--s2);
+}
+
+/* Layer header — direct link, no wrapper div */
+a.ngl-link {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s2);
+  text-decoration: none;
+  padding: var(--s2) 0 var(--s3);
+  border-bottom: 1px solid var(--gray-200);
+  margin-bottom: var(--s2);
+  position: relative;
+  transition: border-bottom-color 240ms cubic-bezier(.2,0,0,1);
+}
+
+/* Layer number */
+.ng-num {
+  font: 500 11px/1 var(--mono);
+  letter-spacing: .12em;
+  color: var(--gray-400);
+  flex-shrink: 0;
+  transition: color 200ms cubic-bezier(.2,0,0,1);
+}
+
+/* Separator dot */
+.ng-sep {
+  font: 500 10px/1 var(--mono);
+  color: var(--gray-300);
+  transition: color 200ms cubic-bezier(.2,0,0,1);
+}
+
+/* Layer name */
+.ng-name {
+  font: 500 14px/1.3 var(--sans);
+  letter-spacing: -.005em;
+  color: var(--gray-700);
+  transition: color 200ms cubic-bezier(.2,0,0,1);
+}
+
+/* Hover */
+a.ngl-link:hover .ng-num  { color: var(--gray-600); }
+a.ngl-link:hover .ng-sep  { color: var(--gray-500); }
+a.ngl-link:hover .ng-name { color: var(--ink); }
+a.ngl-link:hover { border-bottom-color: var(--gray-400); }
+
+/* Active — ember bottom rule, ember number, ink name */
+a.ngl-link.active {
+  border-bottom-color: var(--ember);
+}
+a.ngl-link.active .ng-num  { color: var(--ember); }
+a.ngl-link.active .ng-sep  { color: var(--ember); opacity: .5; }
+a.ngl-link.active .ng-name { color: var(--ink); }
+
+/* Active group indicator: left bar on the whole .ng */
+.ng:has(a.ngl-link.active) {
+  border-left: 2px solid var(--ember);
+  padding-left: var(--s2);
+  margin-left: -10px;
+}
+
+/* Section links — muted at rest */
+nav.side ol a {
+  color: var(--gray-400);
+  font-size: 13px;
+  padding: 6px 0;
+  gap: var(--s2);
+  transition: color 200ms cubic-bezier(.2,0,0,1),
+              padding-left 200ms cubic-bezier(.2,0,0,1);
+}
+nav.side ol a::before {
+  font-size: 11px;
+  color: var(--gray-300);
+  transition: color 200ms cubic-bezier(.2,0,0,1);
+}
+
+/* Hover */
+nav.side ol a:hover          { color: var(--gray-700); }
+nav.side ol a:hover::before  { color: var(--gray-400); }
+
+/* Active — ink + ember counter + left shift */
+nav.side ol a.active {
+  color: var(--ink);
+  padding-left: 10px;
+  box-shadow: inset 2px 0 0 var(--ember);
+}
+nav.side ol a.active::before { color: var(--ember); }
+
+
+/* ─── 4. HERO ─────────────────────────────────────────────────────── */
+
+.hero {
+  padding-bottom: var(--s9);
+  border-bottom: 0;
+  margin-bottom: var(--s8);
+}
+.hero .eyebrow {
+  font-size: 10px;
+  letter-spacing: .22em;
+  color: var(--gray-400);
+  margin-bottom: var(--s7);
+  gap: var(--s4);
+}
+.hero h1 {
+  font-size: 88px;
+  font-weight: 500;
+  line-height: 1.01;
+  letter-spacing: -.025em;
+  margin: 0 0 var(--s7);
+}
+.hero .lede {
+  font-size: 21px;
+  line-height: 1.5;
+  max-width: 54ch;
+  color: var(--gray-600);
+  font-weight: 400;
+}
+
+/* Lower block: badges + metadata in split layout */
+.hero .hero-lower {
+  margin-top: var(--s7);
+  padding-top: var(--s6);
+  border-top: 1px solid var(--gray-200);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s7);
+  align-items: start;
+}
+.hero .lbadges {
+  margin-top: 0;
+}
+.hero .mg {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-align: right;
+  min-width: 160px;
+  padding-left: var(--s6);
+  border-left: 0;
+}
+.hero .mg div b {
+  color: var(--gray-400);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 3px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+.hero .mg div span {
+  font-family: var(--sans);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 11px;
+}
+
+
+/* ─── 5. LAYER INTRO — structural moment ────────────────────────── */
+
+.layer-intro {
+  position: relative;
+  overflow: hidden;
+  padding: var(--s8) 0 var(--s6);
+  margin-top: var(--s7);
+  margin-bottom: var(--s6);
+  border-top: 1px solid var(--ink);
+  scroll-margin-top: var(--s5);
+}
+
+/* Label — ember mono tag */
+.li-label {
+  display: block;
+  font: 500 10px/1 var(--mono);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: var(--s5);
+}
+
+/* Layer name — the headline */
+.li-name {
+  font: 500 60px/1.02 var(--sans);
+  color: var(--ink);
+  letter-spacing: -.02em;
+  margin: 0 0 var(--s5);
+}
+
+/* Description — editorial body */
+.li-desc {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--gray-600);
+  max-width: 52ch;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Ghost number — atmosphere + parallax */
+.li-ghost {
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  /* --ghost-y updated by JS on scroll */
+  transform: translateY(calc(-50% + var(--ghost-y, 20px)));
+  font: 400 220px/1 var(--mono);
+  letter-spacing: -.04em;
+  color: var(--ink);
+  opacity: .04;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+  /* transition makes it silky at low scroll speeds */
+  transition: transform 80ms linear;
+}
+
+
+/* ─── 6. SECTIONS ────────────────────────────────────────────────── */
+
+section.chapter {
+  padding: var(--s7) 0 var(--s7);
+  border-bottom: 0;
+}
+section.chapter:last-child {
+  padding-bottom: var(--s6);
+}
+
+/* Section header grid */
+.ch {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--s6);
+  margin-bottom: var(--s7);
+  align-items: start;
+}
+
+/* Section number — ember accent */
+.cn {
+  font: 500 11px/1 var(--mono);
+  color: var(--ember);
+  letter-spacing: .08em;
+  padding-top: 15px; /* visual cap-height alignment */
+}
+
+/* Section title */
+.ch h2 {
+  font-size: 44px;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.05;
+  margin: 0 0 var(--s5);
+}
+
+/* Principle — thesis statement */
+.ch .pr {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--gray-600);
+  max-width: 58ch;
+  font-weight: 400;
+  margin: 0;
+}
+.ch .pr em {
+  font-style: normal;
+  color: var(--ink);
+  font-weight: 500;
+  background: linear-gradient(180deg, transparent 75%, rgba(238,46,32,.80) 75%);
+  padding: 0 2px;
+}
+
+/* Body — indent matches number column */
+.cb { padding-left: calc(72px + var(--s6)); }
+
+/* Align rules list with access-list and layer-map */
+ul.rules li { font-size: 14px; }
+ul.rules li b { font: 500 10px/1 var(--mono); letter-spacing: .12em; }
+
+@media(max-width:720px) {
+  .ch { grid-template-columns: 1fr; }
+  .cb { padding-left: 0; }
+}
+
+
+/* ─── 7. SIMPLIFIED CONTENT COMPONENTS ───────────────────────────── */
+
+/* Access list — replaces dtbl (no column grid lines) */
+.access-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--s5) 0 var(--s6);
+}
+.access-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s5);
+  padding: var(--s3) 0;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 14px;
+}
+.access-list li:first-child { border-top: 1px solid var(--gray-200); }
+.access-list li span { font-family: var(--sans); color: var(--ink); font-weight: 500; }
+.access-list li em {
+  font-style: normal;
+  font: 500 11px/1 var(--mono);
+  color: var(--gray-500);
+  letter-spacing: .06em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Layer map — replaces vtbl for document map */
+.layer-map {
+  display: flex;
+  flex-direction: column;
+  margin: var(--s5) 0 var(--s6);
+  border-top: 1px solid var(--gray-200);
+}
+.lm-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: var(--s4);
+  padding: var(--s3) 0;
+  border-bottom: 1px solid var(--gray-200);
+  align-items: baseline;
+}
+.lm-n {
+  font: 500 10px/1 var(--mono);
+  color: var(--gray-400);
+  letter-spacing: .08em;
+}
+.lm-t { font-family: var(--sans); font-size: 14px; color: var(--ink); }
+.lm-s { font: 500 11px/1 var(--mono); }
+.lm-s.ok  { color: var(--ember); }
+.lm-s.wip { color: var(--gray-500); }
+
+/* Callout — stripped back, left border only */
+.callout {
+  background: transparent;
+  padding: var(--s4) 0 var(--s4) var(--s4);
+  border-left: 2px solid var(--gray-300);
+  margin: var(--s5) 0;
+  font-size: 14px;
+  max-width: 66ch;
+}
+.callout b {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray-500);
+}
+.callout.warn {
+  border-left-color: var(--ember);
+  background: transparent;
+}
+.callout.warn b { color: var(--ember); }
+
+
+/* ─── 8. RESPONSIVE ──────────────────────────────────────────────── */
+
+@media(max-width:960px) {
+  .hero h1 { font-size: 60px; }
+  .hero .lede { font-size: 18px; }
+  .hero .hero-lower {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+  .hero .mg {
+    text-align: left;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--gray-200);
+    padding-top: var(--s4);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--s5);
+    min-width: 0;
+  }
+  .hero .mg div { text-align: left; }
+  .ch h2 { font-size: 32px; }
+  .li-name { font-size: 44px; }
+  .li-ghost { font-size: 140px; }
+}
+
+@media(max-width:720px) {
+  .hero h1 { font-size: 44px; letter-spacing: -.02em; }
+  .hero .lede { font-size: 16px; }
+  .ch h2 { font-size: 24px; }
+  .li-name { font-size: 34px; }
+  .li-ghost { font-size: 90px; opacity: .03; }
+  .li-desc { font-size: 15px; }
+  .access-list li { flex-direction: column; gap: var(--s2); }
+}
+
+@media(max-width:480px) {
+  .hero h1 { font-size: 34px; }
+}
+</style>
+</head>
+<body data-register="enterprise" data-density="default">
+<div class="shell">
+
+<button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="nav-overlay" id="navOverlay"></div>
+
+
+<!-- ─── NAV ──────────────────────────────────────────────────────── -->
+<nav class="side" id="navSide">
+  <a href="#" class="brand" style="text-decoration:none;"
+     onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <span class="nav-brand-name">InsideBoard AI</span>
+    <span class="nav-brand-sub">BrandOS</span>
+  </a>
+
+  <div class="ng">
+    <a class="ngl-link" href="#layer-00">
+      <span class="ng-num">00</span>
+      <span class="ng-sep">·</span>
+      <span class="ng-name">System Overview</span>
+    </a>
+    <ol>
+      <li><a href="#s00">The Brand OS</a></li>
+    </ol>
+  </div>
+
+  <div class="ng">
+    <a class="ngl-link" href="#layer-01">
+      <span class="ng-num">01</span>
+      <span class="ng-sep">·</span>
+      <span class="ng-name">Brand Strategy</span>
+    </a>
+    <ol>
+      <li><a href="#s11">Positioning</a></li>
+      <li><a href="#s12">The Closed Loop</a></li>
+    </ol>
+  </div>
+
+  <div class="ng">
+    <a class="ngl-link" href="#layer-02">
+      <span class="ng-num">02</span>
+      <span class="ng-sep">·</span>
+      <span class="ng-name">Pattern Audit</span>
+    </a>
+    <ol>
+      <li><a href="#s20">Label / Body blocks</a></li>
+    </ol>
+  </div>
+
+  <div class="nav-footer">
+    <img src="assets/svg/mark-insideboard-ink.svg" alt="" class="nav-mark">
+  </div>
+</nav>
+
+
+<!-- ─── MAIN ──────────────────────────────────────────────────────── -->
+<main class="doc">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="eyebrow"><span class="dot"></span>Brand OS · UI Exploration</div>
+  <h1>InsideBoard AI<br>Brand OS.</h1>
+  <p class="lede">A living operating system for the brand — from strategy to automation. The single source of truth for every team that thinks, speaks, or produces in the name of InsideBoard AI.</p>
+  <div class="hero-lower">
+    <div class="lbadges">
+      <a href="#layer-00" class="lb on">00 · System Overview</a>
+      <a href="#layer-01" class="lb on">01 · Brand Strategy</a>
+      <span class="lb">02 · Verbal Identity</span>
+      <span class="lb wip">03 · Visual Identity</span>
+    </div>
+    <div class="mg">
+      <div><b>Posture</b><span>Always by your side.</span></div>
+      <div><b>Positioning</b><span>Performance Orchestration</span></div>
+      <div><b>Version</b><span>1.0 · Q2 2026</span></div>
+    </div>
+  </div>
+</header>
+
+
+<!-- LAYER 00 -->
+<div class="layer-intro ldiv-reveal" id="layer-00">
+  <span class="li-label">00 · System Overview</span>
+  <p class="li-name">The governance layer.</p>
+  <p class="li-desc">Defines who can read, modify, and validate this document, how it is structured, and its current validation status.</p>
+  <span class="li-ghost" aria-hidden="true">00</span>
+</div>
+
+<!-- SECTION 0·1 -->
+<section class="chapter" id="s00">
+  <div class="ch ch-reveal">
+    <div class="cn">0·1</div>
+    <div>
+      <h2>The Brand OS</h2>
+      <p class="pr">The InsideBoard AI Brand OS is the <em>single source of truth</em> for how the brand thinks, speaks, looks, and operates. It is not a static style guide — it is a living operating system that governs every brand expression, from a sales deck to an event keynote, from product micro-copy to a partner proposal.</p>
+    </div>
+  </div>
+  <div class="cb">
+    <p>Built in layers, from strategy to automation, it can be understood at any depth — and used consistently by anyone authorized to produce brand content.</p>
+
+    <h3 class="sub">Access &amp; Usage</h3>
+    <ul class="access-list">
+      <li><span>Co-founders (Michael, Yohan)</span><em>Full read + validation</em></li>
+      <li><span>Art Director</span><em>Full read + edit</em></li>
+      <li><span>Internal teams (Sales, CSM, Delivery)</span><em>Read · templates only</em></li>
+      <li><span>External partners / agencies</span><em>Restricted · on request</em></li>
+    </ul>
+
+    <h3 class="sub">Document Map</h3>
+    <div class="layer-map">
+      <div class="lm-row"><span class="lm-n">00</span><span class="lm-t">System Overview</span><span class="lm-s ok">✦ Validated</span></div>
+      <div class="lm-row"><span class="lm-n">01</span><span class="lm-t">Brand Strategy</span><span class="lm-s ok">✦ Validated</span></div>
+      <div class="lm-row"><span class="lm-n">02</span><span class="lm-t">Verbal Identity</span><span class="lm-s ok">✦ Validated</span></div>
+      <div class="lm-row"><span class="lm-n">03</span><span class="lm-t">Visual Identity</span><span class="lm-s wip">◑ In progress</span></div>
+      <div class="lm-row"><span class="lm-n">04</span><span class="lm-t">Brand Experience Map</span><span class="lm-s ok">✦ Validated</span></div>
+    </div>
+
+    <div class="callout"><b>Ownership</b>This document is owned and maintained by the Art Director. Any structural modification requires co-founder approval. Version 1.0 — Q2 2026.</div>
+  </div>
+</section>
+
+
+<!-- LAYER 01 -->
+<div class="layer-intro ldiv-reveal" id="layer-01">
+  <span class="li-label">01 · Brand Strategy</span>
+  <p class="li-name">The strategic foundation.</p>
+  <p class="li-desc">Positioning, Closed Loop, Success Formula, audiences, application territories, IRON, and trust architecture. Everything that makes the brand promise defensible.</p>
+  <span class="li-ghost" aria-hidden="true">01</span>
+</div>
+
+<!-- SECTION 1·1 -->
+<section class="chapter" id="s11">
+  <div class="ch ch-reveal">
+    <div class="cn">1·1</div>
+    <div>
+      <h2>Positioning</h2>
+      <p class="pr">InsideBoard AI is the <em>performance layer</em> that sits on top of the client's existing ecosystem. It addresses what nobody else covers: what happens between tool deployment and actual team performance.</p>
+    </div>
+  </div>
+  <div class="cb">
+    <h3 class="sub">Strategic definition</h3>
+    <ul class="rules">
+      <li class="note"><b>Internal</b>Performance Orchestration Platform.</li>
+      <li class="note"><b>Tagline</b>Always by your side. Always alone, never combined.</li>
+      <li class="note"><b>Promise</b>Your team's success isn't a matter of luck. We orchestrate it by your side, day after day.</li>
+      <li class="dont"><b>Former</b>"Activate your success" — phased out. Must not appear in any new material.</li>
+    </ul>
+    <div class="callout warn"><b>What InsideBoard is not</b>An LMS, an IT tool, a digitized consulting firm, an additional reporting layer, or a CRM add-on.</div>
+    <h3 class="sub">Client trajectory</h3>
+    <div class="fd"><div class="flab">Maturity path</div><div class="ftxt">Onboarding → Adoption → Business Performance → Operational Excellence</div></div>
+  </div>
+</section>
+
+<!-- SECTION 1·2 -->
+<section class="chapter" id="s12">
+  <div class="ch ch-reveal">
+    <div class="cn">1·2</div>
+    <div>
+      <h2>The Closed Loop</h2>
+      <p class="pr">InsideBoard AI operates as a <em>closed loop</em> between data, intelligence, and action — continuously improving team performance without requiring manual intervention.</p>
+    </div>
+  </div>
+  <div class="cb">
+    <div class="callout"><b>The loop</b>Signal → Diagnosis → Action → Measurement → Signal. The loop never stops. Neither does the platform.</div>
+    <div class="fd"><div class="flab">Core mechanism</div><div class="ftxt">Detect → Diagnose → Act → Measure → Detect again</div></div>
+    <div class="callout"><b>Lorem ipsum</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+  </div>
+</section>
+
+
+<!-- LAYER 02 -->
+<div class="layer-intro ldiv-reveal" id="layer-02" data-layer="02">
+  <span class="li-label">02 · Pattern Audit</span>
+  <p class="li-name">Label + Body blocks.</p>
+  <p class="li-desc">Every block where a JetBrains Mono label pairs with Outfit body text. Visual inventory before applying the shared CSS rule.</p>
+  <span class="li-ghost" aria-hidden="true">02</span>
+</div>
+
+<!-- SECTION 2·0 -->
+<section class="chapter" id="s20">
+  <div class="ch ch-reveal">
+    <div class="cn">2·0</div>
+    <div>
+      <h2>Block inventory</h2>
+      <p class="pr">Six block types identified. Each uses a <em>mono label</em> to identify the information and Outfit to carry the readable content.</p>
+    </div>
+  </div>
+  <div class="cb">
+
+    <h4 class="mi">1 · Metadata grid (.mg)</h4>
+    <div style="display:flex;flex-direction:column;gap:var(--s4);font-family:var(--mono);font-size:10px;margin:var(--s4) 0 var(--s6);max-width:280px;">
+      <div><b style="color:var(--gray-400);font-weight:500;display:block;margin-bottom:3px;letter-spacing:.12em;text-transform:uppercase;font-size:9px;">Posture</b><span style="font-family:var(--sans);color:var(--ink);font-weight:500;font-size:11px;">Always by your side.</span></div>
+      <div><b style="color:var(--gray-400);font-weight:500;display:block;margin-bottom:3px;letter-spacing:.12em;text-transform:uppercase;font-size:9px;">Positioning</b><span style="font-family:var(--sans);color:var(--ink);font-weight:500;font-size:11px;">Performance Orchestration</span></div>
+      <div><b style="color:var(--gray-400);font-weight:500;display:block;margin-bottom:3px;letter-spacing:.12em;text-transform:uppercase;font-size:9px;">Version</b><span style="font-family:var(--sans);color:var(--ink);font-weight:500;font-size:11px;">1.0 · Q2 2026</span></div>
+    </div>
+
+    <h4 class="mi">2 · Access list (.access-list)</h4>
+    <ul class="access-list" style="margin-bottom:var(--s6);">
+      <li><span>Art Director</span><em>Full read + edit</em></li>
+      <li><span>Internal teams</span><em>Read · templates only</em></li>
+      <li><span>External partners</span><em>Restricted · on request</em></li>
+    </ul>
+
+    <h4 class="mi">3 · Layer map (.layer-map)</h4>
+    <div class="layer-map" style="margin-bottom:var(--s6);">
+      <div class="lm-row"><span class="lm-n">00</span><span class="lm-t">System Overview</span><span class="lm-s ok">✦ Validated</span></div>
+      <div class="lm-row"><span class="lm-n">01</span><span class="lm-t">Brand Strategy</span><span class="lm-s ok">✦ Validated</span></div>
+      <div class="lm-row"><span class="lm-n">03</span><span class="lm-t">Visual Identity</span><span class="lm-s wip">◑ In progress</span></div>
+    </div>
+
+    <h4 class="mi">4 · Rules list (ul.rules)</h4>
+    <ul class="rules" style="margin-bottom:var(--s6);">
+      <li class="note"><b>Internal</b>Performance Orchestration Platform.</li>
+      <li class="note"><b>Tagline</b>Always by your side.</li>
+      <li class="dont"><b>Former</b>"Activate your success" — phased out.</li>
+    </ul>
+
+    <h4 class="mi">5 · Callout (.callout)</h4>
+    <div class="callout" style="margin-bottom:var(--s3);">
+      <b>Ownership</b>This document is owned and maintained by the Art Director. Any structural modification requires co-founder approval.
+    </div>
+    <div class="callout warn" style="margin-bottom:var(--s6);">
+      <b>What InsideBoard is not</b>An LMS, an IT tool, a digitized consulting firm, or a CRM add-on.
+    </div>
+
+    <h4 class="mi">6 · Formula block (.fd)</h4>
+    <div class="fd">
+      <div class="flab">Maturity path</div>
+      <div class="ftxt">Onboarding → Adoption → Business Performance → Operational Excellence</div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+</div><!-- .shell -->
+
+
+<script>
+/* ── Verbatim from index.html ───────────────────────────────────── */
+(function(){
+  const tw=document.getElementById('tweaks');
+  window.addEventListener('message',e=>{
+    const d=e.data||{};
+    if(d.type==='__activate_edit_mode'&&tw)tw.classList.add('visible');
+    if(d.type==='__deactivate_edit_mode'&&tw)tw.classList.remove('visible');
+  });
+  try{window.parent.postMessage({type:'__edit_mode_available'},'*');}catch(_){}
+})();
+
+/* Nav active state — verbatim logic */
+const navs=[...document.querySelectorAll('nav.side ol a')];
+const nglLinks=[...document.querySelectorAll('nav.side .ngl-link')];
+const allAnchors=[
+  ...[...document.querySelectorAll('.layer-intro[id]')].map(el=>({el,type:'layer'})),
+  ...[...document.querySelectorAll('section.chapter[id]')].map(el=>({el,type:'section'}))
+].sort((a,b)=>a.el.offsetTop-b.el.offsetTop);
+
+function updateNav(){
+  const threshold=window.innerHeight*0.4;
+  const hero=document.querySelector('header.hero');
+  if(hero&&hero.getBoundingClientRect().bottom>threshold){
+    nglLinks.forEach(a=>a.classList.remove('active'));
+    navs.forEach(a=>a.classList.remove('active'));
+    return;
+  }
+  let active=null;
+  for(const item of allAnchors){if(item.el.getBoundingClientRect().top<=threshold)active=item;}
+  if(!active)return;
+  if(active.type==='section'){
+    const idx=allAnchors.indexOf(active);
+    for(let i=idx-1;i>=0;i--){
+      if(allAnchors[i].type==='layer'){
+        if(allAnchors[i].el.getBoundingClientRect().bottom>0)active=allAnchors[i];
+        break;
+      }
+    }
+  }
+  nglLinks.forEach(a=>a.classList.remove('active'));
+  navs.forEach(a=>a.classList.remove('active'));
+  if(active.type==='layer'){
+    const lk=nglLinks.find(a=>a.getAttribute('href')==='#'+active.el.id);
+    if(lk)lk.classList.add('active');
+  }else{
+    const lk=navs.find(a=>a.getAttribute('href')==='#'+active.el.id);
+    if(lk)lk.classList.add('active');
+  }
+}
+window.addEventListener('scroll',updateNav,{passive:true});
+updateNav();
+
+/* Mobile nav toggle — verbatim */
+const navToggle=document.getElementById('navToggle');
+const navSide=document.getElementById('navSide');
+const navOverlay=document.getElementById('navOverlay');
+function openNav(){navSide.classList.add('open');navOverlay.classList.add('visible');navToggle.classList.add('open');document.body.style.overflow='hidden';}
+function closeNav(){navSide.classList.remove('open');navOverlay.classList.remove('visible');navToggle.classList.remove('open');document.body.style.overflow='';}
+navToggle.addEventListener('click',()=>navSide.classList.contains('open')?closeNav():openNav());
+navOverlay.addEventListener('click',closeNav);
+document.querySelectorAll('nav.side ol a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=960)closeNav();}));
+
+/* ── Scroll reveals ─────────────────────────────────────────────── */
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('revealed');revealObs.unobserve(e.target);}
+  });
+},{threshold:0.1,rootMargin:'0px 0px -48px 0px'});
+document.querySelectorAll('.ldiv-reveal,.ch-reveal').forEach(el=>revealObs.observe(el));
+
+/* ── Ghost parallax ─────────────────────────────────────────────── */
+const ghosts=[...document.querySelectorAll('.layer-intro')];
+function updateGhosts(){
+  const vh=window.innerHeight;
+  ghosts.forEach(intro=>{
+    const rect=intro.getBoundingClientRect();
+    /* Normalized position: 0 when centered in viewport, ±1 at edges */
+    const center=(rect.top+rect.height*.5)/vh-.5;
+    /* Ghost moves 80px over full viewport traversal — slower than text */
+    intro.style.setProperty('--ghost-y',(center*80)+'px');
+  });
+}
+window.addEventListener('scroll',updateGhosts,{passive:true});
+updateGhosts();
+</script>
+</body>
+</html>

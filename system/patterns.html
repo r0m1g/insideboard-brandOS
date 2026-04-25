@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Patterns — InsideBoard Design System</title>
+  <link rel="stylesheet" href="../brandOS-tokens.css">
+  <link rel="stylesheet" href="../brandOS-components.css">
+</head>
+<body class="sys">
+
+  <nav class="sys-nav">
+    <a href="../index.html" class="sys-home">← BrandOS</a>
+    <div class="sys-links">
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html" aria-current="page">Patterns</a>
+      <a href="assets.html">Assets</a>
+    </div>
+  </nav>
+
+  <main class="sys-main">
+
+    <header class="sys-header">
+      <h1>Patterns</h1>
+      <p>Recurring compositions and layout conventions — how components combine into larger structures.</p>
+    </header>
+
+    <!-- LAYER → SECTION PATTERN -->
+    <section class="sys-section">
+      <p class="sys-section-title">Layer → section structure</p>
+      <div class="spec-card">
+        <p class="spec-label">The document rhythm: layer intro followed by chapter sections</p>
+      </div>
+      <div style="background:var(--ivory);border-radius:4px 4px 0 0;overflow:hidden;padding:0 var(--s5)">
+        <div class="layer-intro" style="position:relative;opacity:1;transform:none;margin-top:0">
+          <span class="li-label">Layer 02</span>
+          <h2 class="li-name">Visual<br>Identity</h2>
+          <p class="li-desc">The aesthetic system that makes InsideBoard unmistakable.</p>
+          <div class="li-ghost" aria-hidden="true">Visual<br>Identity</div>
+        </div>
+      </div>
+      <div style="background:var(--ivory);border-radius:0 0 4px 4px;padding:var(--s5)">
+        <section class="chapter ch-reveal revealed" style="max-width:720px">
+          <div class="ch">
+            <div class="cn">2·1</div>
+            <div>
+              <h2>Colour</h2>
+              <p class="pr">Ink and Ivory are the brand. <em>Ember is the signal.</em></p>
+            </div>
+          </div>
+          <div class="cb">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The palette is warm, dark, and compressed — it does not perform energy, it performs authority.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- REGISTER CONTRAST PATTERN -->
+    <section class="sys-section">
+      <p class="sys-section-title">Register contrast — brand vs product</p>
+      <div class="spec-card">
+        <p class="spec-label">Brand register (Ink bg) vs product register (white bg)</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)">
+        <div style="background:var(--ink);padding:var(--s5);border-radius:4px">
+          <p style="font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);margin:0 0 var(--s3)">Brand register</p>
+          <p style="color:var(--ivory);font-size:20px;font-weight:300;line-height:1.3;margin:0">Augmented<br>performance starts<br>with human judgment.</p>
+        </div>
+        <div style="background:var(--white);padding:var(--s5);border-radius:4px;border:1px solid var(--gray-100)">
+          <p style="font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gray-500);margin:0 0 var(--s3)">Product register</p>
+          <p style="color:var(--ink);font-size:20px;font-weight:400;line-height:1.3;margin:0">Set a goal.<br>The agent handles<br>the execution.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RULES + CALLOUT PATTERN -->
+    <section class="sys-section">
+      <p class="sys-section-title">Rules + callout — section body pattern</p>
+      <div class="spec-card">
+        <p class="spec-label">Typical .cb content: intro paragraph, rules list, optional callout</p>
+      </div>
+      <div style="background:var(--ivory);border-radius:4px;padding:var(--s5);max-width:720px">
+        <div class="cb">
+          <p>The voice system has three registers. Each is calibrated for a different context — never mix them within a single surface.</p>
+          <ul class="rules">
+            <li class="do">Match the register to the surface: brand for marketing, product for UI, technical for docs.</li>
+            <li class="do">Keep register consistent within a screen or document.</li>
+            <li class="dont">Use the brand register in product UI — it sounds theatrical in a dashboard.</li>
+            <li class="note">When uncertain, default to product register. It's the most neutral.</li>
+          </ul>
+          <div class="callout">
+            Register is not tone. Tone shifts within a register (warmer or cooler). Register is the channel — it doesn't flex.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

@@ -20,6 +20,8 @@ InsideBoard AI Brand OS — a living HTML document that serves as the single sou
 | `index.html`           | Pure HTML — named index.html for GitHub Pages (required by web servers) |
 | `brandOS-content.md`           | Content source of truth — maps 1:1 to HTML sections              |
 | `PROCESS.md`           | Full update protocols and prompt-types for all operation types    |
+| `docs/`                | Project documentation: ROADMAP, ADRs, devlog, backlog            |
+| `system/`              | Design system playground — consumes root CSS, never duplicates it |
 
 ---
 
@@ -204,3 +206,28 @@ These 40 lines are stable. Do not modify, move, or rewrite them.
 - `## Section 05` → `#s50`
 
 When in doubt about update protocols, read `PROCESS.md`.
+
+---
+
+## Documentation — docs/
+
+| File | Role |
+|---|---|
+| `docs/ROADMAP.md` | Authoritative status of all phases and steps — update when a step changes state |
+| `docs/decisions/ADR-*.md` | Architecture Decision Records — one file per architectural decision |
+| `docs/devlog/` | Narrative session logs — one file per session, named `YYYY-MM-DD-slug.md` |
+| `docs/backlog/ideas.md` | Speculative ideas not yet committed |
+| `docs/backlog/bugs.md` | Known bugs and regressions |
+| `docs/backlog/feedback.md` | Stakeholder or self-review feedback |
+
+**Proactive rule:** At natural moments (phase complete, bug found and fixed, architectural decision made, session wrapping up), propose updating the relevant doc. Do not wait to be asked.
+
+---
+
+## system/ — playground rules
+
+- All `system/` pages link to `../brandOS-tokens.css` and `../brandOS-components.css` — never duplicate CSS
+- All `system/` pages use `<body class="sys">` to activate the product register skin (white bg, Steel accent)
+- Component prototypes in `system/` use fake/lorem content only — never real brand content
+- `system/lab/` archives experiments (`ui-test.html`, `animation-test.html`) — do not delete them
+- Update type 6 in `PROCESS.md` is the protocol for all system/ operations

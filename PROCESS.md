@@ -136,6 +136,31 @@ Write the result to index.html.
 
 ---
 
+### Update type 6 — System playground (new component or page)
+Adding or updating a component prototype in `system/`, or creating a new `system/*.html` page.
+
+**Rules:**
+- `system/` pages link to `../brandOS-tokens.css` and `../brandOS-components.css` — never duplicate CSS
+- All `system/` pages use `<body class="sys">` to activate the product register skin
+- Component prototypes use fake/lorem content only — never real brand content
+- Once a component is validated in `system/`, it may be promoted to `index.html` via Update type 3 (component) or Update type 4 (new section)
+
+**Prompt to use in Claude Code:**
+```
+Open system/components.html (or the relevant system/ page).
+Add a prototype for [COMPONENT NAME] using fake content.
+CSS goes in brandOS-components.css under a /* SYSTEM */ comment if it is workbench-only,
+or in the main component block if it will be shared.
+Use str_replace only. Do not touch index.html or brandOS-content.md.
+```
+
+**After adding a component prototype, check:**
+- Does it render correctly with `body.sys` skin (white bg, Steel accent)?
+- Is there a responsive rule needed in `brandOS-components.css`?
+- If the component will eventually land in `index.html`, is a promotion path clear?
+
+---
+
 ## Rules for Claude Code (non-negotiable)
 
 1. **str_replace only for targeted updates** — never rewrite an entire file when only a section has changed.
