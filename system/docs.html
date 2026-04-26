@@ -116,6 +116,10 @@
       <div class="devlog-list">
         <div class="devlog-entry">
           <span class="devlog-date">2026-04-26</span>
+          <span class="devlog-title">UI system fixes — backlog filters, status color system, active roadmap → steel, mobile sys-nav, UI state &amp; priority in Brand OS 3·02</span>
+        </div>
+        <div class="devlog-entry">
+          <span class="devlog-date">2026-04-26</span>
           <span class="devlog-title">Backlog restructure — 5 categories + filterable visual display in docs</span>
         </div>
         <div class="devlog-entry">
@@ -150,131 +154,152 @@
         <button class="rf-btn rf-btn--workflow active" data-backlog-filter="workflow">Workflow</button>
       </div>
       <div class="backlog-table">
-        <div class="backlog-row" data-cat="bug">
-          <span class="backlog-cat backlog-cat--bug">Bug</span>
-          <span class="backlog-text">Verbal Rules — IRON label/body misalignment (bold/italic pushes text into label column)</span>
-          <span class="backlog-status backlog-status--open">med</span>
+
+        <div class="backlog-group" data-group="bug">
+          <span class="backlog-group-label backlog-group-label--bug">Bug</span>
+          <div class="backlog-row" data-cat="bug">
+            <span class="backlog-cat backlog-cat--bug">Bug</span>
+            <span class="backlog-text">Verbal Rules — IRON label/body misalignment (bold/italic pushes text into label column)</span>
+            <span class="backlog-status backlog-status--med">med</span>
+          </div>
+          <div class="backlog-row" data-cat="bug">
+            <span class="backlog-cat backlog-cat--bug">Bug</span>
+            <span class="backlog-text">Register switcher strings not in brandOS-content.md — violates content-first rule</span>
+            <span class="backlog-status backlog-status--low">low</span>
+          </div>
         </div>
-        <div class="backlog-row" data-cat="bug">
-          <span class="backlog-cat backlog-cat--bug">Bug</span>
-          <span class="backlog-text">Register switcher strings not in brandOS-content.md — violates content-first rule</span>
-          <span class="backlog-status backlog-status--open">low</span>
+
+        <div class="backlog-group" data-group="todo">
+          <span class="backlog-group-label backlog-group-label--todo">Todo</span>
+          <div class="backlog-row" data-cat="todo">
+            <span class="backlog-cat backlog-cat--todo">Todo</span>
+            <span class="backlog-text">Create GitHub README</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="todo">
+            <span class="backlog-cat backlog-cat--todo">Todo</span>
+            <span class="backlog-text">Add discreet link from Brand OS to docs.html</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="todo">
+            <span class="backlog-cat backlog-cat--todo">Todo</span>
+            <span class="backlog-text">Resolve public GitHub visibility (Google Connect, coordinate with devs)</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row backlog-row--done" data-cat="todo">
+            <span class="backlog-cat backlog-cat--todo">Todo</span>
+            <span class="backlog-text">System nav link from Brand OS</span>
+            <span class="backlog-status backlog-status--done">done</span>
+          </div>
+          <div class="backlog-row backlog-row--done" data-cat="todo">
+            <span class="backlog-cat backlog-cat--todo">Todo</span>
+            <span class="backlog-text">Visual roadmap (system/docs.html frise)</span>
+            <span class="backlog-status backlog-status--done">done</span>
+          </div>
+          <div class="backlog-row backlog-row--done" data-cat="todo">
+            <span class="backlog-cat backlog-cat--todo">Todo</span>
+            <span class="backlog-text">Writing rules enforced across all files (Brand OS / IRON / InsideBoard AI)</span>
+            <span class="backlog-status backlog-status--done">done</span>
+          </div>
         </div>
-        <div class="backlog-row" data-cat="todo">
-          <span class="backlog-cat backlog-cat--todo">Todo</span>
-          <span class="backlog-text">Create GitHub README</span>
-          <span class="backlog-status backlog-status--open">open</span>
+
+        <div class="backlog-group" data-group="idea">
+          <span class="backlog-group-label">Idea</span>
+          <div class="backlog-row" data-cat="idea">
+            <span class="backlog-cat backlog-cat--idea">Idea</span>
+            <span class="backlog-text">Better component descriptions — richer names and display text for components, patterns, foundations</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="idea">
+            <span class="backlog-cat backlog-cat--idea">Idea</span>
+            <span class="backlog-text">Iconography display with downloadable assets + tab/category system</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="idea">
+            <span class="backlog-cat backlog-cat--idea">Idea</span>
+            <span class="backlog-text">Pedagogy blocks — explain token system and atomic design in a distinct visual style</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="idea">
+            <span class="backlog-cat backlog-cat--idea">Idea</span>
+            <span class="backlog-text">Production memory — flag excellent outputs as saved references for reuse</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="idea">
+            <span class="backlog-cat backlog-cat--idea">Idea</span>
+            <span class="backlog-text">Layer 6–9 content — Do/Don't, Design Language, Component System, Automation</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="idea">
+            <span class="backlog-cat backlog-cat--idea">Idea</span>
+            <span class="backlog-text">AI generation pipeline for brand assets within token constraints</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="idea">
+            <span class="backlog-cat backlog-cat--idea">Idea</span>
+            <span class="backlog-text">Public component library extracted from brandOS-components.css</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="idea">
+            <span class="backlog-cat backlog-cat--idea">Idea</span>
+            <span class="backlog-text">Visual regression testing (Percy / Chromatic)</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
         </div>
-        <div class="backlog-row" data-cat="todo">
-          <span class="backlog-cat backlog-cat--todo">Todo</span>
-          <span class="backlog-text">Add discreet link from Brand OS to docs.html</span>
-          <span class="backlog-status backlog-status--open">open</span>
+
+        <div class="backlog-group" data-group="question">
+          <span class="backlog-group-label">Question</span>
+          <div class="backlog-row" data-cat="question">
+            <span class="backlog-cat backlog-cat--question">Question</span>
+            <span class="backlog-text">Should IRON color tokens be renamed after their associated concept or agent? (e.g. Coral → IRON Engagement)</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="question">
+            <span class="backlog-cat backlog-cat--question">Question</span>
+            <span class="backlog-text">Is Jira worth adopting at this stage?</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="question">
+            <span class="backlog-cat backlog-cat--question">Question</span>
+            <span class="backlog-text">Obsidian + Claude as second brain — worth the maintenance overhead?</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="question">
+            <span class="backlog-cat backlog-cat--question">Question</span>
+            <span class="backlog-text">Could IRON be a viable Claude team agent connected to InsideBoard AI?</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
         </div>
-        <div class="backlog-row" data-cat="todo">
-          <span class="backlog-cat backlog-cat--todo">Todo</span>
-          <span class="backlog-text">Resolve public GitHub visibility (Google Connect, coordinate with devs)</span>
-          <span class="backlog-status backlog-status--open">open</span>
+
+        <div class="backlog-group" data-group="workflow">
+          <span class="backlog-group-label">Workflow</span>
+          <div class="backlog-row" data-cat="workflow">
+            <span class="backlog-cat backlog-cat--workflow">Workflow</span>
+            <span class="backlog-text">Add "sound human" rule to AI calibration checklist</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="workflow">
+            <span class="backlog-cat backlog-cat--workflow">Workflow</span>
+            <span class="backlog-text">Custom /commands — /ghost (human tone), /syncmain, /syncproject</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="workflow">
+            <span class="backlog-cat backlog-cat--workflow">Workflow</span>
+            <span class="backlog-text">Design team personas with French family names (Raymonde, Jean, Jacques…) — each with a defined role</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="workflow">
+            <span class="backlog-cat backlog-cat--workflow">Workflow</span>
+            <span class="backlog-text">QCM brief check — Claude asks multiple-choice questions before proceeding in Brand OS team context</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
+          <div class="backlog-row" data-cat="workflow">
+            <span class="backlog-cat backlog-cat--workflow">Workflow</span>
+            <span class="backlog-text">Evaluate "Ask the council" Claude skill</span>
+            <span class="backlog-status backlog-status--open">open</span>
+          </div>
         </div>
-        <div class="backlog-row backlog-row--done" data-cat="todo">
-          <span class="backlog-cat backlog-cat--todo">Todo</span>
-          <span class="backlog-text">System nav link from Brand OS</span>
-          <span class="backlog-status backlog-status--done">done</span>
-        </div>
-        <div class="backlog-row backlog-row--done" data-cat="todo">
-          <span class="backlog-cat backlog-cat--todo">Todo</span>
-          <span class="backlog-text">Visual roadmap (system/docs.html frise)</span>
-          <span class="backlog-status backlog-status--done">done</span>
-        </div>
-        <div class="backlog-row backlog-row--done" data-cat="todo">
-          <span class="backlog-cat backlog-cat--todo">Todo</span>
-          <span class="backlog-text">Writing rules enforced across all files (Brand OS / IRON / InsideBoard AI)</span>
-          <span class="backlog-status backlog-status--done">done</span>
-        </div>
-        <div class="backlog-row" data-cat="idea">
-          <span class="backlog-cat backlog-cat--idea">Idea</span>
-          <span class="backlog-text">Better component descriptions — richer names and display text for components, patterns, foundations</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="idea">
-          <span class="backlog-cat backlog-cat--idea">Idea</span>
-          <span class="backlog-text">Iconography display with downloadable assets + tab/category system</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="idea">
-          <span class="backlog-cat backlog-cat--idea">Idea</span>
-          <span class="backlog-text">Pedagogy blocks — explain token system and atomic design in a distinct visual style</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="idea">
-          <span class="backlog-cat backlog-cat--idea">Idea</span>
-          <span class="backlog-text">Production memory — flag excellent outputs as saved references for reuse</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="idea">
-          <span class="backlog-cat backlog-cat--idea">Idea</span>
-          <span class="backlog-text">Layer 6–9 content — Do/Don't, Design Language, Component System, Automation</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="idea">
-          <span class="backlog-cat backlog-cat--idea">Idea</span>
-          <span class="backlog-text">AI generation pipeline for brand assets within token constraints</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="idea">
-          <span class="backlog-cat backlog-cat--idea">Idea</span>
-          <span class="backlog-text">Public component library extracted from brandOS-components.css</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="idea">
-          <span class="backlog-cat backlog-cat--idea">Idea</span>
-          <span class="backlog-text">Visual regression testing (Percy / Chromatic)</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="question">
-          <span class="backlog-cat backlog-cat--question">Question</span>
-          <span class="backlog-text">Should IRON color tokens be renamed after their associated concept or agent? (e.g. Coral → IRON Engagement)</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="question">
-          <span class="backlog-cat backlog-cat--question">Question</span>
-          <span class="backlog-text">Is Jira worth adopting at this stage?</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="question">
-          <span class="backlog-cat backlog-cat--question">Question</span>
-          <span class="backlog-text">Obsidian + Claude as second brain — worth the maintenance overhead?</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="question">
-          <span class="backlog-cat backlog-cat--question">Question</span>
-          <span class="backlog-text">Could IRON be a viable Claude team agent connected to InsideBoard AI?</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="workflow">
-          <span class="backlog-cat backlog-cat--workflow">Workflow</span>
-          <span class="backlog-text">Add "sound human" rule to AI calibration checklist</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="workflow">
-          <span class="backlog-cat backlog-cat--workflow">Workflow</span>
-          <span class="backlog-text">Custom /commands — /ghost (human tone), /syncmain, /syncproject</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="workflow">
-          <span class="backlog-cat backlog-cat--workflow">Workflow</span>
-          <span class="backlog-text">Design team personas with French family names (Raymonde, Jean, Jacques…) — each with a defined role</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="workflow">
-          <span class="backlog-cat backlog-cat--workflow">Workflow</span>
-          <span class="backlog-text">QCM brief check — Claude asks multiple-choice questions before proceeding in Brand OS team context</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
-        <div class="backlog-row" data-cat="workflow">
-          <span class="backlog-cat backlog-cat--workflow">Workflow</span>
-          <span class="backlog-text">Evaluate "Ask the council" Claude skill</span>
-          <span class="backlog-status backlog-status--open">open</span>
-        </div>
+
       </div>
       </div>
     </section>
@@ -352,7 +377,7 @@ function syncConnectors() {
   });
 }
 
-document.querySelectorAll('.rf-btn').forEach(btn => {
+document.querySelectorAll('.rf-btn[data-filter]').forEach(btn => {
   btn.addEventListener('click', () => {
     btn.classList.toggle('active');
     const filter = btn.dataset.filter;
@@ -399,8 +424,8 @@ document.querySelectorAll('[data-backlog-filter]').forEach(btn => {
   btn.addEventListener('click', () => {
     btn.classList.toggle('active');
     const cat = btn.dataset.backlogFilter;
-    document.querySelectorAll(`.backlog-row[data-cat="${cat}"]`).forEach(row => {
-      row.classList.toggle('rf-hidden', !btn.classList.contains('active'));
+    document.querySelectorAll(`.backlog-group[data-group="${cat}"]`).forEach(group => {
+      group.classList.toggle('rf-hidden', !btn.classList.contains('active'));
     });
   });
 });
