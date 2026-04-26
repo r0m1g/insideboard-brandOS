@@ -15,7 +15,9 @@ InsideBoard AI Brand OS — a living HTML document that serves as the single sou
 
 | File                   | Role                                                              |
 |------------------------|-------------------------------------------------------------------|
-| `brandOS-tokens.css`     | CSS variables only: palette, typography, spacing, density tokens  |
+| `tokens.json`            | Source of truth for design tokens (W3C Design Tokens format)      |
+| `brandOS-tokens.css`     | **Generated** from `tokens.json` — never hand-edit                |
+| `scripts/build-tokens.js`| Generator: `tokens.json` → `brandOS-tokens.css`                   |
 | `brandOS-components.css` | All component styles, layout, navigation, responsive breakpoints  |
 | `index.html`           | Pure HTML — named index.html for GitHub Pages (required by web servers) |
 | `brandOS-content.md`           | Content source of truth — maps 1:1 to HTML sections              |
@@ -29,20 +31,22 @@ InsideBoard AI Brand OS — a living HTML document that serves as the single sou
 
 ### Editing rules
 - **str_replace only** for all modifications. Never rewrite a complete file when a section has changed.
-- **One file per operation.** A content update targets `index.html` only. A token update targets `brandOS-tokens.css` only. A component update targets `brandOS-components.css` only.
+- **One file per operation.** A content update targets `index.html` only. A token update targets `tokens.json` only (then regenerate). A component update targets `brandOS-components.css` only.
+- **Never hand-edit `brandOS-tokens.css`.** It is generated from `tokens.json` by `scripts/build-tokens.js`. Edits will be lost on the next regeneration. To change a token: edit `tokens.json`, then run `node scripts/build-tokens.js`.
 - **Never add `<style>` blocks to `index.html`.** All styles live in the CSS files.
 - **Section markers must be preserved.** Every `<!-- SECTION: id -->` and `<!-- /SECTION: id -->` comment must remain intact after any edit.
 
 ### Reading rules
-- For content updates: read `brandOS-components.css` (class names only) + `brandOS-content.md` (content). Do not read `brandOS-tokens.css`.
-- For token updates: read `brandOS-tokens.css` only.
+- For content updates: read `brandOS-components.css` (class names only) + `brandOS-content.md` (content). Do not read `tokens.json` or `brandOS-tokens.css`.
+- For token updates: read `tokens.json` only.
 - For component updates: read `brandOS-components.css` only.
-- For full regeneration: read all three files.
+- For full regeneration: read `tokens.json`, `brandOS-components.css`, and `brandOS-content.md`.
 
 ### Never do
 - Never rewrite `index.html` in full unless explicitly instructed with the regeneration prompt from `PROCESS.md`.
 - Never add inline styles to `index.html` sections (inline styles already present on specific elements are intentional — do not remove them, but do not add new ones).
-- Never modify `brandOS-tokens.css` or `brandOS-components.css` during a content-only operation.
+- Never modify `tokens.json` or `brandOS-components.css` during a content-only operation.
+- Never hand-edit `brandOS-tokens.css` — it is a generated artifact. Edit `tokens.json` instead, then re-run the generator.
 - **Never write visible text into `index.html` that does not already exist in `brandOS-content.md`.** This includes labels, captions, mode names, demo copy — anything a user reads. If the text doesn't exist in `brandOS-content.md`, add it there first, then derive the HTML from it. No exception.
 
 ### Process is mandatory

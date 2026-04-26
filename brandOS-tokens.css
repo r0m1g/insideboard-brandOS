@@ -1,8 +1,10 @@
 /* ==========================================================================
    INSIDEBOARD AI — BRAND TOKENS
-   Source of truth for all design variables.
-   Edit here to update palette, typography, or spacing globally.
-   Never add component styles here — those live in brand-components.css
+   GENERATED FILE — do not edit by hand.
+   Source:    tokens.json  (W3C Design Tokens Community Group format)
+   Generator: scripts/build-tokens.js
+   To change a value, edit tokens.json and re-run `node scripts/build-tokens.js`.
+   See ADR-002 for the rationale.
    ========================================================================== */
 
 /* --- SELF-HOSTED FONTS --- */
@@ -101,11 +103,25 @@
   --s9: 128px;
 
   /* --- TYPOGRAPHY --- */
-  --sans: "Outfit", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Outfit", "Helvetica Neue", "Arial", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* --- DENSITY --- */
   --density: 1;
+
+  /* --- COMPONENT TOKENS --- */
+  --nav-bg: var(--white);
+  --nav-border: var(--gray-200);
+  --nav-accent: var(--ember);
+  --hero-accent: var(--ember);
+  --hero-lede: var(--gray-600);
+  --hero-border: var(--gray-200);
+  --chapter-accent: var(--ember);
+  --chapter-principle: var(--gray-600);
+  --callout-border: var(--gray-300);
+  --callout-border-warn: var(--ember);
+  --formula-bg: var(--ink);
+  --formula-text: var(--text-primary-inverse);
 }
 
 [data-density="comfortable"] { --density: 1.15; }

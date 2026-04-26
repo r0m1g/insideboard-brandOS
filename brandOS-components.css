@@ -958,6 +958,31 @@ body.sys {
 .space-meta { font: 400 12px/1 var(--mono); color: var(--gray-600); }
 .space-meta b { color: var(--ink); }
 
+/* Semantic + component token alias rows */
+.alias-list { display: flex; flex-direction: column; }
+.alias-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+.alias-row:last-child { border-bottom: none; }
+.alias-chip {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid rgba(27,23,18,.08);
+  flex-shrink: 0;
+}
+.alias-name { font: 500 12px/1 var(--mono); color: var(--ink); width: 196px; flex-shrink: 0; }
+.alias-ref  { font: 400 11px/1 var(--mono); color: var(--gray-500); flex: 1; }
+.alias-val  { font: 400 11px/1 var(--mono); color: var(--gray-400); }
+
+/* Component token sub-groups within an alias section */
+.alias-group + .alias-group { margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--gray-50); }
+.alias-group-label { font: 500 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--gray-400); margin: 0 0 var(--s2); }
+
 @media(max-width:720px) {
   .swatch-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
   .sys-main { padding: var(--s5) var(--s3) var(--s7); }

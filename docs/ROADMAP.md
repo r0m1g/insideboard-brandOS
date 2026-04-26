@@ -3,7 +3,7 @@
 > Single-page status of where we are and where we're going.
 > Updated whenever a phase changes state. Authoritative source for "what's next."
 
-**Last updated:** 2026-04-25
+**Last updated:** 2026-04-26
 
 ---
 
@@ -44,9 +44,9 @@ Move `brandOS-tokens.css` source-of-truth from hand-maintained CSS variables to 
 
 | Step | Status | Description |
 |---|---|---|
-| 1B.1 | `○` | Author `tokens.json` mirroring current CSS variables |
-| 1B.2 | `○` | Build minimal Node generator (`tokens.json` → `brandOS-tokens.css`) |
-| 1B.3 | `○` | Document tokens in `system/foundations.html` |
+| 1B.1 | `✓` | Author `tokens.json` mirroring current CSS variables |
+| 1B.2 | `✓` | Build minimal Node generator (`tokens.json` → `brandOS-tokens.css`) |
+| 1B.3 | `✓` | Document tokens in `system/foundations.html` |
 
 **Decisions covering this phase:** ADR-002
 
@@ -56,9 +56,9 @@ Restructure tokens into Primitives → Semantic → Component layers. Refactor i
 
 | Step | Status | Description |
 |---|---|---|
-| 1C.1 | `○` | Define primitive layer (raw values) |
-| 1C.2 | `○` | Define semantic layer (intent-based, references primitives) |
-| 1C.3 | `○` | Define component-scoped tokens for major components |
+| 1C.1 | `✓` | Define primitive layer (raw values) |
+| 1C.2 | `✓` | Define semantic layer (intent-based, references primitives) |
+| 1C.3 | `✓` | Define component-scoped tokens for major components |
 
 ### Phase 2 · Figma sync
 
@@ -83,5 +83,9 @@ Bidirectional sync between Figma Variables and `tokens.json` via Tokens Studio p
 
 ## Recent changes
 
+- **2026-04-26** — Phase 1C complete. tokens.json restructured to 3-tier (primitive/semantic/component). Generator updated. 65 tokens (43 primitive, 10 semantic, 12 component). 12 new component CSS vars emitted (--nav-*, --hero-*, --chapter-*, --callout-*, --formula-*). All existing vars unchanged — no visual regression. Next: Phase 2 (Figma sync).
+- **2026-04-26** — Phase 1B complete. `system/foundations.html` documenting semantic tokens (alias rows) + density section + W3C source note in header. New CSS: `.alias-list / .alias-row / .alias-chip / .alias-name / .alias-ref / .alias-val`.
+- **2026-04-26** — Phase 1B.2 complete. `scripts/build-tokens.js` generates `brandOS-tokens.css` from `tokens.json`. Diff vs hand-written original: banner replaced + cosmetic font quoting; all 51 CSS variables resolve to identical values, density variants verified, no visual change. `brandOS-tokens.css` is now generated — edit `tokens.json` and re-run. Next: 1B.3 documentation.
+- **2026-04-26** — Phase 1B.1 complete. `tokens.json` authored at root (W3C Design Tokens format), 51/51 CSS variables mirrored.
 - **2026-04-26** — Phase 1A complete. `system/` scaffold live. Lab files archived. Update type 6 added to `PROCESS.md`.
 - **2026-04-25** — Phase 1A.0 completed (nav/layer-intro/animations port). ADR-001 to ADR-004 backfilled. Documentation structure (`docs/`) established.

@@ -23,7 +23,7 @@
 
     <header class="sys-header">
       <h1>Foundations</h1>
-      <p>Design tokens — palette, typography, spacing. The raw values everything else is built from.</p>
+      <p>Design tokens — palette, typography, spacing. The raw values everything else is built from. Source: <code style="font-family:var(--mono);font-size:12px;color:var(--fn-steel)">tokens.json</code> (W3C Design Tokens format), generated to CSS by <code style="font-family:var(--mono);font-size:12px;color:var(--fn-steel)">scripts/build-tokens.js</code>.</p>
     </header>
 
     <!-- PRIMARY PALETTE -->
@@ -214,6 +214,55 @@
       </div>
     </section>
 
+    <!-- SEMANTIC TOKENS -->
+    <section class="sys-section">
+      <p class="sys-section-title">Semantic tokens</p>
+      <div class="alias-list">
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--bg-canvas)"></div>
+          <span class="alias-name">--bg-canvas</span>
+          <span class="alias-ref">→ var(--ivory)</span>
+          <span class="alias-val">#FAFAF9</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--bg-paper)"></div>
+          <span class="alias-name">--bg-paper</span>
+          <span class="alias-ref">→ var(--white)</span>
+          <span class="alias-val">#FFFFFF</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--bg-surface)"></div>
+          <span class="alias-name">--bg-surface</span>
+          <span class="alias-ref">→ var(--stone)</span>
+          <span class="alias-val">#EAE6DF</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--text-primary)"></div>
+          <span class="alias-name">--text-primary</span>
+          <span class="alias-ref">→ var(--ink)</span>
+          <span class="alias-val">#1B1712</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--text-primary-inverse)"></div>
+          <span class="alias-name">--text-primary-inverse</span>
+          <span class="alias-ref">→ var(--ivory)</span>
+          <span class="alias-val">#FAFAF9</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--text-muted)"></div>
+          <span class="alias-name">--text-muted</span>
+          <span class="alias-ref">→ rgba(250, 250, 249, 0.55)</span>
+          <span class="alias-val">ivory · 55%</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--text-on-color)"></div>
+          <span class="alias-name">--text-on-color</span>
+          <span class="alias-ref">→ var(--ivory)</span>
+          <span class="alias-val">#FAFAF9</span>
+        </div>
+      </div>
+    </section>
+
     <!-- TYPOGRAPHY -->
     <section class="sys-section">
       <p class="sys-section-title">Typography</p>
@@ -280,6 +329,136 @@
           <span class="space-meta"><b>--s9</b> · 128px</span>
         </div>
       </div>
+    </section>
+
+    <!-- DENSITY -->
+    <section class="sys-section">
+      <p class="sys-section-title">Density</p>
+      <div class="alias-list">
+        <div class="alias-row">
+          <span class="alias-name">--density</span>
+          <span class="alias-ref">:root (default)</span>
+          <span class="alias-val">1</span>
+        </div>
+        <div class="alias-row">
+          <span class="alias-name">--density</span>
+          <span class="alias-ref">[data-density="comfortable"]</span>
+          <span class="alias-val">1.15</span>
+        </div>
+        <div class="alias-row">
+          <span class="alias-name">--density</span>
+          <span class="alias-ref">[data-density="compact"]</span>
+          <span class="alias-val">0.85</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT TOKENS -->
+    <section class="sys-section">
+      <p class="sys-section-title">Component tokens</p>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Nav</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--nav-bg)"></div>
+            <span class="alias-name">--nav-bg</span>
+            <span class="alias-ref">→ var(--white)</span>
+            <span class="alias-val">#FFFFFF</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--nav-border)"></div>
+            <span class="alias-name">--nav-border</span>
+            <span class="alias-ref">→ var(--gray-200)</span>
+            <span class="alias-val">#DDD4C4</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--nav-accent)"></div>
+            <span class="alias-name">--nav-accent</span>
+            <span class="alias-ref">→ var(--ember)</span>
+            <span class="alias-val">#EE2E20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Hero</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--hero-accent)"></div>
+            <span class="alias-name">--hero-accent</span>
+            <span class="alias-ref">→ var(--ember)</span>
+            <span class="alias-val">#EE2E20</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--hero-lede)"></div>
+            <span class="alias-name">--hero-lede</span>
+            <span class="alias-ref">→ var(--gray-600)</span>
+            <span class="alias-val">#6F6656</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--hero-border)"></div>
+            <span class="alias-name">--hero-border</span>
+            <span class="alias-ref">→ var(--gray-200)</span>
+            <span class="alias-val">#DDD4C4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Chapter</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--chapter-accent)"></div>
+            <span class="alias-name">--chapter-accent</span>
+            <span class="alias-ref">→ var(--ember)</span>
+            <span class="alias-val">#EE2E20</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--chapter-principle)"></div>
+            <span class="alias-name">--chapter-principle</span>
+            <span class="alias-ref">→ var(--gray-600)</span>
+            <span class="alias-val">#6F6656</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Callout</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--callout-border)"></div>
+            <span class="alias-name">--callout-border</span>
+            <span class="alias-ref">→ var(--gray-300)</span>
+            <span class="alias-val">#C9BEAB</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--callout-border-warn)"></div>
+            <span class="alias-name">--callout-border-warn</span>
+            <span class="alias-ref">→ var(--ember)</span>
+            <span class="alias-val">#EE2E20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Formula</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--formula-bg)"></div>
+            <span class="alias-name">--formula-bg</span>
+            <span class="alias-ref">→ var(--ink)</span>
+            <span class="alias-val">#1B1712</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--formula-text)"></div>
+            <span class="alias-name">--formula-text</span>
+            <span class="alias-ref">→ var(--text-primary-inverse)</span>
+            <span class="alias-val">#FAFAF9</span>
+          </div>
+        </div>
+      </div>
+
     </section>
 
   </main>

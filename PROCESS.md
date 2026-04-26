@@ -4,10 +4,13 @@
 
 ```
 insideboard-brandOS/          ← project root
-├── brandOS-tokens.css        # CSS variables, palette, typography, spacing tokens
+├── tokens.json               # Design tokens — source of truth (W3C format)
+├── brandOS-tokens.css        # GENERATED from tokens.json — do not hand-edit
 ├── brandOS-components.css    # All component styles, layout, navigation, responsive rules
-├── index.html              # Pure HTML structure — named index.html for GitHub Pages
+├── index.html                # Pure HTML structure — named index.html for GitHub Pages
 ├── brandOS-content.md        # Content source of truth — update this, not the HTML
+├── scripts/
+│   └── build-tokens.js       # Generator: tokens.json → brandOS-tokens.css
 ├── PROCESS.md                # This file — architecture and update process
 └── CLAUDE.md                 # Permanent context file — auto-read by Claude Code on session start
 ```
@@ -16,17 +19,25 @@ insideboard-brandOS/          ← project root
 
 ## Role of each file
 
-### `brandOS-tokens.css`
-CSS variables only: primary palette, warm gray scale, IRON agent colors, functional palette, semantic tokens, spacing scale, typography stacks, density variants, base reset.
+### `tokens.json`
+Design tokens in W3C Design Tokens Community Group format — source of truth for the palette, gray scale, IRON agent colors, functional palette, semantic aliases, spacing scale, typography stacks, and density multipliers.
 
-**Edit when:** A color value changes, a new token is added, a spacing unit is adjusted.
-**Never edit to:** Add component styles, layout rules, or anything that isn't a pure variable or base reset.
+**Edit when:** A color value changes, a new token is added, a spacing unit is adjusted, a font stack changes.
+**After editing:** run `node scripts/build-tokens.js` to regenerate `brandOS-tokens.css`.
+
+### `brandOS-tokens.css`
+**Generated** from `tokens.json` by `scripts/build-tokens.js`. Contains the `:root` CSS variable block, density variant selectors, and the `@font-face` + base reset header.
+
+**Never edit by hand.** Hand-edits will be lost on the next regeneration. To change a token, edit `tokens.json`. To change a font roster, edit the `HEADER` constant in `scripts/build-tokens.js`.
+
+### `scripts/build-tokens.js`
+Minimal Node generator. Reads `tokens.json`, walks the leaf tokens, resolves W3C aliases (`{color.ivory}` → `var(--ivory)`), and writes `brandOS-tokens.css`. Run with `node scripts/build-tokens.js`. No dependencies, no build system.
 
 ### `brandOS-components.css`
 All component styles: layout shell, nav, hero, chapter, rules, callouts, formulas, audience cards, type specimens, swatches, color bars, register switcher, tweaks panel, mobile nav, all responsive breakpoints.
 
 **Edit when:** A component's visual behavior changes, a new component is added, a responsive rule is updated.
-**Never edit to:** Define token values (those live in brandOS-tokens.css).
+**Never edit to:** Define token values (those live in tokens.json).
 
 ### `index.html`
 Pure HTML structure. Links to `brandOS-tokens.css` and `brandOS-components.css`. Contains inline JS (40 lines — register switcher, density tweaks, nav active state, mobile toggle). Each section is delimited by `<!-- SECTION: id -->` and `<!-- /SECTION: id -->` markers.
@@ -64,14 +75,22 @@ Do not touch any other section. Do not rewrite the file. Use str_replace only.
 ---
 
 ### Update type 2 — Visual token change
-A color value, spacing unit, or font token has changed.
+A color value, spacing unit, font stack, or density multiplier has changed.
+
+`brandOS-tokens.css` is a **generated** file. Never edit it directly. Edit `tokens.json` (the W3C Design Tokens source of truth), then re-run the generator.
 
 **Prompt to use in Claude Code:**
 ```
-Open brandOS-tokens.css.
-Update [TOKEN NAME] from [OLD VALUE] to [NEW VALUE].
-Use str_replace. Do not touch brandOS-components.css or index.html.
+Open tokens.json.
+Update [TOKEN PATH — e.g. color.ember, spacing.s4, density.comfortable] from [OLD VALUE] to [NEW VALUE].
+Use str_replace. Do not touch brandOS-components.css, index.html, or brandOS-tokens.css.
+After the edit, run: node scripts/build-tokens.js
 ```
+
+**Notes:**
+- Aliases use W3C reference syntax: `"$value": "{color.ivory}"` — leaf-name only matters; the generator emits `var(--ivory)`.
+- Adding a new token: add a new leaf under the correct group in `tokens.json` with `$type` and `$value`. Then re-run the generator. The leaf key becomes the CSS variable name (`--<leafkey>`).
+- The generator preserves `@font-face` and the base reset — those are not tokens. To change a font roster, edit the `HEADER` constant in `scripts/build-tokens.js`.
 
 ---
 
@@ -123,7 +142,7 @@ This step is not optional. Never close a structural operation with the Section I
 
 **Prompt to use in Claude Code:**
 ```
-Read brandOS-tokens.css and brandOS-components.css in full — these define all available classes and variables.
+Read tokens.json and brandOS-components.css in full — these define all available variables and classes.
 Read brandOS-content.md in full — this is the content source.
 Regenerate index.html following exactly the structure of the current index.html:
 - Link to brandOS-tokens.css and brandOS-components.css (no inline styles)
@@ -164,11 +183,12 @@ Use str_replace only. Do not touch index.html or brandOS-content.md.
 ## Rules for Claude Code (non-negotiable)
 
 1. **str_replace only for targeted updates** — never rewrite an entire file when only a section has changed.
-2. **One file per operation** — a content update touches `index.html` only. A token update touches `brandOS-tokens.css` only.
-3. **Never add `<style>` blocks to `index.html`** — all styles live in the CSS files.
-4. **Never read `brandOS-tokens.css` for content updates** — only `brandOS-components.css` (for class names) and `brandOS-content.md` (for content).
-5. **Section markers are stable** — `<!-- SECTION: id -->` and `<!-- /SECTION: id -->` must be preserved in all operations.
-6. **Content-first, no exception** — Before writing any visible text into `index.html` (labels, captions, mode names, demo copy — anything a user reads), verify it exists verbatim in `brandOS-content.md`. If it doesn't, add it there first, then derive the HTML from it. Never originate content directly in the HTML.
+2. **One file per operation** — a content update touches `index.html` only. A token update touches `tokens.json` only (then re-run the generator). A component update touches `brandOS-components.css` only.
+3. **Never hand-edit `brandOS-tokens.css`** — it is generated from `tokens.json`. Edits will be silently overwritten on the next regeneration.
+4. **Never add `<style>` blocks to `index.html`** — all styles live in the CSS files.
+5. **Never read `tokens.json` or `brandOS-tokens.css` for content updates** — only `brandOS-components.css` (for class names) and `brandOS-content.md` (for content).
+6. **Section markers are stable** — `<!-- SECTION: id -->` and `<!-- /SECTION: id -->` must be preserved in all operations.
+7. **Content-first, no exception** — Before writing any visible text into `index.html` (labels, captions, mode names, demo copy — anything a user reads), verify it exists verbatim in `brandOS-content.md`. If it doesn't, add it there first, then derive the HTML from it. Never originate content directly in the HTML.
 
 ---
 
