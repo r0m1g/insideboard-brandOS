@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Animation Test — Brand OS</title>
+<link rel="stylesheet" href="brandOS-tokens.css">
+<link rel="stylesheet" href="brandOS-components.css">
+<style>
+/* ─── OPTION A v2 — "Always Present" · version mature ────────────────────
+   Même philosophie : le contenu fait surface, pas apparaître.
+   Blur plus doux, séquence plus lente, davantage de respiration.
+   ──────────────────────────────────────────────────────────────────────── */
+
+/* --- Keyframes --- */
+
+@keyframes surface {
+  from { opacity: 0.15; filter: blur(6px); }
+  to   { opacity: 1;    filter: blur(0px); }
+}
+
+@keyframes nav-arrive {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes dot-ping {
+  0%   { box-shadow: 0 0 0 0px color-mix(in srgb, var(--ember) 55%, transparent); }
+  55%  { box-shadow: 0 0 0 8px color-mix(in srgb, var(--ember) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0px color-mix(in srgb, var(--ember) 0%, transparent); }
+}
+
+/* --- Nav --- */
+
+nav.side {
+  animation: nav-arrive 900ms cubic-bezier(0.2, 0, 0, 1) both;
+  animation-delay: 80ms;
+}
+
+/* --- Hero — surface lente, séquentielle --- */
+
+.hero .eyebrow {
+  animation: surface 900ms cubic-bezier(0.2, 0, 0, 1) both;
+  animation-delay: 0ms;
+}
+
+.hero h1 {
+  animation: surface 1100ms cubic-bezier(0.2, 0, 0, 1) both;
+  animation-delay: 200ms;
+}
+
+.hero .lede {
+  animation: surface 1000ms cubic-bezier(0.2, 0, 0, 1) both;
+  animation-delay: 520ms;
+}
+
+.hero .lbadges {
+  animation: surface 900ms cubic-bezier(0.2, 0, 0, 1) both;
+  animation-delay: 820ms;
+}
+
+.hero .mg {
+  animation: surface 900ms cubic-bezier(0.2, 0, 0, 1) both;
+  animation-delay: 1080ms;
+}
+
+/* --- Dot — ping discret, une seule fois --- */
+
+.hero .eyebrow .dot {
+  animation: dot-ping 1000ms cubic-bezier(0.2, 0, 0, 1) both;
+  animation-delay: 1400ms;
+}
+
+</style>
+</head>
+<body data-register="enterprise" data-density="default">
+<div class="shell">
+
+<button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav class="side" id="navSide">
+  <a href="#" class="brand" style="text-decoration:none;" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><img src="assets/svg/logo-insideboard-brandos.svg" alt="InsideBoard BrandOS" class="nav-logo"></a>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-00">00 · <span class="ngl-name">System Overview</span></a></div>
+  <ol>
+    <li><a href="#s00">The Brand OS</a></li>
+  </ol></div>
+  <div class="ng"><div class="ngl"><a class="ngl-link" href="#layer-01">01 · <span class="ngl-name">Brand Strategy</span></a></div>
+  <ol>
+    <li><a href="#s11">Positioning</a></li>
+    <li><a href="#s12">The Closed Loop</a></li>
+  </ol></div>
+  <div class="meta">Animation Test · feat/animations</div>
+</nav>
+
+<main class="doc">
+
+<header class="hero">
+  <div class="eyebrow"><span class="dot"></span> Brand OS · Animation Test</div>
+  <h1>InsideBoard AI<br>Brand OS.</h1>
+  <p class="lede">A living operating system for the brand — from strategy to automation. The single source of truth for every team that thinks, speaks, or produces in the name of InsideBoard AI.</p>
+  <div class="lbadges">
+    <a href="#s00" class="lb on">00 · System Overview</a>
+    <a href="#s11" class="lb on">01 · Brand Strategy</a>
+    <span class="lb">02 · Verbal Identity</span>
+    <span class="lb wip">03 · Visual Identity</span>
+  </div>
+  <div class="mg" style="margin-top:var(--s6)">
+    <div><b>Posture</b><span><em>Always by your side.</em></span></div>
+    <div><b>Strategic positioning</b><span>Performance Orchestration Platform</span></div>
+    <div><b>Branch</b><span>feat/animations</span></div>
+    <div><b>Version</b><span>1.0 · Internal · Q2 2026</span></div>
+  </div>
+</header>
+
+<div class="ldiv lintro" id="layer-00"><div class="ldn">00 · System Overview</div><p class="ldd">Governance layer. Defines who can read, modify, and validate this document, how it is structured, and its current validation status.</p></div>
+
+<section class="chapter" id="s00">
+  <div class="ch"><div class="cn">0·1</div><div>
+    <h2>The Brand OS</h2>
+    <p class="pr">The InsideBoard AI Brand OS is the <em>single source of truth</em> for how the brand thinks, speaks, looks, and operates. It is not a static style guide — it is a living operating system that governs every brand expression, from a sales deck to an event keynote, from product micro-copy to a partner proposal.</p>
+  </div></div>
+  <div class="cb">
+    <h3 class="sub">Access &amp; Usage</h3>
+    <div class="dtbl">
+      <div class="drow hd"><div class="dc">Audience</div><div class="dc">Access</div><div class="dc">Purpose</div></div>
+      <div class="drow"><div class="dc">Co-founders (Michael, Yohan)</div><div class="dc">Full read + validation</div><div class="dc">Strategic alignment and final approval</div></div>
+      <div class="drow"><div class="dc">Art Director</div><div class="dc">Full read + edit</div><div class="dc">Creation, maintenance, enforcement</div></div>
+      <div class="drow"><div class="dc">Internal teams (Sales, CSM, Delivery)</div><div class="dc">Read · templates only</div><div class="dc">Produce brand-compliant content autonomously</div></div>
+      <div class="drow"><div class="dc">External partners / agencies</div><div class="dc">Restricted · on request</div><div class="dc">Apply brand within defined scope</div></div>
+    </div>
+
+    <h3 class="sub">Document Map</h3>
+    <div class="vtbl">
+      <div class="vrow hd"><div class="vc">Layer</div><div class="vc">Title</div><div class="vc">Status</div></div>
+      <div class="vrow"><div class="vc">00</div><div class="vc">System Overview</div><div class="vc"><span style="color:var(--ember)">✦ Validated</span></div></div>
+      <div class="vrow"><div class="vc">01</div><div class="vc">Brand Strategy</div><div class="vc"><span style="color:var(--ember)">✦ Validated</span></div></div>
+      <div class="vrow"><div class="vc">02</div><div class="vc">Verbal Identity</div><div class="vc"><span style="color:var(--ember)">✦ Validated</span></div></div>
+      <div class="vrow"><div class="vc">03</div><div class="vc">Visual Identity</div><div class="vc"><span style="color:var(--gray-500)">◑ In progress</span></div></div>
+      <div class="vrow"><div class="vc">04</div><div class="vc">Brand Experience Map</div><div class="vc"><span style="color:var(--ember)">✦ Validated</span></div></div>
+    </div>
+
+    <h3 class="sub">Ownership</h3>
+    <div class="callout"><b>Ownership</b>This document is owned and maintained by the Art Director. Any structural modification requires co-founder approval.</div>
+    <div class="callout"><b>Versioning</b>Version 1.0 — Q2 2026. Each validated update increments the version number and logs the change below.</div>
+  </div>
+</section>
+
+<div class="ldiv lintro" id="layer-01"><div class="ldn">01 · Brand Strategy</div><p class="ldd">The strategic foundation. Positioning, Closed Loop, Success Formula, audiences, application territories, IRON, and trust architecture. Everything that makes the brand promise defensible.</p></div>
+
+<section class="chapter" id="s11">
+  <div class="ch"><div class="cn">1·1</div><div>
+    <h2>Positioning</h2>
+    <p class="pr">InsideBoard AI is the <em>performance layer</em> that sits on top of the client's existing ecosystem. It addresses what nobody else covers: what happens between tool deployment and actual team performance.</p>
+  </div></div>
+  <div class="cb">
+    <h3 class="sub">Strategic definition</h3>
+    <ul class="rules">
+      <li class="note"><b>Internal</b>Performance Orchestration Platform.</li>
+      <li class="note"><b>Tagline</b>Always by your side.</li>
+      <li class="note"><b>Promise (EN)</b>Your team's success isn't a matter of luck. We orchestrate it by your side, day after day.</li>
+      <li class="dont"><b>Former</b>"Activate your success" — phased out. Must not appear in any new material.</li>
+    </ul>
+    <div class="callout warn"><b>What InsideBoard is not</b>An LMS, an IT tool, a digitized consulting firm, an additional reporting layer, or a CRM add-on.</div>
+    <h3 class="sub">Client trajectory</h3>
+    <div class="fd"><div class="flab">Maturity path</div><div class="ftxt">Onboarding → Adoption → Business Performance → Operational Excellence</div></div>
+  </div>
+</section>
+
+<section class="chapter" id="s12">
+  <div class="ch"><div class="cn">1·2</div><div>
+    <h2>The Closed Loop</h2>
+    <p class="pr">InsideBoard AI operates as a <em>closed loop</em> between data, intelligence, and action — continuously improving team performance without requiring manual intervention.</p>
+  </div></div>
+  <div class="cb">
+    <div class="callout"><b>The loop</b>Signal → Diagnosis → Action → Measurement → Signal. The loop never stops. Neither does the platform.</div>
+    <div class="fd"><div class="flab">Core mechanism</div><div class="ftxt">Detect → Diagnose → Act → Measure → Detect again</div></div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<script>
+/* Option C — progresseur de lecture */
+(function(){
+  const bar=document.createElement('div');
+  bar.id='read-progress';
+  document.body.appendChild(bar);
+  function updateProgress(){
+    const doc=document.documentElement;
+    const progress=doc.scrollTop/(doc.scrollHeight-doc.clientHeight)||0;
+    bar.style.height=(progress*100)+'%';
+  }
+  window.addEventListener('scroll',updateProgress,{passive:true});
+})();
+
+/* Verbatim from index.html — do not modify */
+(function(){
+  const tw=document.getElementById('tweaks');
+  window.addEventListener('message',e=>{const d=e.data||{};if(d.type==='__activate_edit_mode'&&tw)tw.classList.add('visible');if(d.type==='__deactivate_edit_mode'&&tw)tw.classList.remove('visible');});
+  try{window.parent.postMessage({type:'__edit_mode_available'},'*');}catch(_){}
+})();
+const rc={
+  enterprise:{eyebrow:'01 · Enterprise · RFP, commercial docs, LinkedIn',title:'A quiet operating system for customer-facing AI.',body:'Four agents. One formula. A posture that holds across enterprise rollout, partner onboarding, and keynote stage. The register changes — the identity does not.',foot:'Canvas · Ivory / Ink · no Ember'},
+  event:{eyebrow:'02 · Event · Keynote, launch, trade show',title:'Always <em>by your side</em>.',body:'Event register takes the stage. Ink background, Ivory voice, one Ember signal. The Formula carries, and the butterfly signature closes the gesture.',foot:'Deep · Ink / Ivory · Ember authorized'},
+  product:{eyebrow:'03 · Product · UI, documentation, embedded surfaces',title:'Four agents. One interface.',body:'Product register is the mechanics register. White canvas, Ink text, IRON functional colors differentiate states and objects. No Ember — product surfaces do not shout.',foot:'Paper · White / Ink · functional accents'},
+  partner:{eyebrow:'04 · Partner · Co-branded material, integrations',title:'Built alongside, not on top of, our partners.',body:'Partner register is warm, open, peer-to-peer. Stone grounds the canvas. A partner accent color anchors the composition. The mark stays in identity mode — never dominant, always present.',foot:'Surface · Stone / Ink · partner accent'},
+  impact:{eyebrow:'05 · Impact · Event signal · single high-stakes moment',title:'The number that changes the conversation.',body:'Ember as background is a decision, not a default. One composition per event context — reserved for the stat, the CTA, the moment the brand chooses to speak loudest. Never in Enterprise or Product.',foot:'Ember / Ivory · Event register only · one per composition'}
+};
+function applyReg(r){
+  document.body.setAttribute('data-register',r);
+  const c=rc[r];
+  document.getElementById('rEyebrow').textContent=c.eyebrow;
+  document.getElementById('rTitle').innerHTML=c.title;
+  document.getElementById('rBody').textContent=c.body;
+  document.getElementById('rFoot').textContent=c.foot;
+  document.querySelectorAll('#registerSwitcher button').forEach(b=>b.classList.toggle('active',b.dataset.r===r));
+  document.querySelectorAll('[data-tweak="register"] button').forEach(b=>b.classList.toggle('on',b.dataset.v===r));
+}
+document.querySelectorAll('#registerSwitcher button').forEach(b=>b.addEventListener('click',()=>applyReg(b.dataset.r)));
+document.querySelectorAll('[data-tweak="register"] button').forEach(b=>b.addEventListener('click',()=>applyReg(b.dataset.v)));
+document.querySelectorAll('[data-tweak="density"] button').forEach(b=>b.addEventListener('click',()=>{document.body.setAttribute('data-density',b.dataset.v);document.querySelectorAll('[data-tweak="density"] button').forEach(x=>x.classList.toggle('on',x===b));}));
+const navs=[...document.querySelectorAll('nav.side ol a')];
+const nglLinks=[...document.querySelectorAll('nav.side .ngl-link')];
+const allAnchors=[
+  ...[...document.querySelectorAll('.ldiv[id]')].map(el=>({el,type:'layer'})),
+  ...[...document.querySelectorAll('section.chapter[id]')].map(el=>({el,type:'section'}))
+].sort((a,b)=>a.el.offsetTop-b.el.offsetTop);
+function updateNav(){
+  const threshold=window.innerHeight*0.4;
+  let active=null;
+  for(const item of allAnchors){if(item.el.getBoundingClientRect().top<=threshold)active=item;}
+  if(!active)return;
+  if(active.type==='section'){
+    const idx=allAnchors.indexOf(active);
+    for(let i=idx-1;i>=0;i--){
+      if(allAnchors[i].type==='layer'){
+        if(allAnchors[i].el.getBoundingClientRect().bottom>0)active=allAnchors[i];
+        break;
+      }
+    }
+  }
+  nglLinks.forEach(a=>a.classList.remove('active'));
+  navs.forEach(a=>a.classList.remove('active'));
+  if(active.type==='layer'){
+    const lk=nglLinks.find(a=>a.getAttribute('href')==='#'+active.el.id);
+    if(lk)lk.classList.add('active');
+  }else{
+    const lk=navs.find(a=>a.getAttribute('href')==='#'+active.el.id);
+    if(lk)lk.classList.add('active');
+  }
+}
+window.addEventListener('scroll',updateNav,{passive:true});
+updateNav();
+
+/* Mobile nav toggle */
+const navToggle=document.getElementById('navToggle');
+const navSide=document.getElementById('navSide');
+const navOverlay=document.getElementById('navOverlay');
+function openNav(){navSide.classList.add('open');navOverlay.classList.add('visible');navToggle.classList.add('open');document.body.style.overflow='hidden';}
+function closeNav(){navSide.classList.remove('open');navOverlay.classList.remove('visible');navToggle.classList.remove('open');document.body.style.overflow='';}
+navToggle.addEventListener('click',()=>navSide.classList.contains('open')?closeNav():openNav());
+navOverlay.addEventListener('click',closeNav);
+document.querySelectorAll('nav.side ol a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=960)closeNav();}));
+</script>
+</body>
+</html>

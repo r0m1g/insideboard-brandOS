@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Components — InsideBoard Design System</title>
+  <link rel="stylesheet" href="../brandOS-tokens.css">
+  <link rel="stylesheet" href="../brandOS-components.css">
+</head>
+<body class="sys">
+
+  <nav class="sys-nav">
+    <a href="../index.html" class="sys-home">← BrandOS</a>
+    <div class="sys-links">
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" aria-current="page">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="assets.html">Assets</a>
+      <a href="docs.html">Docs</a>
+    </div>
+  </nav>
+
+  <main class="sys-main">
+
+    <header class="sys-header">
+      <h1>Components</h1>
+      <p>Live component prototypes using real CSS from brandOS-components.css. All content is fake.</p>
+    </header>
+
+    <!-- LAYER INTRO -->
+    <section class="sys-section">
+      <p class="sys-section-title">Layer intro · .layer-intro</p>
+      <div class="spec-card">
+        <p class="spec-label">Default</p>
+      </div>
+      <div style="background:var(--ivory);border-radius:4px;overflow:hidden;padding:0 var(--s5)">
+        <div class="layer-intro" style="position:relative;opacity:1;transform:none;margin-top:0">
+          <span class="li-label">Layer 01</span>
+          <h2 class="li-name">Strategic<br>Foundation</h2>
+          <p class="li-desc">Why we exist, who we serve, and what makes us different.</p>
+          <div class="li-ghost" aria-hidden="true">Strategic<br>Foundation</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER -->
+    <section class="sys-section">
+      <p class="sys-section-title">Chapter · .chapter</p>
+      <div class="spec-card">
+        <p class="spec-label">Standard section</p>
+      </div>
+      <div style="background:var(--ivory);border-radius:4px;padding:var(--s5)">
+        <section class="chapter ch-reveal revealed" style="max-width:720px">
+          <div class="ch">
+            <div class="cn">1·1</div>
+            <div>
+              <h2>Positioning</h2>
+              <p class="pr">InsideBoard augments human managers with AI agents that <em>act, not just advise</em>.</p>
+            </div>
+          </div>
+          <div class="cb">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- CALLOUT -->
+    <section class="sys-section">
+      <p class="sys-section-title">Callout · .callout</p>
+      <div style="padding:var(--s5);background:var(--ivory);border-radius:4px;display:flex;flex-direction:column;gap:var(--s3)">
+        <div class="callout">
+          <strong>Default callout.</strong> Use for important context that doesn't fit in the flow. Keep it short — one or two sentences maximum.
+        </div>
+        <div class="callout warn">
+          <strong>Warning variant.</strong> Use when the reader might make a common mistake. Rare — not every section needs one.
+        </div>
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section class="sys-section">
+      <p class="sys-section-title">Rules list · ul.rules</p>
+      <div style="padding:var(--s5);background:var(--ivory);border-radius:4px">
+        <ul class="rules">
+          <li class="do">Write from the manager's perspective, not the platform's.</li>
+          <li class="do">Use specific, observable language — avoid vague claims.</li>
+          <li class="dont">Use jargon that non-technical managers won't recognize.</li>
+          <li class="dont">Treat AI as the subject — managers are the subject.</li>
+          <li class="note">When in doubt, cut. The brand speaks with compression, not volume.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CAP TAG -->
+    <section class="sys-section">
+      <p class="sys-section-title">Cap tag · .cap-tag</p>
+      <div style="padding:var(--s4);background:var(--ivory);border-radius:4px;display:flex;gap:var(--s2);flex-wrap:wrap;align-items:center">
+        <span class="cap-tag">Strategic</span>
+        <span class="cap-tag">Positioning</span>
+        <span class="cap-tag">Layer 01</span>
+        <span class="cap-tag">Brand system</span>
+      </div>
+    </section>
+
+    <!-- FORMULA DARK -->
+    <section class="sys-section">
+      <p class="sys-section-title">Formula dark · .fd</p>
+      <div class="fd">
+        <span>Human judgment</span>
+        <span>+</span>
+        <span>AI velocity</span>
+        <span>=</span>
+        <span>Augmented performance</span>
+      </div>
+    </section>
+
+    <!-- POSTURE CARD -->
+    <section class="sys-section">
+      <p class="sys-section-title">Posture card · .pc</p>
+      <div class="pc">
+        <div class="pct">The system that makes managers better.</div>
+        <div class="pcb">Long form: InsideBoard gives managers an AI that acts — not one that just recommends. The platform handles the execution so managers can focus on the decisions that actually matter.</div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

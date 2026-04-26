@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Foundations — InsideBoard Design System</title>
+  <link rel="stylesheet" href="../brandOS-tokens.css">
+  <link rel="stylesheet" href="../brandOS-components.css">
+</head>
+<body class="sys">
+
+  <nav class="sys-nav">
+    <a href="../index.html" class="sys-home">← BrandOS</a>
+    <div class="sys-links">
+      <a href="foundations.html" aria-current="page">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="assets.html">Assets</a>
+      <a href="docs.html">Docs</a>
+    </div>
+  </nav>
+
+  <main class="sys-main">
+
+    <header class="sys-header">
+      <h1>Foundations</h1>
+      <p>Design tokens — palette, typography, spacing. The raw values everything else is built from. Source: <code style="font-family:var(--mono);font-size:12px;color:var(--fn-steel)">tokens.json</code> (W3C Design Tokens format), generated to CSS by <code style="font-family:var(--mono);font-size:12px;color:var(--fn-steel)">scripts/build-tokens.js</code>.</p>
+    </header>
+
+    <!-- PRIMARY PALETTE -->
+    <section class="sys-section">
+      <p class="sys-section-title">Primary palette</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--ink)"></div>
+          <span class="swatch-name">--ink</span>
+          <span class="swatch-value">#1B1712</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--ivory)"></div>
+          <span class="swatch-name">--ivory</span>
+          <span class="swatch-value">#FAFAF9</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--white)"></div>
+          <span class="swatch-name">--white</span>
+          <span class="swatch-value">#FFFFFF</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-50)"></div>
+          <span class="swatch-name">--gray-50</span>
+          <span class="swatch-value">#F4EFE6</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--stone)"></div>
+          <span class="swatch-name">--stone</span>
+          <span class="swatch-value">#EAE6DF</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--ember)"></div>
+          <span class="swatch-name">--ember</span>
+          <span class="swatch-value">#EE2E20</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WARM GRAY SCALE -->
+    <section class="sys-section">
+      <p class="sys-section-title">Warm gray scale</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-100)"></div>
+          <span class="swatch-name">--gray-100</span>
+          <span class="swatch-value">#EAE3D6</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-200)"></div>
+          <span class="swatch-name">--gray-200</span>
+          <span class="swatch-value">#DDD4C4</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-300)"></div>
+          <span class="swatch-name">--gray-300</span>
+          <span class="swatch-value">#C9BEAB</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-400)"></div>
+          <span class="swatch-name">--gray-400</span>
+          <span class="swatch-value">#AFA38E</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-500)"></div>
+          <span class="swatch-name">--gray-500</span>
+          <span class="swatch-value">#8F8472</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-600)"></div>
+          <span class="swatch-name">--gray-600</span>
+          <span class="swatch-value">#6F6656</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-700)"></div>
+          <span class="swatch-name">--gray-700</span>
+          <span class="swatch-value">#4F483C</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-800)"></div>
+          <span class="swatch-name">--gray-800</span>
+          <span class="swatch-value">#332E26</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-900)"></div>
+          <span class="swatch-name">--gray-900</span>
+          <span class="swatch-value">#1B1712</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--gray-950)"></div>
+          <span class="swatch-name">--gray-950</span>
+          <span class="swatch-value">#0D0B08</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCTIONAL PALETTE -->
+    <section class="sys-section">
+      <p class="sys-section-title">Functional palette</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-steel)"></div>
+          <span class="swatch-name">--fn-steel</span>
+          <span class="swatch-value">#4A7FBF</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-slate)"></div>
+          <span class="swatch-name">--fn-slate</span>
+          <span class="swatch-value">#4A5F8A</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-teal)"></div>
+          <span class="swatch-name">--fn-teal</span>
+          <span class="swatch-value">#2E7A82</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-pine)"></div>
+          <span class="swatch-name">--fn-pine</span>
+          <span class="swatch-value">#3D7A62</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-moss)"></div>
+          <span class="swatch-name">--fn-moss</span>
+          <span class="swatch-value">#6B8F5A</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-amber)"></div>
+          <span class="swatch-name">--fn-amber</span>
+          <span class="swatch-value">#C8882A</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-ochre)"></div>
+          <span class="swatch-name">--fn-ochre</span>
+          <span class="swatch-value">#B8963E</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-brick)"></div>
+          <span class="swatch-name">--fn-brick</span>
+          <span class="swatch-value">#D4725A</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-red)"></div>
+          <span class="swatch-name">--fn-red</span>
+          <span class="swatch-value">#C94040</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-plum)"></div>
+          <span class="swatch-name">--fn-plum</span>
+          <span class="swatch-value">#7A5A8F</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-mauve)"></div>
+          <span class="swatch-name">--fn-mauve</span>
+          <span class="swatch-value">#9E6B82</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-brown)"></div>
+          <span class="swatch-name">--fn-brown</span>
+          <span class="swatch-value">#7A4F35</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- IRON AGENTS -->
+    <section class="sys-section">
+      <p class="sys-section-title">Iron Agents — reserved</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-coral)"></div>
+          <span class="swatch-name">--fn-coral</span>
+          <span class="swatch-value">#F08B73</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-blue)"></div>
+          <span class="swatch-name">--fn-blue</span>
+          <span class="swatch-value">#7DA8E8</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-sage)"></div>
+          <span class="swatch-name">--fn-sage</span>
+          <span class="swatch-value">#B8D29C</span>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--fn-lavender)"></div>
+          <span class="swatch-name">--fn-lavender</span>
+          <span class="swatch-value">#B79BE8</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMANTIC TOKENS -->
+    <section class="sys-section">
+      <p class="sys-section-title">Semantic tokens</p>
+      <div class="alias-list">
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--bg-canvas)"></div>
+          <span class="alias-name">--bg-canvas</span>
+          <span class="alias-ref">→ var(--ivory)</span>
+          <span class="alias-val">#FAFAF9</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--bg-paper)"></div>
+          <span class="alias-name">--bg-paper</span>
+          <span class="alias-ref">→ var(--white)</span>
+          <span class="alias-val">#FFFFFF</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--bg-surface)"></div>
+          <span class="alias-name">--bg-surface</span>
+          <span class="alias-ref">→ var(--stone)</span>
+          <span class="alias-val">#EAE6DF</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--text-primary)"></div>
+          <span class="alias-name">--text-primary</span>
+          <span class="alias-ref">→ var(--ink)</span>
+          <span class="alias-val">#1B1712</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--text-primary-inverse)"></div>
+          <span class="alias-name">--text-primary-inverse</span>
+          <span class="alias-ref">→ var(--ivory)</span>
+          <span class="alias-val">#FAFAF9</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--text-muted)"></div>
+          <span class="alias-name">--text-muted</span>
+          <span class="alias-ref">→ rgba(250, 250, 249, 0.55)</span>
+          <span class="alias-val">ivory · 55%</span>
+        </div>
+        <div class="alias-row">
+          <div class="alias-chip" style="background:var(--text-on-color)"></div>
+          <span class="alias-name">--text-on-color</span>
+          <span class="alias-ref">→ var(--ivory)</span>
+          <span class="alias-val">#FAFAF9</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="sys-section">
+      <p class="sys-section-title">Typography</p>
+
+      <div class="spec-card">
+        <p class="spec-label">Display — Outfit 300 · 88px</p>
+        <p style="font-family:var(--sans);font-size:clamp(44px,6vw,88px);font-weight:300;line-height:1;letter-spacing:-.02em;margin:0">The brand<br>in motion</p>
+      </div>
+
+      <div class="spec-card">
+        <p class="spec-label">Title — Outfit 600 · 44px</p>
+        <p style="font-family:var(--sans);font-size:44px;font-weight:600;line-height:1.1;letter-spacing:-.01em;margin:0">Section heading</p>
+      </div>
+
+      <div class="spec-card">
+        <p class="spec-label">Body — Outfit 400 · 16px · leading 1.55</p>
+        <p style="font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.55;margin:0;max-width:60ch">InsideBoard augments human managers with AI agents that act, not just advise. Every decision a manager makes is an opportunity to learn, adapt, and improve the system.</p>
+      </div>
+
+      <div class="spec-card">
+        <p class="spec-label">Mono — JetBrains Mono 400 · 13px</p>
+        <p style="font-family:var(--mono);font-size:13px;font-weight:400;line-height:1.5;margin:0">const signal = await agent.observe(context);<br>return signal.confidence &gt; 0.8 ? act(signal) : defer();</p>
+      </div>
+    </section>
+
+    <!-- SPACING -->
+    <section class="sys-section">
+      <p class="sys-section-title">Spacing scale</p>
+      <div>
+        <div class="space-row">
+          <div class="space-bar" style="width:4px"></div>
+          <span class="space-meta"><b>--s1</b> · 4px</span>
+        </div>
+        <div class="space-row">
+          <div class="space-bar" style="width:8px"></div>
+          <span class="space-meta"><b>--s2</b> · 8px</span>
+        </div>
+        <div class="space-row">
+          <div class="space-bar" style="width:16px"></div>
+          <span class="space-meta"><b>--s3</b> · 16px</span>
+        </div>
+        <div class="space-row">
+          <div class="space-bar" style="width:24px"></div>
+          <span class="space-meta"><b>--s4</b> · 24px</span>
+        </div>
+        <div class="space-row">
+          <div class="space-bar" style="width:32px"></div>
+          <span class="space-meta"><b>--s5</b> · 32px</span>
+        </div>
+        <div class="space-row">
+          <div class="space-bar" style="width:48px"></div>
+          <span class="space-meta"><b>--s6</b> · 48px</span>
+        </div>
+        <div class="space-row">
+          <div class="space-bar" style="width:64px"></div>
+          <span class="space-meta"><b>--s7</b> · 64px</span>
+        </div>
+        <div class="space-row">
+          <div class="space-bar" style="width:96px"></div>
+          <span class="space-meta"><b>--s8</b> · 96px</span>
+        </div>
+        <div class="space-row">
+          <div class="space-bar" style="width:128px"></div>
+          <span class="space-meta"><b>--s9</b> · 128px</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DENSITY -->
+    <section class="sys-section">
+      <p class="sys-section-title">Density</p>
+      <div class="alias-list">
+        <div class="alias-row">
+          <span class="alias-name">--density</span>
+          <span class="alias-ref">:root (default)</span>
+          <span class="alias-val">1</span>
+        </div>
+        <div class="alias-row">
+          <span class="alias-name">--density</span>
+          <span class="alias-ref">[data-density="comfortable"]</span>
+          <span class="alias-val">1.15</span>
+        </div>
+        <div class="alias-row">
+          <span class="alias-name">--density</span>
+          <span class="alias-ref">[data-density="compact"]</span>
+          <span class="alias-val">0.85</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT TOKENS -->
+    <section class="sys-section">
+      <p class="sys-section-title">Component tokens</p>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Nav</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--nav-bg)"></div>
+            <span class="alias-name">--nav-bg</span>
+            <span class="alias-ref">→ var(--white)</span>
+            <span class="alias-val">#FFFFFF</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--nav-border)"></div>
+            <span class="alias-name">--nav-border</span>
+            <span class="alias-ref">→ var(--gray-200)</span>
+            <span class="alias-val">#DDD4C4</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--nav-accent)"></div>
+            <span class="alias-name">--nav-accent</span>
+            <span class="alias-ref">→ var(--ember)</span>
+            <span class="alias-val">#EE2E20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Hero</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--hero-accent)"></div>
+            <span class="alias-name">--hero-accent</span>
+            <span class="alias-ref">→ var(--ember)</span>
+            <span class="alias-val">#EE2E20</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--hero-lede)"></div>
+            <span class="alias-name">--hero-lede</span>
+            <span class="alias-ref">→ var(--gray-600)</span>
+            <span class="alias-val">#6F6656</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--hero-border)"></div>
+            <span class="alias-name">--hero-border</span>
+            <span class="alias-ref">→ var(--gray-200)</span>
+            <span class="alias-val">#DDD4C4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Chapter</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--chapter-accent)"></div>
+            <span class="alias-name">--chapter-accent</span>
+            <span class="alias-ref">→ var(--ember)</span>
+            <span class="alias-val">#EE2E20</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--chapter-principle)"></div>
+            <span class="alias-name">--chapter-principle</span>
+            <span class="alias-ref">→ var(--gray-600)</span>
+            <span class="alias-val">#6F6656</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Callout</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--callout-border)"></div>
+            <span class="alias-name">--callout-border</span>
+            <span class="alias-ref">→ var(--gray-300)</span>
+            <span class="alias-val">#C9BEAB</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--callout-border-warn)"></div>
+            <span class="alias-name">--callout-border-warn</span>
+            <span class="alias-ref">→ var(--ember)</span>
+            <span class="alias-val">#EE2E20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alias-group">
+        <p class="alias-group-label">Formula</p>
+        <div class="alias-list">
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--formula-bg)"></div>
+            <span class="alias-name">--formula-bg</span>
+            <span class="alias-ref">→ var(--ink)</span>
+            <span class="alias-val">#1B1712</span>
+          </div>
+          <div class="alias-row">
+            <div class="alias-chip" style="background:var(--formula-text)"></div>
+            <span class="alias-name">--formula-text</span>
+            <span class="alias-ref">→ var(--text-primary-inverse)</span>
+            <span class="alias-val">#FAFAF9</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</body>
+</html>

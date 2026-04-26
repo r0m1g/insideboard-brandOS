@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Docs — InsideBoard Design System</title>
+  <link rel="stylesheet" href="../brandOS-tokens.css">
+  <link rel="stylesheet" href="../brandOS-components.css">
+</head>
+<body class="sys">
+
+  <nav class="sys-nav">
+    <a href="../index.html" class="sys-home">← BrandOS</a>
+    <div class="sys-links">
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="assets.html">Assets</a>
+      <a href="docs.html" aria-current="page">Docs</a>
+    </div>
+  </nav>
+
+  <main class="sys-main">
+
+    <header class="sys-header">
+      <h1>Docs</h1>
+      <p>Roadmap, decisions, devlog, and backlog — the living record of how the Brand OS is built.</p>
+    </header>
+
+    <!-- ROADMAP -->
+    <section class="sys-section">
+      <h2 class="sys-section-title">Roadmap</h2>
+      <div class="roadmap-wrap">
+
+        <div class="roadmap-filters">
+          <span class="rf-label">Show</span>
+          <button class="rf-btn rf-btn--done active"   data-filter="done">✓ Complete</button>
+          <button class="rf-btn rf-btn--active active" data-filter="active">◔ Active</button>
+          <button class="rf-btn rf-btn--future active" data-filter="future">… Future</button>
+        </div>
+
+        <div class="roadmap-scroll">
+          <div class="roadmap-track">
+            <button class="phase-card phase-card--done" data-phase="1a" data-status="done">
+              <span class="phase-tag phase-tag--done">✓ Complete</span>
+              <span class="phase-card-num">Phase 1A</span>
+              <span class="phase-card-name">Design system foundation</span>
+            </button>
+            <span class="roadmap-connector" aria-hidden="true"></span>
+            <button class="phase-card phase-card--done" data-phase="1b" data-status="done">
+              <span class="phase-tag phase-tag--done">✓ Complete</span>
+              <span class="phase-card-num">Phase 1B</span>
+              <span class="phase-card-name">Tokens W3C migration</span>
+            </button>
+            <span class="roadmap-connector" aria-hidden="true"></span>
+            <button class="phase-card phase-card--done" data-phase="1c" data-status="done">
+              <span class="phase-tag phase-tag--done">✓ Complete</span>
+              <span class="phase-card-num">Phase 1C</span>
+              <span class="phase-card-name">3-tier token architecture</span>
+            </button>
+            <span class="roadmap-connector" aria-hidden="true"></span>
+            <button class="phase-card phase-card--active" data-phase="2" data-status="active">
+              <span class="phase-tag phase-tag--active">◔ Active</span>
+              <span class="phase-card-num">Phase 2</span>
+              <span class="phase-card-name">Figma sync</span>
+            </button>
+            <span class="roadmap-connector" aria-hidden="true"></span>
+            <button class="phase-card phase-card--future" data-phase="future" data-status="future">
+              <span class="phase-tag phase-tag--future">… Future</span>
+              <span class="phase-card-num"></span>
+              <span class="phase-card-name">On the radar</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="roadmap-detail" id="roadmap-detail" hidden></div>
+
+      </div>
+    </section>
+
+    <!-- DECISIONS -->
+    <section class="sys-section">
+      <h2 class="sys-section-title">Decisions</h2>
+      <div class="adr-list">
+        <div class="adr-row">
+          <span class="adr-num">ADR-001</span>
+          <span class="adr-title">Design System Architecture</span>
+          <span class="adr-status adr-status--accepted">Accepted</span>
+        </div>
+        <div class="adr-row">
+          <span class="adr-num">ADR-002</span>
+          <span class="adr-title">W3C Design Tokens Format</span>
+          <span class="adr-status adr-status--implemented">Implemented</span>
+        </div>
+        <div class="adr-row">
+          <span class="adr-num">ADR-003</span>
+          <span class="adr-title">System/ Workbench Skin</span>
+          <span class="adr-status adr-status--accepted">Accepted</span>
+        </div>
+        <div class="adr-row">
+          <span class="adr-num">ADR-004</span>
+          <span class="adr-title">Port ui-test.html Redesign to BrandOS</span>
+          <span class="adr-status adr-status--accepted">Accepted</span>
+        </div>
+        <div class="adr-row">
+          <span class="adr-num">ADR-005</span>
+          <span class="adr-title">3-Tier Token Architecture</span>
+          <span class="adr-status adr-status--implemented">Implemented</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVLOG -->
+    <section class="sys-section">
+      <h2 class="sys-section-title">Devlog</h2>
+      <div class="devlog-list">
+        <div class="devlog-entry">
+          <span class="devlog-date">2026-04-26</span>
+          <span class="devlog-title">Phase 1C — 3-tier token architecture</span>
+        </div>
+        <div class="devlog-entry">
+          <span class="devlog-date">2026-04-26</span>
+          <span class="devlog-title">Phase 1B — W3C Design Tokens migration</span>
+        </div>
+        <div class="devlog-entry">
+          <span class="devlog-date">2026-04-25</span>
+          <span class="devlog-title">From one-pager to design system</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACKLOG -->
+    <section class="sys-section">
+      <h2 class="sys-section-title">Backlog</h2>
+      <div class="backlog-grid">
+        <div>
+          <p class="backlog-col-title">Ideas</p>
+          <div class="backlog-item"><span class="backlog-item-date">Apr 25</span><span>Layer 6–9 content — Do/Don't, Design Language, Component System, Automation</span></div>
+          <div class="backlog-item"><span class="backlog-item-date">Apr 25</span><span>AI generation pipeline for brand assets</span></div>
+          <div class="backlog-item"><span class="backlog-item-date">Apr 25</span><span>Public component library from brandOS-components.css</span></div>
+          <div class="backlog-item"><span class="backlog-item-date">Apr 25</span><span>Visual regression testing (Percy / Chromatic)</span></div>
+        </div>
+        <div>
+          <p class="backlog-col-title">Bugs</p>
+          <p class="backlog-empty">No open bugs.</p>
+        </div>
+        <div>
+          <p class="backlog-col-title">Feedback</p>
+          <p class="backlog-empty">No feedback logged.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<script>
+const phasesData = {
+  '1a': {
+    name: 'Phase 1A · Design system foundation',
+    steps: [
+      { id: '1A.0', s: 'done', label: 'Port redesigned nav, layer-intro, animations from <code>ui-test.html</code> to BrandOS' },
+      { id: '1A.1', s: 'done', label: 'Build <code>system/</code> scaffold consuming existing CSS' },
+      { id: '1A.2', s: 'done', label: 'Archive lab files into <code>system/lab/</code>' },
+      { id: '1A.3', s: 'done', label: 'Extend <code>PROCESS.md</code> with Update type 6 protocol' },
+    ],
+    note: 'Decisions: ADR-001, ADR-003, ADR-004'
+  },
+  '1b': {
+    name: 'Phase 1B · Tokens W3C migration',
+    steps: [
+      { id: '1B.1', s: 'done', label: 'Author <code>tokens.json</code> mirroring current CSS variables' },
+      { id: '1B.2', s: 'done', label: 'Build minimal Node generator (<code>tokens.json</code> → <code>brandOS-tokens.css</code>)' },
+      { id: '1B.3', s: 'done', label: 'Document tokens in <code>system/foundations.html</code>' },
+    ],
+    note: 'Decisions: ADR-002'
+  },
+  '1c': {
+    name: 'Phase 1C · 3-tier token architecture',
+    steps: [
+      { id: '1C.1', s: 'done', label: 'Define primitive layer (raw values)' },
+      { id: '1C.2', s: 'done', label: 'Define semantic layer (intent-based, references primitives)' },
+      { id: '1C.3', s: 'done', label: 'Define component-scoped tokens for major components' },
+    ],
+    note: 'Decisions: ADR-005'
+  },
+  '2': {
+    name: 'Phase 2 · Figma sync',
+    desc: 'Bidirectional sync between Figma Variables and <code>tokens.json</code> via Tokens Studio plugin.',
+    steps: [
+      { id: '2.1', s: 'planned', label: 'Install and configure Tokens Studio in Figma' },
+      { id: '2.2', s: 'planned', label: 'Connect to GitHub (this repo)' },
+      { id: '2.3', s: 'planned', label: 'Validate sync workflow (Figma → repo, repo → Figma)' },
+    ],
+    note: 'Prerequisite (manual): GitHub personal access token with repo read/write scope.'
+  },
+  'future': {
+    name: 'Future — uncommitted',
+    steps: [
+      { id: '', s: 'future', label: "Layer 6–9 content — Do/Don't, Design Language, Component System, Automation" },
+      { id: '', s: 'future', label: 'AI generation pipeline for brand assets' },
+      { id: '', s: 'future', label: 'Public component library from <code>brandOS-components.css</code>' },
+      { id: '', s: 'future', label: 'Visual regression testing (Percy / Chromatic)' },
+    ]
+  }
+};
+
+const detail = document.getElementById('roadmap-detail');
+const cards  = [...document.querySelectorAll('.phase-card')];
+const conns  = [...document.querySelectorAll('.roadmap-connector')];
+let current  = null;
+
+function syncConnectors() {
+  conns.forEach((c, i) => {
+    const hide = cards[i].classList.contains('rf-hidden') || cards[i + 1].classList.contains('rf-hidden');
+    c.classList.toggle('rf-hidden', hide);
+  });
+  // If hidden cards create a break between two visible groups, mark the
+  // first visible card after the break with .rf-gapped so it gets a visual gap.
+  cards.forEach((card, i) => {
+    if (card.classList.contains('rf-hidden')) return;
+    const prevVisible = cards.slice(0, i).filter(c => !c.classList.contains('rf-hidden')).pop();
+    const hasHiddenBetween = prevVisible && cards.slice(cards.indexOf(prevVisible) + 1, i).some(c => c.classList.contains('rf-hidden'));
+    card.classList.toggle('rf-gapped', !!hasHiddenBetween);
+  });
+}
+
+document.querySelectorAll('.rf-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    const filter = btn.dataset.filter;
+    cards.filter(c => c.dataset.status === filter).forEach(card => {
+      card.classList.toggle('rf-hidden', !btn.classList.contains('active'));
+      if (card.classList.contains('rf-hidden') && card.dataset.phase === current) {
+        card.classList.remove('selected');
+        current = null;
+        detail.hidden = true;
+      }
+    });
+    syncConnectors();
+  });
+});
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const phase = card.dataset.phase;
+    if (current === phase) {
+      card.classList.remove('selected');
+      current = null;
+      detail.hidden = true;
+      return;
+    }
+    cards.forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    current = phase;
+    const d = phasesData[phase];
+    let html = `<p class="phase-name" style="margin:0 0 var(--s3)">${d.name}</p>`;
+    if (d.desc) html += `<p class="phase-desc">${d.desc}</p>`;
+    html += `<ul class="phase-steps">`;
+    d.steps.forEach(step => {
+      const dot = step.s === 'done' ? '✓' : '';
+      html += `<li class="phase-step"><span class="step-id">${step.id}</span><span class="step-dot step-dot--${step.s === 'planned' ? 'planned' : step.s}">${dot}</span><span>${step.label}</span></li>`;
+    });
+    html += `</ul>`;
+    if (d.note) html += `<p class="phase-note">${d.note}</p>`;
+    detail.innerHTML = html;
+    detail.hidden = false;
+  });
+});
+</script>
+
+</body>
+</html>

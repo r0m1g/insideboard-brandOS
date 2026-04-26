@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Assets — InsideBoard Design System</title>
+  <link rel="stylesheet" href="../brandOS-tokens.css">
+  <link rel="stylesheet" href="../brandOS-components.css">
+</head>
+<body class="sys">
+
+  <nav class="sys-nav">
+    <a href="../index.html" class="sys-home">← BrandOS</a>
+    <div class="sys-links">
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Components</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="assets.html" aria-current="page">Assets</a>
+      <a href="docs.html">Docs</a>
+    </div>
+  </nav>
+
+  <main class="sys-main">
+
+    <header class="sys-header">
+      <h1>Assets</h1>
+      <p>Logos, fonts, and production-ready files. Source of truth for export and usage.</p>
+    </header>
+
+    <!-- LOGOTYPE -->
+    <section class="sys-section">
+      <p class="sys-section-title">Logotype</p>
+
+      <div class="spec-card">
+        <p class="spec-label">On dark (brand register)</p>
+        <div style="background:var(--ink);padding:var(--s5);border-radius:3px;display:flex;align-items:center;gap:var(--s3)">
+          <img src="../assets/images/logos/insideboard-logo-white.svg" alt="InsideBoard" style="height:32px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span style="display:none;font:600 18px/1 var(--sans);color:var(--ivory)">InsideBoard</span>
+        </div>
+      </div>
+
+      <div class="spec-card">
+        <p class="spec-label">On light (product register)</p>
+        <div style="background:var(--white);padding:var(--s5);border-radius:3px;border:1px solid var(--gray-100);display:flex;align-items:center;gap:var(--s3)">
+          <img src="../assets/images/logos/insideboard-logo-dark.svg" alt="InsideBoard" style="height:32px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span style="display:none;font:600 18px/1 var(--sans);color:var(--ink)">InsideBoard</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONTS -->
+    <section class="sys-section">
+      <p class="sys-section-title">Self-hosted fonts</p>
+
+      <div class="spec-card">
+        <p class="spec-label">Outfit (sans) — weight range 300–600</p>
+        <div style="display:flex;gap:var(--s5);flex-wrap:wrap">
+          <span style="font-family:var(--sans);font-weight:300;font-size:24px">Light 300</span>
+          <span style="font-family:var(--sans);font-weight:400;font-size:24px">Regular 400</span>
+          <span style="font-family:var(--sans);font-weight:500;font-size:24px">Medium 500</span>
+          <span style="font-family:var(--sans);font-weight:600;font-size:24px">Semi 600</span>
+        </div>
+        <div style="margin-top:var(--s3);font:400 12px/1.4 var(--mono);color:var(--gray-500)">
+          assets/fonts/outfit-latin.woff2<br>
+          assets/fonts/outfit-latin-ext.woff2
+        </div>
+      </div>
+
+      <div class="spec-card">
+        <p class="spec-label">JetBrains Mono — weight range 400–500</p>
+        <div style="display:flex;gap:var(--s5);flex-wrap:wrap">
+          <span style="font-family:var(--mono);font-weight:400;font-size:18px">Regular 400</span>
+          <span style="font-family:var(--mono);font-weight:500;font-size:18px">Medium 500</span>
+        </div>
+        <div style="margin-top:var(--s3);font:400 12px/1.4 var(--mono);color:var(--gray-500)">
+          assets/fonts/jetbrains-mono-latin.woff2<br>
+          assets/fonts/jetbrains-mono-latin-ext.woff2
+        </div>
+      </div>
+    </section>
+
+    <!-- FILE INVENTORY -->
+    <section class="sys-section">
+      <p class="sys-section-title">File inventory</p>
+      <div class="spec-card">
+        <p class="spec-label">assets/</p>
+        <pre style="font:400 12px/1.8 var(--mono);color:var(--gray-700);margin:0">assets/
+├── fonts/
+│   ├── outfit-latin.woff2
+│   ├── outfit-latin-ext.woff2
+│   ├── jetbrains-mono-latin.woff2
+│   └── jetbrains-mono-latin-ext.woff2
+└── images/
+    └── logos/
+        ├── insideboard-logo-white.svg
+        └── insideboard-logo-dark.svg</pre>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
