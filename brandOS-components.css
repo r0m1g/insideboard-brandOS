@@ -1052,11 +1052,19 @@ body.sys {
 .devlog-title { font-size: 14px; color: var(--ink); }
 
 /* Backlog */
-.backlog-grid      { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--s5); }
-.backlog-col-title { font: 500 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); margin: 0 0 var(--s3); }
-.backlog-empty     { font-size: 13px; color: var(--gray-400); font-style: italic; margin: 0; }
-.backlog-item      { display: flex; gap: var(--s3); font-size: 13px; color: var(--gray-700); margin-bottom: var(--s2); line-height: 1.4; }
-.backlog-item-date { font: 400 10px/1.4 var(--mono); color: var(--gray-400); white-space: nowrap; flex-shrink: 0; }
+.backlog-table              { display: flex; flex-direction: column; }
+.backlog-row                { display: grid; grid-template-columns: 72px 1fr 40px; align-items: baseline; gap: var(--s4); padding: var(--s3) 0; border-bottom: 1px solid var(--gray-100); }
+.backlog-row--done .backlog-text { color: var(--gray-400); text-decoration: line-through; }
+.backlog-cat                { font: 500 9px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.backlog-cat--bug           { color: var(--ember); }
+.backlog-cat--todo          { color: var(--steel); }
+.backlog-cat--idea          { color: var(--gray-500); }
+.backlog-cat--question      { color: var(--gray-500); }
+.backlog-cat--workflow      { color: var(--gray-500); }
+.backlog-text               { font-size: 13px; color: var(--gray-700); line-height: 1.4; }
+.backlog-status             { font: 400 9px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; text-align: right; }
+.backlog-status--open       { color: var(--gray-400); }
+.backlog-status--done       { color: var(--gray-300); }
 
 /* Roadmap frise */
 .roadmap-wrap    { display: flex; flex-direction: column; gap: var(--s4); }
@@ -1074,9 +1082,15 @@ body.sys {
   cursor: pointer;
   transition: border-color .12s, color .12s;
 }
-.rf-btn--done.active   { border-color: var(--fn-moss);  color: var(--fn-moss); }
-.rf-btn--active.active { border-color: var(--ember);    color: var(--ember); }
-.rf-btn--future.active { border-color: var(--gray-500); color: var(--gray-500); }
+.rf-btn--done.active      { border-color: var(--fn-moss);  color: var(--fn-moss); }
+.rf-btn--active.active    { border-color: var(--ember);    color: var(--ember); }
+.rf-btn--future.active    { border-color: var(--gray-500); color: var(--gray-500); }
+.rf-btn--bug.active       { border-color: var(--ember);    color: var(--ember); }
+.rf-btn--todo.active      { border-color: var(--steel);    color: var(--steel); }
+.rf-btn--idea.active      { border-color: var(--gray-500); color: var(--gray-500); }
+.rf-btn--question.active  { border-color: var(--gray-500); color: var(--gray-500); }
+.rf-btn--workflow.active  { border-color: var(--gray-500); color: var(--gray-500); }
+.backlog-row.rf-hidden    { display: none; }
 
 .roadmap-scroll { overflow-x: auto; padding-bottom: var(--s2); }
 .roadmap-track  { display: flex; align-items: center; gap: 0; min-width: max-content; }
