@@ -180,6 +180,41 @@ Use str_replace only. Do not touch index.html or brandOS-content.md.
 
 ---
 
+### Update type 7 — Sync to main (`/syncmain`)
+
+Publish the current `index.html`, CSS, and `assets/` from `feat/ui-exploration` to `main` so colleagues can see the latest version on GitHub Pages.
+
+**When to sync — Claude proposes this proactively after:**
+- A content section is written and validated in `index.html`
+- A visual change (token, component) is confirmed working in the browser
+- A session ends with meaningful changes to the BrandOS document
+
+**What gets synced — display files only:**
+```
+index.html
+brandOS-tokens.css
+brandOS-components.css
+assets/
+```
+
+**What stays on `feat/ui-exploration` only:**
+```
+tokens.json          system/       docs/
+scripts/             PROCESS.md    CLAUDE.md
+```
+
+**Command (say `/syncmain` or "sync main"):**
+```bash
+git checkout main
+git checkout feat/ui-exploration -- index.html brandOS-tokens.css brandOS-components.css assets/
+git add index.html brandOS-tokens.css brandOS-components.css assets/
+git commit -m "chore: sync display files to main"
+git push origin main
+git checkout feat/ui-exploration
+```
+
+---
+
 ## Rules for Claude Code (non-negotiable)
 
 1. **str_replace only for targeted updates** — never rewrite an entire file when only a section has changed.

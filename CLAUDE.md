@@ -52,6 +52,16 @@ InsideBoard AI Brand OS — a living HTML document that serves as the single sou
 ### Process is mandatory
 `PROCESS.md` defines the update protocol for every operation type. It is not optional reading — follow it for every edit, without waiting to be reminded. Before touching any file, identify the operation type (content / token / component / new section) and apply the corresponding protocol from `PROCESS.md`.
 
+### Branch workflow — mandatory awareness
+
+Two branches, two roles:
+- **`feat/ui-exploration`** — working branch. All edits happen here. Never goes online.
+- **`main`** — public branch. Only `index.html`, CSS, and `assets/`. What colleagues see on GitHub Pages.
+
+**Proactively propose `/syncmain`** (Update type 7 in `PROCESS.md`) at the end of any session where `index.html` or the CSS files changed meaningfully. Say: *"Veux-tu que je sync main pour que tes collègues voient la mise à jour ?"*
+
+Never merge `feat/ui-exploration` into `main` — always use the cherry-pick method from Update type 7.
+
 ### Structural coherence — mandatory
 
 `brandOS-content.md` is the single source of truth for structure: layer names, section titles, section order, and what exists. `index.html` implements it. No other file maintains a structural list.
