@@ -1,7 +1,8 @@
 # ADR-002 — W3C Design Tokens Format
 
-**Status:** Accepted  
+**Status:** Implemented  
 **Date:** 2026-04-25  
+**Implemented:** 2026-04-26 (Phase 1B complete)  
 **Author:** Romain (Art Director)
 
 ---

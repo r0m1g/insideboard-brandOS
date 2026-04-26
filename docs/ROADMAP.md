@@ -19,9 +19,23 @@
 
 ## Active phase
 
-### Phase 1A · Design system foundation
+### Phase 2 · Figma sync
 
-Splitting the project into a brand document (`index.html`) and a design system playground (`system/`) that share a single CSS source of truth.
+Bidirectional sync between Figma Variables and `tokens.json` via Tokens Studio plugin.
+
+| Step | Status | Description |
+|---|---|---|
+| 2.1 | `○` | Install and configure Tokens Studio in Figma |
+| 2.2 | `○` | Connect to GitHub (this repo) |
+| 2.3 | `○` | Validate sync workflow (Figma → repo, repo → Figma) |
+
+**Prerequisite (manual):** GitHub personal access token with repo read/write scope.
+
+---
+
+## Completed
+
+### Phase 1A · Design system foundation
 
 | Step | Status | Description |
 |---|---|---|
@@ -30,17 +44,9 @@ Splitting the project into a brand document (`index.html`) and a design system p
 | 1A.2 | `✓` | Archive `ui-test.html` and `animation-test.html` into `system/lab/` |
 | 1A.3 | `✓` | Extend `PROCESS.md` with "Update type 6 — System (playground)" protocol |
 
-**Owner:** Romain (Art Director)
-**Target:** End of week 2026-04-30
-**Decisions covering this phase:** ADR-001, ADR-003, ADR-004
-
----
-
-## Planned
+**Decisions:** ADR-001, ADR-003, ADR-004
 
 ### Phase 1B · Tokens W3C migration
-
-Move `brandOS-tokens.css` source-of-truth from hand-maintained CSS variables to W3C Design Tokens format (`tokens.json`), with a Node script generating the CSS. No visual change.
 
 | Step | Status | Description |
 |---|---|---|
@@ -48,11 +54,9 @@ Move `brandOS-tokens.css` source-of-truth from hand-maintained CSS variables to 
 | 1B.2 | `✓` | Build minimal Node generator (`tokens.json` → `brandOS-tokens.css`) |
 | 1B.3 | `✓` | Document tokens in `system/foundations.html` |
 
-**Decisions covering this phase:** ADR-002
+**Decisions:** ADR-002
 
 ### Phase 1C · 3-tier token architecture
-
-Restructure tokens into Primitives → Semantic → Component layers. Refactor invisible from the rendering side.
 
 | Step | Status | Description |
 |---|---|---|
@@ -60,15 +64,8 @@ Restructure tokens into Primitives → Semantic → Component layers. Refactor i
 | 1C.2 | `✓` | Define semantic layer (intent-based, references primitives) |
 | 1C.3 | `✓` | Define component-scoped tokens for major components |
 
-### Phase 2 · Figma sync
+**Decisions:** ADR-005
 
-Bidirectional sync between Figma Variables and `tokens.json` via Tokens Studio plugin. Enables design changes in Figma to flow to code and vice versa.
-
-| Step | Status | Description |
-|---|---|---|
-| 2.1 | `○` | Install and configure Tokens Studio in Figma |
-| 2.2 | `○` | Connect to GitHub (this repo) |
-| 2.3 | `○` | Validate sync workflow (Figma → repo, repo → Figma) |
 
 ---
 
